@@ -743,6 +743,17 @@ note right on link : link2に対する\nコメント
 - クラスという集合の中にオブジェクトが属していると考える。
 - クラス図だけでは抽象的な図しか書けないので、オブジェクト図でもっと詳しい補足をする。
 
+```
+object Object1 {
+    id = 1234
+    name = "Alice"
+}
+
+object "<u>bar:Object2</u>" as bar
+bar : id = 4321
+bar : name = "Bob"
+```
+
 ```plantuml
 object Object1 {
     id = 1234
@@ -762,6 +773,26 @@ bar : name = "Bob"
 - 呼び出すことができるのは、インポートするパッケージのみ。
 - PlantUMLにはパッケージ図が用意されていない。
 - パッケージ - クラス間のリンクはできない。
+
+```
+package Search{
+}
+
+package Drawing{
+}
+
+Search .> Drawing : <<import>>
+
+package "Input/Output" as io{
+}
+
+Search ..> io : <<access>>
+
+package Database{
+}
+
+io +-- Database
+```
 
 ```plantuml
 package Search{
