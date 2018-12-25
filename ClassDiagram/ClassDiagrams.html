@@ -1,0 +1,1228 @@
+<!DOCTYPE html><html><head>
+      <title>ClassDiagrams</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\shisa\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.11\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</h1>
+
+<h2 class="mume-header" id="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</h2>
+
+<hr>
+<p>&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x306E;&#x4ED5;&#x69D8;&#x66F8;&#x3001;&#x8A2D;&#x8A08;&#x66F8;&#x306E;&#x4F5C;&#x6210;&#x3084;&#x7BA1;&#x7406;&#x3092;&#x52B9;&#x7387;&#x5316;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;Markdown + PlantUML&#x306B;&#x3088;&#x308B;&#x4F5C;&#x6210;&#x65B9;&#x6CD5;&#x3092;&#x65E5;&#x3005;&#x6A21;&#x7D22;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>
+&#x3057;&#x304B;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;&#x305D;&#x3082;&#x305D;&#x3082;UML&#x56F3;&#x306E;&#x6B63;&#x5F0F;&#x306A;&#x66F8;&#x304D;&#x65B9;&#x3068;&#x3044;&#x3046;&#x3082;&#x306E;&#x3092;&#x3061;&#x3083;&#x3093;&#x3068;&#x5206;&#x304B;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x306E;&#x304C;&#x6B63;&#x76F4;&#x306A;&#x3068;&#x3053;&#x308D;&#x306A;&#x306E;&#x3067;&#x3001;PlantUML&#x3092;&#x901A;&#x3058;&#x3066;UML&#x306E;&#x5404;&#x7A2E;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x52C9;&#x5F37;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x672C;&#x7A3F;&#x306E;&#x30C6;&#x30FC;&#x30DE;&#x306F;&#x3001;&#x300C;UML&#x306B;&#x3088;&#x308B;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x300D;&#x3067;&#x3059;&#x3002;</li>
+<li>&#x672C;&#x7A3F;&#x306B;&#x304A;&#x3051;&#x308B;UML&#x56F3;&#x306E;&#x4F5C;&#x6210;&#x306F;&#x3001;Markdown + PlantUML&#x304C;&#x30D9;&#x30FC;&#x30B9;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x524D;&#x63D0;&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</h2>
+
+<hr>
+<ul>
+<li><a href="#plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</a>
+<ul>
+<li><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</a></li>
+<li><a href="#%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</a></li>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%81%A8%E3%81%AF">&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x3068;&#x306F;</a></li>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0">&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x3092;&#x69CB;&#x6210;&#x3059;&#x308B;&#x8981;&#x7D20;</a>
+<ul>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9class">&#x30AF;&#x30E9;&#x30B9;(Class)</a></li>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9%E9%96%93%E3%81%AE%E9%96%A2%E4%BF%82%E3%81%A8%E7%B7%9A%E7%A8%AE">&#x30AF;&#x30E9;&#x30B9;&#x9593;&#x306E;&#x95A2;&#x4FC2;&#x3068;&#x7DDA;&#x7A2E;</a></li>
+<li><a href="#%E9%96%A2%E9%80%A3association">&#x95A2;&#x9023;(Association)</a></li>
+<li><a href="#%E6%B1%8E%E5%8C%96generalization%E3%81%A8%E7%89%B9%E5%8C%96specialization">&#x6C4E;&#x5316;(Generalization)&#x3068;&#x7279;&#x5316;(Specialization)</a></li>
+<li><a href="#%E5%AE%9F%E7%8F%BErealization">&#x5B9F;&#x73FE;(Realization)</a></li>
+<li><a href="#%E9%9B%86%E7%B4%84aggregation%E3%81%A8%E5%90%88%E6%88%90composition">&#x96C6;&#x7D04;(Aggregation)&#x3068;&#x5408;&#x6210;(Composition)</a></li>
+<li><a href="#%E4%BE%9D%E5%AD%98dependency">&#x4F9D;&#x5B58;(Dependency)</a></li>
+<li><a href="#%E3%83%AD%E3%83%BC%E3%83%AB%E5%90%8Drole-name">&#x30ED;&#x30FC;&#x30EB;&#x540D;(Role name)</a></li>
+<li><a href="#%E5%A4%9A%E9%87%8D%E5%BA%A6multiplicity">&#x591A;&#x91CD;&#x5EA6;(Multiplicity)</a></li>
+<li><a href="#%E3%82%B9%E3%83%86%E3%83%AC%E3%82%AA%E3%82%BF%E3%82%A4%E3%83%97stereotype">&#x30B9;&#x30C6;&#x30EC;&#x30AA;&#x30BF;&#x30A4;&#x30D7;(Stereotype)</a></li>
+<li><a href="#%E5%88%B6%E7%B4%84constraint">&#x5236;&#x7D04;(Constraint)</a></li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E3%82%AF%E3%83%A9%E3%82%B9">&#x7279;&#x6B8A;&#x30AF;&#x30E9;&#x30B9;</a></li>
+<li><a href="#%E3%83%AD%E3%83%AA%E3%83%9D%E3%83%83%E3%83%97">&#x30ED;&#x30EA;&#x30DD;&#x30C3;&#x30D7;</a></li>
+</ul>
+</li>
+<li><a href="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</a>
+<ul>
+<li><a href="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E5%AE%9A%E7%BE%A9">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5B9A;&#x7FA9;</a></li>
+<li><a href="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x30B9;&#x30BF;&#x30A4;&#x30EB;</a></li>
+<li><a href="#%E3%83%8D%E3%83%BC%E3%83%A0%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9">&#x30CD;&#x30FC;&#x30E0;&#x30B9;&#x30DA;&#x30FC;&#x30B9;</a></li>
+</ul>
+</li>
+<li><a href="#%E3%83%8E%E3%83%BC%E3%83%88">&#x30CE;&#x30FC;&#x30C8;</a>
+<ul>
+<li><a href="#%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E3%83%8E%E3%83%BC%E3%83%88">&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><a href="#%E9%96%A2%E4%BF%82%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%83%8E%E3%83%BC%E3%83%88">&#x95A2;&#x4FC2;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x30CE;&#x30FC;&#x30C8;</a></li>
+<li><a href="#%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%B8%E3%81%AE%E3%83%8E%E3%83%BC%E3%83%88">&#x30EA;&#x30F3;&#x30AF;&#x3078;&#x306E;&#x30CE;&#x30FC;&#x30C8;</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E5%9B%B3">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x56F3;</a></li>
+<li><a href="#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E5%9B%B3">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x56F3;</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%81%A8%E3%81%AF">&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x3068;&#x306F;</h2>
+
+<hr>
+<ul>
+<li>&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x9759;&#x7684;&#x306A;&#x69CB;&#x9020;&#x3092;&#x8868;&#x3059;&#x56F3;&#x3067;&#x3042;&#x308A;&#x3001;&#x554F;&#x984C;&#x9818;&#x57DF;&#x3084;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x69CB;&#x9020;&#x3092;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x5168;&#x4F53;&#x3001;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x5358;&#x4F4D;&#x3001;&#x6A5F;&#x80FD;&#x5358;&#x4F4D;&#x306A;&#x3069;&#x3001;&#x69D8;&#x3005;&#x306A;&#x8996;&#x70B9;&#x3067;&#x4F5C;&#x6210;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%82%AF%E3%83%A9%E3%82%B9%E5%9B%B3%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0">&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x3092;&#x69CB;&#x6210;&#x3059;&#x308B;&#x8981;&#x7D20;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E3%82%AF%E3%83%A9%E3%82%B9class">&#x30AF;&#x30E9;&#x30B9;(Class)</h3>
+
+<ul>
+<li>&#x9577;&#x65B9;&#x5F62;&#x306E;&#x4E2D;&#x3092;&#xFF13;&#x533A;&#x753B;&#x306B;&#x5206;&#x5272;&#x3057;&#x3001;&#x4E0A;&#x304B;&#x3089;<strong>&#x30AF;&#x30E9;&#x30B9;&#x540D;</strong>&#x3001;<strong>&#x5C5E;&#x6027;</strong>&#x3001;<strong>&#x64CD;&#x4F5C;</strong>&#x3092;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x540D;&#x306E;&#x4E0A;&#x306B;&#x306F;&quot;&lt;&lt;&gt;&gt;&quot;&#x3067;&#x56F2;&#x307E;&#x308C;&#x305F;&#x30B9;&#x30C6;&#x30EC;&#x30AA;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x4E8B;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+<li>&#x5C5E;&#x6027;&#x306F;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x8868;&#x3057;&#x3001;<strong>&#x53EF;&#x8996;&#x6027; &#x540D;&#x524D;:&#x578B; = &#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;</strong>&#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;&#x3067;&#x66F8;&#x304F;&#x3002;</li>
+<li>&#x64CD;&#x4F5C;&#x306F;&#x632F;&#x308B;&#x821E;&#x3044;&#x3092;&#x8868;&#x3057;<strong>&#x53EF;&#x8996;&#x6027; &#x540D;&#x524D;(&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;):&#x8FD4;&#x308A;&#x5024;</strong>&#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;&#x3067;&#x8868;&#x3059;&#x3002;</li>
+<li>&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306F;&#x3001;<strong>&#x540D;&#x524D;:&#x578B;=&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x5024;</strong>&#x3092;&#x30B3;&#x30F3;&#x30DE;&#x3067;&#x533A;&#x5207;&#x3063;&#x3066;&#x4E26;&#x3079;&#x308B;&#x3002;static&#x306A;&#x5C5E;&#x6027;&#x3084;&#x64CD;&#x4F5C;&#x306F;<strong>&#x4E0B;&#x7DDA;</strong>&#x3092;&#x4ED8;&#x3051;&#x3066;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<p>&#x53EF;&#x8996;&#x6027;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x8868;&#x306E;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x304C;&#x3042;&#x308B;&#x3002;<br>
+<img src="2018-12-22-21-38-18.png" alt=""></p>
+<p>&#x3053;&#x308C;&#x3089;&#x3092;PlantUML&#x3067;&#x66F8;&#x304F;&#x3068;&#x4E0B;&#x8A18;&#x306E;&#x8868;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;<br>
+<img src="2018-12-22-22-54-14.png" alt=""></p>
+<p>PlantUML&#x306B;&#x3088;&#x308B;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x8A18;&#x6CD5;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x901A;&#x308A;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>class Dummy{
+    - field1
+    # field2
+    {static} field3
+    ~ method1()
+    + method2()
+}
+</code></pre><p>&#x3053;&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x3088;&#x3063;&#x3066;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x308B;&#x3002;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="136px" preserveAspectRatio="none" style="width:92px;height:136px;" version="1.1" viewBox="0 0 92 136" width="92px" zoomAndPan="magnify"><defs><filter height="300%" id="f1xb8ygfm0j4mn" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Dummy--><rect fill="#FEFECE" filter="url(#f1xb8ygfm0j4mn)" height="117.1797" id="Dummy" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="6" y="8"/><ellipse cx="21" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,29.4375 Q22.7813,30.3594 20.5156,30.3594 Q19.25,30.3594 18.3281,29.4375 Q16.6719,27.7813 16.6719,24.25 Q16.6719,20.1406 18.4531,18.3438 Q19.3906,17.4219 20.5781,17.4219 Q22.8438,17.4219 23.5781,18.1406 Q24.9688,19.5469 24.9063,21.9375 L22.4375,21.9375 Q22.375,19.8125 21.6406,19.0781 Q21.25,18.6719 20.5781,18.6719 Q20.5781,18.6719 20.5156,19.1406 Q19.1875,20.4688 19.1875,24.125 Q19.1875,27.3125 20.3281,28.4375 Q20.8594,28.9688 20.8594,28.9688 Q21.1094,28.9688 21.6406,28.4375 Q22.3125,27.7813 22.375,25.3906 L24.9688,25.3906 Q24.7656,28.375 23.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="43" x="35" y="28.9102">Dummy</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="80" y1="40" y2="40"/><rect fill="none" height="6" style="stroke: #C82930; stroke-width: 1.0;" width="6" x="14" y="49.418"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="26" x="26" y="55.4189">field1</text><polygon fill="none" points="17,61.2539,21,65.2539,17,69.2539,13,65.2539" style="stroke: #B38D22; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="26" x="26" y="69.2549">field2</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="26" x="26" y="83.0908">field3</text><line style="stroke: #000000; stroke-width: 1.0;" x1="26" x2="52" y1="85.0908" y2="85.0908"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="80" y1="89.5078" y2="89.5078"/><polygon fill="#4177AF" points="17,97.9258,13,103.9258,21,103.9258" style="stroke: #1963A0; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="26" y="104.9268">method1()</text><ellipse cx="17" cy="115.7617" fill="#84BE84" rx="3" ry="3" style="stroke: #038048; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="49" x="26" y="118.7627">method2()</text><!--
+@startuml
+class Dummy{
+    - field1
+    # field2
+    {static} field3
+    ~ method1()
+    + method2()
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><p>PlantUML&#x306B;&#x3088;&#x308B;&#x30A2;&#x30A4;&#x30B3;&#x30F3;&#x8868;&#x793A;&#x3092;&#x9069;&#x7528;&#x3057;&#x305F;&#x304F;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;<strong>&#x30B3;&#x30DE;&#x30F3;&#x30C9; skinparam classAttributeIconSize 0</strong>&#x3092;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x5148;&#x982D;&#x306B;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>skinparam classAttributeIconSize 0
+
+class Dummy{
+    - field1
+    # field2
+    {static} field3
+    ~ method1()
+    + method2()
+}
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="136px" preserveAspectRatio="none" style="width:92px;height:136px;" version="1.1" viewBox="0 0 92 136" width="92px" zoomAndPan="magnify"><defs><filter height="300%" id="f1g2nilpa9lox3" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Dummy--><rect fill="#FEFECE" filter="url(#f1g2nilpa9lox3)" height="117.1797" id="Dummy" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="6" y="8"/><ellipse cx="21" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,29.4375 Q22.7813,30.3594 20.5156,30.3594 Q19.25,30.3594 18.3281,29.4375 Q16.6719,27.7813 16.6719,24.25 Q16.6719,20.1406 18.4531,18.3438 Q19.3906,17.4219 20.5781,17.4219 Q22.8438,17.4219 23.5781,18.1406 Q24.9688,19.5469 24.9063,21.9375 L22.4375,21.9375 Q22.375,19.8125 21.6406,19.0781 Q21.25,18.6719 20.5781,18.6719 Q20.5781,18.6719 20.5156,19.1406 Q19.1875,20.4688 19.1875,24.125 Q19.1875,27.3125 20.3281,28.4375 Q20.8594,28.9688 20.8594,28.9688 Q21.1094,28.9688 21.6406,28.4375 Q22.3125,27.7813 22.375,25.3906 L24.9688,25.3906 Q24.7656,28.375 23.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="43" x="35" y="28.9102">Dummy</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="80" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="30" x="12" y="55.4189">-field1</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="32" x="12" y="69.2549">#field2</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="26" x="12" y="83.0908">field3</text><line style="stroke: #000000; stroke-width: 1.0;" x1="12" x2="38" y1="85.0908" y2="85.0908"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="80" y1="89.5078" y2="89.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="12" y="104.9268">~method1()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="12" y="118.7627">+method2()</text><!--
+@startuml
+skinparam classAttributeIconSize 0
+
+class Dummy{
+    - field1
+    # field2
+    {static} field3
+    ~ method1()
+    + method2()
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%82%AF%E3%83%A9%E3%82%B9%E9%96%93%E3%81%AE%E9%96%A2%E4%BF%82%E3%81%A8%E7%B7%9A%E7%A8%AE">&#x30AF;&#x30E9;&#x30B9;&#x9593;&#x306E;&#x95A2;&#x4FC2;&#x3068;&#x7DDA;&#x7A2E;</h3>
+
+<ul>
+<li>PlantUML&#x3067;&#x306F;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x9593;&#x306E;&#x95A2;&#x4FC2;&#x3092;&#x4E0B;&#x8A18;&#x306E;&#x5F62;&#x5F0F;&#x3067;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&#x30AF;&#x30E9;&#x30B9;&#x540D; &#x7DDA;&#x7A2E;&#x306E;&#x8A18;&#x53F7; &#x30AF;&#x30E9;&#x30B9;&#x540D; [: &#x30E9;&#x30D9;&#x30EB;]
+</code></pre><ul>
+<li>
+<p>&#x30AF;&#x30E9;&#x30B9;&#x540D;&#x306B;&#x82F1;&#x6570;&#x5B57;&#x4EE5;&#x5916;&#x3092;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&quot;(&#x30C0;&#x30D6;&#x30EB;&#x30AF;&#x30AA;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;)&#x3067;&#x56F2;&#x3080;&#x3002;</p>
+</li>
+<li>
+<p>&#x65E5;&#x672C;&#x8A9E;&#x306E;&#x5834;&#x5408;&#x306F; &quot; &#x304C;&#x306A;&#x3044;&#x3068;&#x3046;&#x307E;&#x304F;&#x8868;&#x793A;&#x3055;&#x308C;&#x306A;&#x3044;&#x5834;&#x5408;&#x304C;&#x3042;&#x308B;&#x306E;&#x3067;&#x3001;&#x56F2;&#x3063;&#x3066;&#x304A;&#x3044;&#x305F;&#x65B9;&#x304C;&#x5B89;&#x5168;&#x3067;&#x3042;&#x308B;&#x3002;</p>
+</li>
+<li>
+<p>PlantUML&#x3067;&#x306E;&#x8A18;&#x8FF0;&#x4F8B;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x901A;&#x308A;&#x3002;</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>ClassA -- ClassB
+&quot;&#x30AF;&#x30E9;&#x30B9;C&quot; -- &quot;&#x30AF;&#x30E9;&#x30B9;D&quot; : &#x95A2;&#x4FC2;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="193px" preserveAspectRatio="none" style="width:202px;height:193px;" version="1.1" viewBox="0 0 202 193" width="202px" zoomAndPan="magnify"><defs><filter height="300%" id="f1opt28fumedwc" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class ClassA--><rect fill="#FEFECE" filter="url(#f1opt28fumedwc)" height="48" id="ClassA" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="6.5" y="8"/><ellipse cx="21.5" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M24.2031,29.4375 Q23.2813,30.3594 21.0156,30.3594 Q19.75,30.3594 18.8281,29.4375 Q17.1719,27.7813 17.1719,24.25 Q17.1719,20.1406 18.9531,18.3438 Q19.8906,17.4219 21.0781,17.4219 Q23.3438,17.4219 24.0781,18.1406 Q25.4688,19.5469 25.4063,21.9375 L22.9375,21.9375 Q22.875,19.8125 22.1406,19.0781 Q21.75,18.6719 21.0781,18.6719 Q21.0781,18.6719 21.0156,19.1406 Q19.6875,20.4688 19.6875,24.125 Q19.6875,27.3125 20.8281,28.4375 Q21.3594,28.9688 21.3594,28.9688 Q21.6094,28.9688 22.1406,28.4375 Q22.8125,27.7813 22.875,25.3906 L25.4688,25.3906 Q25.2656,28.375 24.2031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="35.5" y="28.9102">ClassA</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7.5" x2="77.5" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7.5" x2="77.5" y1="48" y2="48"/><!--class ClassB--><rect fill="#FEFECE" filter="url(#f1opt28fumedwc)" height="48" id="ClassB" style="stroke: #A80036; stroke-width: 1.5;" width="73" x="6" y="134"/><ellipse cx="21" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,155.4375 Q22.7813,156.3594 20.5156,156.3594 Q19.25,156.3594 18.3281,155.4375 Q16.6719,153.7813 16.6719,150.25 Q16.6719,146.1406 18.4531,144.3438 Q19.3906,143.4219 20.5781,143.4219 Q22.8438,143.4219 23.5781,144.1406 Q24.9688,145.5469 24.9063,147.9375 L22.4375,147.9375 Q22.375,145.8125 21.6406,145.0781 Q21.25,144.6719 20.5781,144.6719 Q20.5781,144.6719 20.5156,145.1406 Q19.1875,146.4688 19.1875,150.125 Q19.1875,153.3125 20.3281,154.4375 Q20.8594,154.9688 20.8594,154.9688 Q21.1094,154.9688 21.6406,154.4375 Q22.3125,153.7813 22.375,151.3906 L24.9688,151.3906 Q24.7656,154.375 23.7031,155.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="41" x="35" y="154.9102">ClassB</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="78" y1="166" y2="166"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="78" y1="174" y2="174"/><!--class クラスC--><rect fill="#FEFECE" filter="url(#f1opt28fumedwc)" height="48" id="&#x30AF;&#x30E9;&#x30B9;C" style="stroke: #A80036; stroke-width: 1.5;" width="77" x="114" y="8"/><ellipse cx="129" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M131.7031,29.4375 Q130.7813,30.3594 128.5156,30.3594 Q127.25,30.3594 126.3281,29.4375 Q124.6719,27.7813 124.6719,24.25 Q124.6719,20.1406 126.4531,18.3438 Q127.3906,17.4219 128.5781,17.4219 Q130.8438,17.4219 131.5781,18.1406 Q132.9688,19.5469 132.9063,21.9375 L130.4375,21.9375 Q130.375,19.8125 129.6406,19.0781 Q129.25,18.6719 128.5781,18.6719 Q128.5781,18.6719 128.5156,19.1406 Q127.1875,20.4688 127.1875,24.125 Q127.1875,27.3125 128.3281,28.4375 Q128.8594,28.9688 128.8594,28.9688 Q129.1094,28.9688 129.6406,28.4375 Q130.3125,27.7813 130.375,25.3906 L132.9688,25.3906 Q132.7656,28.375 131.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="45" x="143" y="28.9102">&#x30AF;&#x30E9;&#x30B9;C</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="115" x2="190" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="115" x2="190" y1="48" y2="48"/><!--class クラスD--><rect fill="#FEFECE" filter="url(#f1opt28fumedwc)" height="48" id="&#x30AF;&#x30E9;&#x30B9;D" style="stroke: #A80036; stroke-width: 1.5;" width="77" x="114" y="134"/><ellipse cx="129" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M131.7031,155.4375 Q130.7813,156.3594 128.5156,156.3594 Q127.25,156.3594 126.3281,155.4375 Q124.6719,153.7813 124.6719,150.25 Q124.6719,146.1406 126.4531,144.3438 Q127.3906,143.4219 128.5781,143.4219 Q130.8438,143.4219 131.5781,144.1406 Q132.9688,145.5469 132.9063,147.9375 L130.4375,147.9375 Q130.375,145.8125 129.6406,145.0781 Q129.25,144.6719 128.5781,144.6719 Q128.5781,144.6719 128.5156,145.1406 Q127.1875,146.4688 127.1875,150.125 Q127.1875,153.3125 128.3281,154.4375 Q128.8594,154.9688 128.8594,154.9688 Q129.1094,154.9688 129.6406,154.4375 Q130.3125,153.7813 130.375,151.3906 L132.9688,151.3906 Q132.7656,154.375 131.7031,155.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="45" x="143" y="154.9102">&#x30AF;&#x30E9;&#x30B9;D</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="115" x2="190" y1="166" y2="166"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="115" x2="190" y1="174" y2="174"/><!--link ClassA to ClassB--><path d="M42.5,56.033 C42.5,78.165 42.5,111.4383 42.5,133.6697 " fill="none" id="ClassA-ClassB" style="stroke: #A80036; stroke-width: 1.0;"/><!--link クラスC to クラスD--><path d="M152.5,56.033 C152.5,78.165 152.5,111.4383 152.5,133.6697 " fill="none" id="&#x30AF;&#x30E9;&#x30B9;C-&#x30AF;&#x30E9;&#x30B9;D" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="153.5" y="100.4951">&#x95A2;&#x4FC2;</text><!--
+@startuml
+ClassA - - ClassB
+"クラスC" - - "クラスD" : 関係
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><ul>
+<li>&#x30E9;&#x30D9;&#x30EB;&#x306E;&#x6700;&#x521D;&#x307E;&#x305F;&#x306F;&#x6700;&#x5F8C;&#x306B; &lt; &#x304B; &gt; &#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x4ED6;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3078;&#x306E;&#x95A2;&#x4FC2;&#x3092;&#x793A;&#x3059;&#x77E2;&#x5370;&#x3092;&#x8FFD;&#x52A0;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>class Car
+
+Driver - Car : drives &gt;
+Car *- Wheel : have 4 &gt;
+Car -- Person : &lt; owns
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="193px" preserveAspectRatio="none" style="width:369px;height:193px;" version="1.1" viewBox="0 0 369 193" width="369px" zoomAndPan="magnify"><defs><filter height="300%" id="f1fbfkwplcf7tv" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Car--><rect fill="#FEFECE" filter="url(#f1fbfkwplcf7tv)" height="48" id="Car" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="153" y="8"/><ellipse cx="168" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M170.7031,29.4375 Q169.7813,30.3594 167.5156,30.3594 Q166.25,30.3594 165.3281,29.4375 Q163.6719,27.7813 163.6719,24.25 Q163.6719,20.1406 165.4531,18.3438 Q166.3906,17.4219 167.5781,17.4219 Q169.8438,17.4219 170.5781,18.1406 Q171.9688,19.5469 171.9063,21.9375 L169.4375,21.9375 Q169.375,19.8125 168.6406,19.0781 Q168.25,18.6719 167.5781,18.6719 Q167.5781,18.6719 167.5156,19.1406 Q166.1875,20.4688 166.1875,24.125 Q166.1875,27.3125 167.3281,28.4375 Q167.8594,28.9688 167.8594,28.9688 Q168.1094,28.9688 168.6406,28.4375 Q169.3125,27.7813 169.375,25.3906 L171.9688,25.3906 Q171.7656,28.375 170.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="182" y="28.9102">Car</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="154" x2="204" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="154" x2="204" y1="48" y2="48"/><!--class Driver--><rect fill="#FEFECE" filter="url(#f1fbfkwplcf7tv)" height="48" id="Driver" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="6" y="8"/><ellipse cx="21" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,29.4375 Q22.7813,30.3594 20.5156,30.3594 Q19.25,30.3594 18.3281,29.4375 Q16.6719,27.7813 16.6719,24.25 Q16.6719,20.1406 18.4531,18.3438 Q19.3906,17.4219 20.5781,17.4219 Q22.8438,17.4219 23.5781,18.1406 Q24.9688,19.5469 24.9063,21.9375 L22.4375,21.9375 Q22.375,19.8125 21.6406,19.0781 Q21.25,18.6719 20.5781,18.6719 Q20.5781,18.6719 20.5156,19.1406 Q19.1875,20.4688 19.1875,24.125 Q19.1875,27.3125 20.3281,28.4375 Q20.8594,28.9688 20.8594,28.9688 Q21.1094,28.9688 21.6406,28.4375 Q22.3125,27.7813 22.375,25.3906 L24.9688,25.3906 Q24.7656,28.375 23.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="32" x="35" y="28.9102">Driver</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="69" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="69" y1="48" y2="48"/><!--class Wheel--><rect fill="#FEFECE" filter="url(#f1fbfkwplcf7tv)" height="48" id="Wheel" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="291.5" y="8"/><ellipse cx="306.5" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M309.2031,29.4375 Q308.2813,30.3594 306.0156,30.3594 Q304.75,30.3594 303.8281,29.4375 Q302.1719,27.7813 302.1719,24.25 Q302.1719,20.1406 303.9531,18.3438 Q304.8906,17.4219 306.0781,17.4219 Q308.3438,17.4219 309.0781,18.1406 Q310.4688,19.5469 310.4063,21.9375 L307.9375,21.9375 Q307.875,19.8125 307.1406,19.0781 Q306.75,18.6719 306.0781,18.6719 Q306.0781,18.6719 306.0156,19.1406 Q304.6875,20.4688 304.6875,24.125 Q304.6875,27.3125 305.8281,28.4375 Q306.3594,28.9688 306.3594,28.9688 Q306.6094,28.9688 307.1406,28.4375 Q307.8125,27.7813 307.875,25.3906 L310.4688,25.3906 Q310.2656,28.375 309.2031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="35" x="320.5" y="28.9102">Wheel</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="292.5" x2="357.5" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="292.5" x2="357.5" y1="48" y2="48"/><!--class Person--><rect fill="#FEFECE" filter="url(#f1fbfkwplcf7tv)" height="48" id="Person" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="143" y="134"/><ellipse cx="158" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M160.7031,155.4375 Q159.7813,156.3594 157.5156,156.3594 Q156.25,156.3594 155.3281,155.4375 Q153.6719,153.7813 153.6719,150.25 Q153.6719,146.1406 155.4531,144.3438 Q156.3906,143.4219 157.5781,143.4219 Q159.8438,143.4219 160.5781,144.1406 Q161.9688,145.5469 161.9063,147.9375 L159.4375,147.9375 Q159.375,145.8125 158.6406,145.0781 Q158.25,144.6719 157.5781,144.6719 Q157.5781,144.6719 157.5156,145.1406 Q156.1875,146.4688 156.1875,150.125 Q156.1875,153.3125 157.3281,154.4375 Q157.8594,154.9688 157.8594,154.9688 Q158.1094,154.9688 158.6406,154.4375 Q159.3125,153.7813 159.375,151.3906 L161.9688,151.3906 Q161.7656,154.375 160.7031,155.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="172" y="154.9102">Person</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="144" x2="214" y1="166" y2="166"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="144" x2="214" y1="174" y2="174"/><!--link Driver to Car--><path d="M70.3482,32 C95.3901,32 129.622,32 152.925,32 " fill="none" id="Driver-Car" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="33" x="88.5" y="25.4951">drives</text><polygon fill="#000000" points="124.5,18.6758,130.5,21.6758,124.5,24.6758,124.5,18.6758" style="stroke: #000000; stroke-width: 1.0;"/><!--link Car to Wheel--><path d="M218.153,32 C241.021,32 269.579,32 291.416,32 " fill="none" id="Car-Wheel" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="205.102,32,211.102,36,217.102,32,211.102,28,205.102,32" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="37" x="223.25" y="25.4951">have 4</text><polygon fill="#000000" points="263.25,18.6758,269.25,21.6758,263.25,24.6758,263.25,18.6758" style="stroke: #000000; stroke-width: 1.0;"/><!--link Car to Person--><path d="M179,56.033 C179,78.165 179,111.4383 179,133.6697 " fill="none" id="Car-Person" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#000000" points="190.5,97,193.5,91,196.5,97,190.5,97" style="stroke: #000000; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="30" x="180" y="113.4951">owns</text><!--
+@startuml
+class Car
+
+Driver - Car : drives >
+Car *- Wheel : have 4 >
+Car - - Person : < owns
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><ul>
+<li>:&#x306B;&#x7D9A;&#x3051;&#x3066;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x540D;&#x3084;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x540D;&#x3092;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3068;&#x3001;&#x30D5;&#x30A3;&#x30FC;&#x30EB;&#x30C9;&#x3084;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5BA3;&#x8A00;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Object &lt;|-- ArrayList
+
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="216px" preserveAspectRatio="none" style="width:128px;height:216px;" version="1.1" viewBox="0 0 128 216" width="128px" zoomAndPan="magnify"><defs><filter height="300%" id="f117g7dxaywto9" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Object--><rect fill="#FEFECE" filter="url(#f117g7dxaywto9)" height="61.8359" id="Object" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="28" y="8"/><ellipse cx="43" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M45.7031,29.4375 Q44.7813,30.3594 42.5156,30.3594 Q41.25,30.3594 40.3281,29.4375 Q38.6719,27.7813 38.6719,24.25 Q38.6719,20.1406 40.4531,18.3438 Q41.3906,17.4219 42.5781,17.4219 Q44.8438,17.4219 45.5781,18.1406 Q46.9688,19.5469 46.9063,21.9375 L44.4375,21.9375 Q44.375,19.8125 43.6406,19.0781 Q43.25,18.6719 42.5781,18.6719 Q42.5781,18.6719 42.5156,19.1406 Q41.1875,20.4688 41.1875,24.125 Q41.1875,27.3125 42.3281,28.4375 Q42.8594,28.9688 42.8594,28.9688 Q43.1094,28.9688 43.6406,28.4375 Q44.3125,27.7813 44.375,25.3906 L46.9688,25.3906 Q46.7656,28.375 45.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="35" x="57" y="28.9102">Object</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="29" x2="94" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="29" x2="94" y1="48" y2="48"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="40" x="34" y="63.4189">equals()</text><!--class ArrayList--><rect fill="#FEFECE" filter="url(#f117g7dxaywto9)" height="75.6719" id="ArrayList" style="stroke: #A80036; stroke-width: 1.5;" width="111" x="6" y="130"/><ellipse cx="35.4" cy="146" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M38.1031,151.4375 Q37.1813,152.3594 34.9156,152.3594 Q33.65,152.3594 32.7281,151.4375 Q31.0719,149.7813 31.0719,146.25 Q31.0719,142.1406 32.8531,140.3438 Q33.7906,139.4219 34.9781,139.4219 Q37.2438,139.4219 37.9781,140.1406 Q39.3688,141.5469 39.3063,143.9375 L36.8375,143.9375 Q36.775,141.8125 36.0406,141.0781 Q35.65,140.6719 34.9781,140.6719 Q34.9781,140.6719 34.9156,141.1406 Q33.5875,142.4688 33.5875,146.125 Q33.5875,149.3125 34.7281,150.4375 Q35.2594,150.9688 35.2594,150.9688 Q35.5094,150.9688 36.0406,150.4375 Q36.7125,149.7813 36.775,147.3906 L39.3688,147.3906 Q39.1656,150.375 38.1031,151.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="47" x="52.6" y="150.9102">ArrayList</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="116" y1="162" y2="162"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="99" x="12" y="177.4189">Object[] elementData</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="116" y1="183.8359" y2="183.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="28" x="12" y="199.2549">size()</text><!--link Object to ArrayList--><path d="M61.5,90.427 C61.5,103.585 61.5,117.5261 61.5,129.8555 " fill="none" id="Object-ArrayList" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="54.5001,90.097,61.5,70.097,68.5001,90.097,54.5001,90.097" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+Object <|- - ArrayList
+
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><ul>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x9593;&#x306E;&#x95A2;&#x4FC2;&#x3092;&#x8868;&#x3059;&#x7DDA;&#x7A2E;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x8868;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;<br>
+<img src="2018-12-23-11-55-30.png" alt=""></li>
+</ul>
+<h3 class="mume-header" id="%E9%96%A2%E9%80%A3association">&#x95A2;&#x9023;(Association)</h3>
+
+<ul>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x9593;&#x306B;&#x3001;&#x53C2;&#x7167;&#x3084;&#x5B9F;&#x4F53;&#x3092;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x306A;&#x3069;&#x306E;&#x95A2;&#x4FC2;&#x304C;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x8868;&#x3059;&#x3002;</li>
+<li>&#x7DDA;&#x306E;&#x4E21;&#x7AEF;&#x306B;&#x306F;&#x77E2;&#x5370;&#x3092;&#x3064;&#x3051;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x3001;&#x77E2;&#x5370;&#x304C;&#x3042;&#x308B;&#x5834;&#x5408;&#x306F;&#x305D;&#x306E;&#x65B9;&#x5411;&#x306B;&#x306E;&#x307F;&#x95A2;&#x9023;&#x304C;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x793A;&#x3059;&#x3002;</li>
+<li>&#x3053;&#x308C;&#x3092;&#x8A98;&#x5C0E;&#x53EF;&#x80FD;&#x6027;(Navigability)&#x3068;&#x8A00;&#x3044;&#x3001;&#x77E2;&#x5370;&#x306E;&#x7121;&#x3044;&#x95A2;&#x9023;&#x306F;&#x8A98;&#x5C0E;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x672A;&#x77E5;&#x3001;&#x3042;&#x308B;&#x3044;&#x306F;&#x53CC;&#x65B9;&#x5411;&#x3092;&#x610F;&#x5473;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Control -- View
+Control --&gt; Model
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="175px" preserveAspectRatio="none" style="width:175px;height:175px;" version="1.1" viewBox="0 0 175 175" width="175px" zoomAndPan="magnify"><defs><filter height="300%" id="f14dqn2uw3p3hy" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Control--><rect fill="#FEFECE" filter="url(#f14dqn2uw3p3hy)" height="48" id="Control" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="47" y="8"/><ellipse cx="62" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M64.7031,29.4375 Q63.7813,30.3594 61.5156,30.3594 Q60.25,30.3594 59.3281,29.4375 Q57.6719,27.7813 57.6719,24.25 Q57.6719,20.1406 59.4531,18.3438 Q60.3906,17.4219 61.5781,17.4219 Q63.8438,17.4219 64.5781,18.1406 Q65.9688,19.5469 65.9063,21.9375 L63.4375,21.9375 Q63.375,19.8125 62.6406,19.0781 Q62.25,18.6719 61.5781,18.6719 Q61.5781,18.6719 61.5156,19.1406 Q60.1875,20.4688 60.1875,24.125 Q60.1875,27.3125 61.3281,28.4375 Q61.8594,28.9688 61.8594,28.9688 Q62.1094,28.9688 62.6406,28.4375 Q63.3125,27.7813 63.375,25.3906 L65.9688,25.3906 Q65.7656,28.375 64.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="76" y="28.9102">Control</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="48" x2="118" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="48" x2="118" y1="48" y2="48"/><!--class View--><rect fill="#FEFECE" filter="url(#f14dqn2uw3p3hy)" height="48" id="View" style="stroke: #A80036; stroke-width: 1.5;" width="58" x="6" y="116"/><ellipse cx="21" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,137.4375 Q22.7813,138.3594 20.5156,138.3594 Q19.25,138.3594 18.3281,137.4375 Q16.6719,135.7813 16.6719,132.25 Q16.6719,128.1406 18.4531,126.3438 Q19.3906,125.4219 20.5781,125.4219 Q22.8438,125.4219 23.5781,126.1406 Q24.9688,127.5469 24.9063,129.9375 L22.4375,129.9375 Q22.375,127.8125 21.6406,127.0781 Q21.25,126.6719 20.5781,126.6719 Q20.5781,126.6719 20.5156,127.1406 Q19.1875,128.4688 19.1875,132.125 Q19.1875,135.3125 20.3281,136.4375 Q20.8594,136.9688 20.8594,136.9688 Q21.1094,136.9688 21.6406,136.4375 Q22.3125,135.7813 22.375,133.3906 L24.9688,133.3906 Q24.7656,136.375 23.7031,137.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="26" x="35" y="136.9102">View</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="63" y1="148" y2="148"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="63" y1="156" y2="156"/><!--class Model--><rect fill="#FEFECE" filter="url(#f14dqn2uw3p3hy)" height="48" id="Model" style="stroke: #A80036; stroke-width: 1.5;" width="65" x="99.5" y="116"/><ellipse cx="114.5" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M117.2031,137.4375 Q116.2813,138.3594 114.0156,138.3594 Q112.75,138.3594 111.8281,137.4375 Q110.1719,135.7813 110.1719,132.25 Q110.1719,128.1406 111.9531,126.3438 Q112.8906,125.4219 114.0781,125.4219 Q116.3438,125.4219 117.0781,126.1406 Q118.4688,127.5469 118.4063,129.9375 L115.9375,129.9375 Q115.875,127.8125 115.1406,127.0781 Q114.75,126.6719 114.0781,126.6719 Q114.0781,126.6719 114.0156,127.1406 Q112.6875,128.4688 112.6875,132.125 Q112.6875,135.3125 113.8281,136.4375 Q114.3594,136.9688 114.3594,136.9688 Q114.6094,136.9688 115.1406,136.4375 Q115.8125,135.7813 115.875,133.3906 L118.4688,133.3906 Q118.2656,136.375 117.2031,137.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="33" x="128.5" y="136.9102">Model</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="163.5" y1="148" y2="148"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="100.5" x2="163.5" y1="156" y2="156"/><!--link Control to View--><path d="M72.5847,56 C64.5887,73.6584 53.5929,97.9408 45.5607,115.6784 " fill="none" id="Control-View" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Control to Model--><path d="M93.6323,56 C101.0934,72.1409 111.113,93.8162 119.042,110.9688 " fill="none" id="Control-Model" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="121.219,115.6784,121.0732,105.8306,119.1209,111.1399,113.8116,109.1876,121.219,115.6784" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+Control - - View
+Control - -> Model
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E6%B1%8E%E5%8C%96generalization%E3%81%A8%E7%89%B9%E5%8C%96specialization">&#x6C4E;&#x5316;(Generalization)&#x3068;&#x7279;&#x5316;(Specialization)</h3>
+
+<ul>
+<li>&#x7570;&#x306A;&#x308B;&#x30AF;&#x30E9;&#x30B9;&#x9593;&#x3067;&#x5171;&#x901A;&#x3057;&#x3066;&#x3044;&#x308B;&#x90E8;&#x5206;&#x3092;&#x898B;&#x51FA;&#x3059;&#x4E8B;&#x3092;&#x6C4E;&#x5316;&#x3068;&#x3044;&#x3046;&#x3002;</li>
+<li>&#x5171;&#x901A;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x500B;&#x5225;&#x306E;&#x6027;&#x8CEA;&#x306B;&#x3064;&#x3044;&#x3066;&#x8003;&#x3048;&#x308B;&#x4E8B;&#x3092;&#x7279;&#x5316;&#x3068;&#x3044;&#x3046;&#x3002;</li>
+<li>&#x6C4E;&#x5316;&#x3092;&#x610F;&#x8B58;&#x3057;&#x3066;&#x5171;&#x901A;&#x90E8;&#x5206;&#x3092;&#x5225;&#x306B;&#x4F5C;&#x308B;&#x5B9F;&#x88C5;&#x624B;&#x6BB5;&#x304C;&#x7D99;&#x627F;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+</ul>
+<p>&#x8ECA;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x7D99;&#x627F;&#x3057;&#x3066;&#x3001;&#x30D0;&#x30B9;&#x30AF;&#x30E9;&#x30B9;&#x3068;&#x30C8;&#x30E9;&#x30C3;&#x30AF;&#x30AF;&#x30E9;&#x30B9;&#x304C;&#x4F5C;&#x3089;&#x308C;&#x308B;&#x4F8B;&#x3002;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="360px" preserveAspectRatio="none" style="width:238px;height:360px;" version="1.1" viewBox="0 0 238 360" width="238px" zoomAndPan="magnify"><defs><filter height="300%" id="fn97yvt35i0ny" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Car--><rect fill="#FEFECE" filter="url(#fn97yvt35i0ny)" height="117.1797" id="Car" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="95" y="8"/><ellipse cx="110" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M112.7031,29.4375 Q111.7813,30.3594 109.5156,30.3594 Q108.25,30.3594 107.3281,29.4375 Q105.6719,27.7813 105.6719,24.25 Q105.6719,20.1406 107.4531,18.3438 Q108.3906,17.4219 109.5781,17.4219 Q111.8438,17.4219 112.5781,18.1406 Q113.9688,19.5469 113.9063,21.9375 L111.4375,21.9375 Q111.375,19.8125 110.6406,19.0781 Q110.25,18.6719 109.5781,18.6719 Q109.5781,18.6719 109.5156,19.1406 Q108.1875,20.4688 108.1875,24.125 Q108.1875,27.3125 109.3281,28.4375 Q109.8594,28.9688 109.8594,28.9688 Q110.1094,28.9688 110.6406,28.4375 Q111.3125,27.7813 111.375,25.3906 L113.9688,25.3906 Q113.7656,28.375 112.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="124" y="28.9102">Car</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="96" x2="146" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="37" x="101" y="55.4189">-marker</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="25" x="101" y="69.2549">-type</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="96" x2="146" y1="75.6719" y2="75.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="101" y="91.0908">+Drive()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="101" y="104.9268">+Turn()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="101" y="118.7627">+Stop()</text><!--class Bus--><rect fill="#FEFECE" filter="url(#fn97yvt35i0ny)" height="103.3438" id="Bus" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="6" y="246"/><ellipse cx="42.6" cy="262" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M45.3031,267.4375 Q44.3813,268.3594 42.1156,268.3594 Q40.85,268.3594 39.9281,267.4375 Q38.2719,265.7813 38.2719,262.25 Q38.2719,258.1406 40.0531,256.3438 Q40.9906,255.4219 42.1781,255.4219 Q44.4438,255.4219 45.1781,256.1406 Q46.5688,257.5469 46.5063,259.9375 L44.0375,259.9375 Q43.975,257.8125 43.2406,257.0781 Q42.85,256.6719 42.1781,256.6719 Q42.1781,256.6719 42.1156,257.1406 Q40.7875,258.4688 40.7875,262.125 Q40.7875,265.3125 41.9281,266.4375 Q42.4594,266.9688 42.4594,266.9688 Q42.7094,266.9688 43.2406,266.4375 Q43.9125,265.7813 43.975,263.3906 L46.5688,263.3906 Q46.3656,266.375 45.3031,267.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="22" x="61.4" y="266.9102">Bus</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="107" y1="278" y2="278"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="58" x="12" y="293.4189">-drivingRoot</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="24" x="12" y="307.2549">-fare</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="107" y1="313.6719" y2="313.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="64" x="12" y="329.0908">+Announce()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="90" x="12" y="342.9268">+OpenCloseDoor()</text><!--class Truck--><rect fill="#FEFECE" filter="url(#fn97yvt35i0ny)" height="89.5078" id="Truck" style="stroke: #A80036; stroke-width: 1.5;" width="84" x="143" y="252.5"/><ellipse cx="167.9" cy="268.5" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M170.6031,273.9375 Q169.6813,274.8594 167.4156,274.8594 Q166.15,274.8594 165.2281,273.9375 Q163.5719,272.2813 163.5719,268.75 Q163.5719,264.6406 165.3531,262.8438 Q166.2906,261.9219 167.4781,261.9219 Q169.7438,261.9219 170.4781,262.6406 Q171.8688,264.0469 171.8063,266.4375 L169.3375,266.4375 Q169.275,264.3125 168.5406,263.5781 Q168.15,263.1719 167.4781,263.1719 Q167.4781,263.1719 167.4156,263.6406 Q166.0875,264.9688 166.0875,268.625 Q166.0875,271.8125 167.2281,272.9375 Q167.7594,273.4688 167.7594,273.4688 Q168.0094,273.4688 168.5406,272.9375 Q169.2125,272.2813 169.275,269.8906 L171.8688,269.8906 Q171.6656,272.875 170.6031,273.9375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="30" x="184.1" y="273.4102">Truck</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="144" x2="226" y1="284.5" y2="284.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="72" x="149" y="299.9189">-maximumLoad</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="144" x2="226" y1="306.3359" y2="306.3359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="41" x="149" y="321.7549">+Stack()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="47" x="149" y="335.5908">+Unload()</text><!--link Car to Bus--><path d="M99.4041,144.773 C90.096,178.078 79.4702,216.099 71.1838,245.749 " fill="none" id="Car-Bus" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="92.7251,142.664,104.8501,125.286,106.208,146.432,92.7251,142.664" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Car to Truck--><path d="M142.54,144.572 C152.58,180.497 164.164,221.945 172.693,252.4651 " fill="none" id="Car-Truck" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="135.792,146.432,137.15,125.286,149.275,142.664,135.792,146.432" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+skinparam classAttributeIconSize 0
+
+Car <|- - - Bus
+Car <|- - - Truck
+
+Car : - marker
+Car : - type
+Car : + Drive()
+Car : + Turn()
+Car : + Stop()
+
+Bus : - drivingRoot
+Bus : - fare
+Bus : + Announce()
+Bus : + OpenCloseDoor()
+
+Truck : - maximumLoad
+Truck : + Stack()
+Truck : + Unload()
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><p>PlantUML&#x3067;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>skinparam classAttributeIconSize 0
+
+Car &lt;|--- Bus
+Car &lt;|--- Truck
+
+Car : - marker
+Car : - type
+Car : + Drive()
+Car : + Turn()
+Car : + Stop()
+
+Bus : - drivingRoot
+Bus : - fare
+Bus : + Announce()
+Bus : + OpenCloseDoor()
+
+Truck : - maximumLoad
+Truck : + Stack()
+Truck : + Unload()
+</code></pre><h3 class="mume-header" id="%E5%AE%9F%E7%8F%BErealization">&#x5B9F;&#x73FE;(Realization)</h3>
+
+<ul>
+<li>Java&#x3067;&#x3044;&#x3046;interface&#x3068;&#x540C;&#x7B49;&#x306E;&#x610F;&#x5473;&#x3002;</li>
+<li>&#x76F8;&#x624B;&#x3092;&#x5177;&#x8C61;&#x5316;&#x3059;&#x308B;&#x95A2;&#x4FC2;&#x306E;&#x969B;&#x306B;&#x7528;&#x3044;&#x308B;&#x8868;&#x73FE;&#x3002;</li>
+<li>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3068;&#x306F;&#x3001;&#x5B9A;&#x6570;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30E1;&#x30F3;&#x30D0;&#x5909;&#x6570;&#x3068;&#x62BD;&#x8C61;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3067;&#x69CB;&#x6210;&#x3055;&#x308C;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5B9F;&#x88C5;&#x3057;&#x3066;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<p>&#x5B9F;&#x73FE;&#x3092;&#x8868;&#x3059;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x4F8B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>skinparam classAttributeIconSize 0
+
+class Operation &lt;&lt;interface&gt;&gt;
+Operation &lt;|... Plane
+Operation &lt;|... Ship
+Operation &lt;|... Car
+
+Operation : + Drive()
+Operation : + Stop()
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="272px" preserveAspectRatio="none" style="width:261px;height:272px;" version="1.1" viewBox="0 0 261 272" width="261px" zoomAndPan="magnify"><defs><filter height="300%" id="fh0ax68xwyqmm" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Operation--><rect fill="#FEFECE" filter="url(#fh0ax68xwyqmm)" height="83.8594" id="Operation" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="89.5" y="8"/><ellipse cx="104.5" cy="28.0938" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M107.2031,33.5313 Q106.2813,34.4531 104.0156,34.4531 Q102.75,34.4531 101.8281,33.5313 Q100.1719,31.875 100.1719,28.3438 Q100.1719,24.2344 101.9531,22.4375 Q102.8906,21.5156 104.0781,21.5156 Q106.3438,21.5156 107.0781,22.2344 Q108.4688,23.6406 108.4063,26.0313 L105.9375,26.0313 Q105.875,23.9063 105.1406,23.1719 Q104.75,22.7656 104.0781,22.7656 Q104.0781,22.7656 104.0156,23.2344 Q102.6875,24.5625 102.6875,28.2188 Q102.6875,31.4063 103.8281,32.5313 Q104.3594,33.0625 104.3594,33.0625 Q104.6094,33.0625 105.1406,32.5313 Q105.8125,31.875 105.875,29.4844 L108.4688,29.4844 Q108.2656,32.4688 107.2031,33.5313 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="61" x="116.5" y="25.457">&#xAB;interface&#xBB;</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="54" x="120" y="40.5508">Operation</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="90.5" x2="177.5" y1="48.1875" y2="48.1875"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="90.5" x2="177.5" y1="56.1875" y2="56.1875"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="95.5" y="71.6064">+Drive()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="95.5" y="85.4424">+Stop()</text><!--class Plane--><rect fill="#FEFECE" filter="url(#fh0ax68xwyqmm)" height="48" id="Plane" style="stroke: #A80036; stroke-width: 1.5;" width="64" x="6" y="213"/><ellipse cx="21" cy="229" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,234.4375 Q22.7813,235.3594 20.5156,235.3594 Q19.25,235.3594 18.3281,234.4375 Q16.6719,232.7813 16.6719,229.25 Q16.6719,225.1406 18.4531,223.3438 Q19.3906,222.4219 20.5781,222.4219 Q22.8438,222.4219 23.5781,223.1406 Q24.9688,224.5469 24.9063,226.9375 L22.4375,226.9375 Q22.375,224.8125 21.6406,224.0781 Q21.25,223.6719 20.5781,223.6719 Q20.5781,223.6719 20.5156,224.1406 Q19.1875,225.4688 19.1875,229.125 Q19.1875,232.3125 20.3281,233.4375 Q20.8594,233.9688 20.8594,233.9688 Q21.1094,233.9688 21.6406,233.4375 Q22.3125,232.7813 22.375,230.3906 L24.9688,230.3906 Q24.7656,233.375 23.7031,234.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="32" x="35" y="233.9102">Plane</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="69" y1="245" y2="245"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="69" y1="253" y2="253"/><!--class Ship--><rect fill="#FEFECE" filter="url(#fh0ax68xwyqmm)" height="48" id="Ship" style="stroke: #A80036; stroke-width: 1.5;" width="57" x="105.5" y="213"/><ellipse cx="120.5" cy="229" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M123.2031,234.4375 Q122.2813,235.3594 120.0156,235.3594 Q118.75,235.3594 117.8281,234.4375 Q116.1719,232.7813 116.1719,229.25 Q116.1719,225.1406 117.9531,223.3438 Q118.8906,222.4219 120.0781,222.4219 Q122.3438,222.4219 123.0781,223.1406 Q124.4688,224.5469 124.4063,226.9375 L121.9375,226.9375 Q121.875,224.8125 121.1406,224.0781 Q120.75,223.6719 120.0781,223.6719 Q120.0781,223.6719 120.0156,224.1406 Q118.6875,225.4688 118.6875,229.125 Q118.6875,232.3125 119.8281,233.4375 Q120.3594,233.9688 120.3594,233.9688 Q120.6094,233.9688 121.1406,233.4375 Q121.8125,232.7813 121.875,230.3906 L124.4688,230.3906 Q124.2656,233.375 123.2031,234.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="25" x="134.5" y="233.9102">Ship</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="106.5" x2="161.5" y1="245" y2="245"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="106.5" x2="161.5" y1="253" y2="253"/><!--class Car--><rect fill="#FEFECE" filter="url(#fh0ax68xwyqmm)" height="48" id="Car" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="198" y="213"/><ellipse cx="213" cy="229" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M215.7031,234.4375 Q214.7813,235.3594 212.5156,235.3594 Q211.25,235.3594 210.3281,234.4375 Q208.6719,232.7813 208.6719,229.25 Q208.6719,225.1406 210.4531,223.3438 Q211.3906,222.4219 212.5781,222.4219 Q214.8438,222.4219 215.5781,223.1406 Q216.9688,224.5469 216.9063,226.9375 L214.4375,226.9375 Q214.375,224.8125 213.6406,224.0781 Q213.25,223.6719 212.5781,223.6719 Q212.5781,223.6719 212.5156,224.1406 Q211.1875,225.4688 211.1875,229.125 Q211.1875,232.3125 212.3281,233.4375 Q212.8594,233.9688 212.8594,233.9688 Q213.1094,233.9688 213.6406,233.4375 Q214.3125,232.7813 214.375,230.3906 L216.9688,230.3906 Q216.7656,233.375 215.7031,234.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="227" y="233.9102">Car</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="199" x2="249" y1="245" y2="245"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="199" x2="249" y1="253" y2="253"/><!--link Operation to Plane--><path d="M103.3694,110.028 C85.2545,144.937 63.3245,187.1975 50.0294,212.8183 " fill="none" id="Operation-Plane" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="97.2692,106.585,112.694,92.057,109.696,113.034,97.2692,106.585" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Operation to Ship--><path d="M134,112.452 C134,146.875 134,187.7879 134,212.8183 " fill="none" id="Operation-Ship" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="127,112.058,134,92.057,141,112.057,127,112.058" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Operation to Car--><path d="M162.951,110.511 C179.888,145.326 200.316,187.3156 212.722,212.8183 " fill="none" id="Operation-Car" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="156.429,113.104,153.974,92.057,169.018,106.98,156.429,113.104" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+skinparam classAttributeIconSize 0
+
+class Operation <<interface>>
+Operation <|... Plane
+Operation <|... Ship
+Operation <|... Car
+
+Operation : + Drive()
+Operation : + Stop()
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E9%9B%86%E7%B4%84aggregation%E3%81%A8%E5%90%88%E6%88%90composition">&#x96C6;&#x7D04;(Aggregation)&#x3068;&#x5408;&#x6210;(Composition)</h3>
+
+<ul>
+<li>&#x96C6;&#x7D04;&#x306F;&#x95A2;&#x9023;&#x306E;&#x4E00;&#x7A2E;&#x3067;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x8907;&#x6570;&#x96C6;&#x307E;&#x3063;&#x3066;&#x5168;&#x4F53;&#x3092;&#x69CB;&#x6210;&#x3059;&#x308B;&#x95A2;&#x4FC2;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+<li>&#x53CC;&#x65B9;&#x306E;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x9593;&#x306B;&#x300C;&#x5168;&#x4F53; - &#x90E8;&#x5206;&#x300D;&#x306E;&#x95A2;&#x4FC2;&#x304C;&#x6210;&#x308A;&#x7ACB;&#x3063;&#x3066;&#x3044;&#x308B;&#x3002;</li>
+<li>&#x5408;&#x6210;&#x306F;&#x95A2;&#x9023;&#x306E;&#x4E00;&#x7A2E;&#x3067;&#x96C6;&#x7D04;&#x3088;&#x308A;&#x3082;&#x7D50;&#x3073;&#x3064;&#x304D;&#x304C;&#x5F37;&#x3044;&#x5834;&#x5408;&#x3001;&#x4F8B;&#x3048;&#x3070;&#x300C;&#x5168;&#x4F53; - &#x90E8;&#x5206;&#x300D;&#x306B;&#x304A;&#x3044;&#x3066;&#x53CC;&#x65B9;&#x304C;&#x5B58;&#x5728;&#x3057;&#x3066;&#x521D;&#x3081;&#x3066;&#x6210;&#x308A;&#x7ACB;&#x3064;&#x3088;&#x3046;&#x306A;&#x95A2;&#x4FC2;&#x306E;&#x3068;&#x304D;&#x306B;&#x7528;&#x3044;&#x3089;&#x308C;&#x308B;&#x3002;</li>
+</ul>
+<p>&#x96C6;&#x7D04;&#x3092;&#x8868;&#x3059;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x4F8B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>skinparam classAttributeIconSize 0
+Taxi o-- Crew
+
+Taxi : - companyName
+Taxi : - startingFare
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="203px" preserveAspectRatio="none" style="width:104px;height:203px;" version="1.1" viewBox="0 0 104 203" width="104px" zoomAndPan="magnify"><defs><filter height="300%" id="f1moy8tezowu9v" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Taxi--><rect fill="#FEFECE" filter="url(#f1moy8tezowu9v)" height="75.6719" id="Taxi" style="stroke: #A80036; stroke-width: 1.5;" width="87" x="6" y="8"/><ellipse cx="35.85" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M38.5531,29.4375 Q37.6313,30.3594 35.3656,30.3594 Q34.1,30.3594 33.1781,29.4375 Q31.5219,27.7813 31.5219,24.25 Q31.5219,20.1406 33.3031,18.3438 Q34.2406,17.4219 35.4281,17.4219 Q37.6938,17.4219 38.4281,18.1406 Q39.8188,19.5469 39.7563,21.9375 L37.2875,21.9375 Q37.225,19.8125 36.4906,19.0781 Q36.1,18.6719 35.4281,18.6719 Q35.4281,18.6719 35.3656,19.1406 Q34.0375,20.4688 34.0375,24.125 Q34.0375,27.3125 35.1781,28.4375 Q35.7094,28.9688 35.7094,28.9688 Q35.9594,28.9688 36.4906,28.4375 Q37.1625,27.7813 37.225,25.3906 L39.8188,25.3906 Q39.6156,28.375 38.5531,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="22" x="53.15" y="28.9102">Taxi</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="92" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="75" x="12" y="55.4189">-companyName</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="62" x="12" y="69.2549">-startingFare</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="92" y1="75.6719" y2="75.6719"/><!--class Crew--><rect fill="#FEFECE" filter="url(#f1moy8tezowu9v)" height="48" id="Crew" style="stroke: #A80036; stroke-width: 1.5;" width="61" x="19" y="144"/><ellipse cx="34" cy="160" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M36.7031,165.4375 Q35.7813,166.3594 33.5156,166.3594 Q32.25,166.3594 31.3281,165.4375 Q29.6719,163.7813 29.6719,160.25 Q29.6719,156.1406 31.4531,154.3438 Q32.3906,153.4219 33.5781,153.4219 Q35.8438,153.4219 36.5781,154.1406 Q37.9688,155.5469 37.9063,157.9375 L35.4375,157.9375 Q35.375,155.8125 34.6406,155.0781 Q34.25,154.6719 33.5781,154.6719 Q33.5781,154.6719 33.5156,155.1406 Q32.1875,156.4688 32.1875,160.125 Q32.1875,163.3125 33.3281,164.4375 Q33.8594,164.9688 33.8594,164.9688 Q34.1094,164.9688 34.6406,164.4375 Q35.3125,163.7813 35.375,161.3906 L37.9688,161.3906 Q37.7656,164.375 36.7031,165.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="29" x="48" y="164.9102">Crew</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="20" x2="79" y1="176" y2="176"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="20" x2="79" y1="184" y2="184"/><!--link Taxi to Crew--><path d="M49.5,97.472 C49.5,113.5256 49.5,130.5132 49.5,143.6782 " fill="none" id="Taxi-Crew" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="49.5,84.311,45.5,90.311,49.5,96.311,53.5,90.311,49.5,84.311" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+skinparam classAttributeIconSize 0
+Taxi o- - Crew
+
+Taxi : - companyName
+Taxi : - startingFare
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><p>&#x5408;&#x6210;&#x3092;&#x8868;&#x3059;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x4F8B;(&#x30BF;&#x30A4;&#x30E4;&#x3084;&#x30A8;&#x30F3;&#x30B8;&#x30F3;&#x304C;&#x306A;&#x3044;&#x3068;&#x8ECA;&#x304C;&#x52D5;&#x304B;&#x306A;&#x3044;)</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="346px" preserveAspectRatio="none" style="width:221px;height:346px;" version="1.1" viewBox="0 0 221 346" width="221px" zoomAndPan="magnify"><defs><filter height="300%" id="f1hl5p9l1ccwre" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Car--><rect fill="#FEFECE" filter="url(#f1hl5p9l1ccwre)" height="117.1797" id="Car" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="68.5" y="8"/><ellipse cx="83.5" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M86.2031,29.4375 Q85.2813,30.3594 83.0156,30.3594 Q81.75,30.3594 80.8281,29.4375 Q79.1719,27.7813 79.1719,24.25 Q79.1719,20.1406 80.9531,18.3438 Q81.8906,17.4219 83.0781,17.4219 Q85.3438,17.4219 86.0781,18.1406 Q87.4688,19.5469 87.4063,21.9375 L84.9375,21.9375 Q84.875,19.8125 84.1406,19.0781 Q83.75,18.6719 83.0781,18.6719 Q83.0781,18.6719 83.0156,19.1406 Q81.6875,20.4688 81.6875,24.125 Q81.6875,27.3125 82.8281,28.4375 Q83.3594,28.9688 83.3594,28.9688 Q83.6094,28.9688 84.1406,28.4375 Q84.8125,27.7813 84.875,25.3906 L87.4688,25.3906 Q87.2656,28.375 86.2031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="97.5" y="28.9102">Car</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="69.5" x2="119.5" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="33" x="74.5" y="55.4189">-maker</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="25" x="74.5" y="69.2549">-type</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="69.5" x2="119.5" y1="75.6719" y2="75.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="74.5" y="91.0908">+Drive()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="74.5" y="104.9268">+Turn()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="74.5" y="118.7627">+Stop()</text><!--class Tire--><rect fill="#FEFECE" filter="url(#f1hl5p9l1ccwre)" height="89.5078" id="Tire" style="stroke: #A80036; stroke-width: 1.5;" width="57" x="6" y="246"/><ellipse cx="22.8" cy="262" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M25.5031,267.4375 Q24.5813,268.3594 22.3156,268.3594 Q21.05,268.3594 20.1281,267.4375 Q18.4719,265.7813 18.4719,262.25 Q18.4719,258.1406 20.2531,256.3438 Q21.1906,255.4219 22.3781,255.4219 Q24.6438,255.4219 25.3781,256.1406 Q26.7688,257.5469 26.7063,259.9375 L24.2375,259.9375 Q24.175,257.8125 23.4406,257.0781 Q23.05,256.6719 22.3781,256.6719 Q22.3781,256.6719 22.3156,257.1406 Q20.9875,258.4688 20.9875,262.125 Q20.9875,265.3125 22.1281,266.4375 Q22.6594,266.9688 22.6594,266.9688 Q22.9094,266.9688 23.4406,266.4375 Q24.1125,265.7813 24.175,263.3906 L26.7688,263.3906 Q26.5656,266.375 25.5031,267.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="21" x="37.2" y="266.9102">Tire</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="62" y1="278" y2="278"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="45" x="12" y="293.4189">-diameter</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="62" y1="299.8359" y2="299.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="45" x="12" y="315.2549">+Rotate()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="12" y="329.0908">+Stop()</text><!--class Engine--><rect fill="#FEFECE" filter="url(#f1hl5p9l1ccwre)" height="89.5078" id="Engine" style="stroke: #A80036; stroke-width: 1.5;" width="112" x="98.5" y="246"/><ellipse cx="131.95" cy="262" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M134.6531,267.4375 Q133.7313,268.3594 131.4656,268.3594 Q130.2,268.3594 129.2781,267.4375 Q127.6219,265.7813 127.6219,262.25 Q127.6219,258.1406 129.4031,256.3438 Q130.3406,255.4219 131.5281,255.4219 Q133.7938,255.4219 134.5281,256.1406 Q135.9188,257.5469 135.8563,259.9375 L133.3875,259.9375 Q133.325,257.8125 132.5906,257.0781 Q132.2,256.6719 131.5281,256.6719 Q131.5281,256.6719 131.4656,257.1406 Q130.1375,258.4688 130.1375,262.125 Q130.1375,265.3125 131.2781,266.4375 Q131.8094,266.9688 131.8094,266.9688 Q132.0594,266.9688 132.5906,266.4375 Q133.2625,265.7813 133.325,263.3906 L135.9188,263.3906 Q135.7156,266.375 134.6531,267.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="39" x="150.05" y="266.9102">Engine</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="99.5" x2="209.5" y1="278" y2="278"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="100" x="104.5" y="293.4189">-engineDisplacement</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="99.5" x2="209.5" y1="299.8359" y2="299.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="37" x="104.5" y="315.2549">+Start()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="104.5" y="329.0908">+Stop()</text><!--link Car to Tire--><path d="M75.5482,137.779 C66.0237,173.099 54.7723,214.824 46.46,245.6482 " fill="none" id="Car-Tire" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="78.9705,125.089,73.5464,129.8408,75.8465,136.6752,81.2706,131.9234,78.9705,125.089" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Car to Engine--><path d="M113.452,137.779 C122.976,173.099 134.228,214.824 142.54,245.6482 " fill="none" id="Car-Engine" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="110.03,125.089,107.7299,131.9235,113.154,136.6752,115.4541,129.8408,110.03,125.089" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+skinparam classAttributeIconSize 0
+
+Car *- - - Tire
+Car *- - - Engine
+
+Car : - maker
+Car : - type
+Car : + Drive()
+Car : + Turn()
+Car : + Stop()
+
+Tire : - diameter
+Tire : + Rotate()
+Tire : + Stop()
+
+Engine : - engineDisplacement
+Engine : + Start()
+Engine : + Stop()
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E4%BE%9D%E5%AD%98dependency">&#x4F9D;&#x5B58;(Dependency)</h3>
+
+<ul>
+<li>&#x76F8;&#x624B;&#x306E;&#x72B6;&#x614B;&#x3001;&#x3082;&#x3057;&#x304F;&#x306F;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x5F71;&#x97FF;&#x3092;&#x53D7;&#x3051;&#x308B;&#x95A2;&#x4FC2;&#x306E;&#x3068;&#x304D;&#x306B;&#x7528;&#x3044;&#x308B;&#x8868;&#x73FE;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+<li>&#x5909;&#x66F4;&#x3059;&#x308B;&#x3068;&#x4ED6;&#x65B9;&#x306B;&#x3082;&#x5909;&#x66F4;&#x304C;&#x751F;&#x3058;&#x308B;&#x3088;&#x3046;&#x306A;&#x95A2;&#x4FC2;&#x3002;</li>
+</ul>
+<p>&#x4F9D;&#x5B58;&#x3092;&#x8868;&#x3059;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x4F8B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>FuelMeter ..&gt; FuelTank : Dependency
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="193px" preserveAspectRatio="none" style="width:134px;height:193px;" version="1.1" viewBox="0 0 134 193" width="134px" zoomAndPan="magnify"><defs><filter height="300%" id="fua56dgme34tb" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class FuelMeter--><rect fill="#FEFECE" filter="url(#fua56dgme34tb)" height="48" id="FuelMeter" style="stroke: #A80036; stroke-width: 1.5;" width="86" x="6" y="8"/><ellipse cx="21" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,29.4375 Q22.7813,30.3594 20.5156,30.3594 Q19.25,30.3594 18.3281,29.4375 Q16.6719,27.7813 16.6719,24.25 Q16.6719,20.1406 18.4531,18.3438 Q19.3906,17.4219 20.5781,17.4219 Q22.8438,17.4219 23.5781,18.1406 Q24.9688,19.5469 24.9063,21.9375 L22.4375,21.9375 Q22.375,19.8125 21.6406,19.0781 Q21.25,18.6719 20.5781,18.6719 Q20.5781,18.6719 20.5156,19.1406 Q19.1875,20.4688 19.1875,24.125 Q19.1875,27.3125 20.3281,28.4375 Q20.8594,28.9688 20.8594,28.9688 Q21.1094,28.9688 21.6406,28.4375 Q22.3125,27.7813 22.375,25.3906 L24.9688,25.3906 Q24.7656,28.375 23.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="54" x="35" y="28.9102">FuelMeter</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="91" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="91" y1="48" y2="48"/><!--class FuelTank--><rect fill="#FEFECE" filter="url(#fua56dgme34tb)" height="48" id="FuelTank" style="stroke: #A80036; stroke-width: 1.5;" width="83" x="7.5" y="134"/><ellipse cx="22.5" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M25.2031,155.4375 Q24.2813,156.3594 22.0156,156.3594 Q20.75,156.3594 19.8281,155.4375 Q18.1719,153.7813 18.1719,150.25 Q18.1719,146.1406 19.9531,144.3438 Q20.8906,143.4219 22.0781,143.4219 Q24.3438,143.4219 25.0781,144.1406 Q26.4688,145.5469 26.4063,147.9375 L23.9375,147.9375 Q23.875,145.8125 23.1406,145.0781 Q22.75,144.6719 22.0781,144.6719 Q22.0781,144.6719 22.0156,145.1406 Q20.6875,146.4688 20.6875,150.125 Q20.6875,153.3125 21.8281,154.4375 Q22.3594,154.9688 22.3594,154.9688 Q22.6094,154.9688 23.1406,154.4375 Q23.8125,153.7813 23.875,151.3906 L26.4688,151.3906 Q26.2656,154.375 25.2031,155.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="51" x="36.5" y="154.9102">FuelTank</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="8.5" x2="89.5" y1="166" y2="166"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="8.5" x2="89.5" y1="174" y2="174"/><!--link FuelMeter to FuelTank--><path d="M49,56.033 C49,76.522 49,106.5607 49,128.5464 " fill="none" id="FuelMeter-FuelTank" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="49,133.6697,53,124.6697,49,128.6697,45,124.6697,49,133.6697" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="72" x="50" y="100.4951">Dependency</text><!--
+@startuml
+FuelMeter ..> FuelTank : Dependency
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><pre data-role="codeBlock" data-info="" class="language-"><code>skinparam classAttributeIconSize 0
+
+F1Driver ..&gt; F1Machine
+
+F1Driver : - nationality
+F1Driver : - age
+F1Driver : - career
+F1Driver : + Drive()
+
+F1Machine : - team
+F1Machine : - sponsor
+F1Machine : + Drive()
+F1Machine : + Turn()
+F1Machine : + Stop()
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="299px" preserveAspectRatio="none" style="width:109px;height:299px;" version="1.1" viewBox="0 0 109 299" width="109px" zoomAndPan="magnify"><defs><filter height="300%" id="fjmkirgmih57" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class F1Driver--><rect fill="#FEFECE" filter="url(#fjmkirgmih57)" height="103.3438" id="F1Driver" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="13" y="8"/><ellipse cx="28" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M30.7031,29.4375 Q29.7813,30.3594 27.5156,30.3594 Q26.25,30.3594 25.3281,29.4375 Q23.6719,27.7813 23.6719,24.25 Q23.6719,20.1406 25.4531,18.3438 Q26.3906,17.4219 27.5781,17.4219 Q29.8438,17.4219 30.5781,18.1406 Q31.9688,19.5469 31.9063,21.9375 L29.4375,21.9375 Q29.375,19.8125 28.6406,19.0781 Q28.25,18.6719 27.5781,18.6719 Q27.5781,18.6719 27.5156,19.1406 Q26.1875,20.4688 26.1875,24.125 Q26.1875,27.3125 27.3281,28.4375 Q27.8594,28.9688 27.8594,28.9688 Q28.1094,28.9688 28.6406,28.4375 Q29.3125,27.7813 29.375,25.3906 L31.9688,25.3906 Q31.7656,28.375 30.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="46" x="42" y="28.9102">F1Driver</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="14" x2="90" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="52" x="19" y="55.4189">-nationality</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="19" y="69.2549">-age</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="19" y="83.0908">-career</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="14" x2="90" y1="89.5078" y2="89.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="19" y="104.9268">+Drive()</text><!--class F1Machine--><rect fill="#FEFECE" filter="url(#fjmkirgmih57)" height="117.1797" id="F1Machine" style="stroke: #A80036; stroke-width: 1.5;" width="92" x="6" y="171"/><ellipse cx="21" cy="187" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,192.4375 Q22.7813,193.3594 20.5156,193.3594 Q19.25,193.3594 18.3281,192.4375 Q16.6719,190.7813 16.6719,187.25 Q16.6719,183.1406 18.4531,181.3438 Q19.3906,180.4219 20.5781,180.4219 Q22.8438,180.4219 23.5781,181.1406 Q24.9688,182.5469 24.9063,184.9375 L22.4375,184.9375 Q22.375,182.8125 21.6406,182.0781 Q21.25,181.6719 20.5781,181.6719 Q20.5781,181.6719 20.5156,182.1406 Q19.1875,183.4688 19.1875,187.125 Q19.1875,190.3125 20.3281,191.4375 Q20.8594,191.9688 20.8594,191.9688 Q21.1094,191.9688 21.6406,191.4375 Q22.3125,190.7813 22.375,188.3906 L24.9688,188.3906 Q24.7656,191.375 23.7031,192.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="35" y="191.9102">F1Machine</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="97" y1="203" y2="203"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="27" x="12" y="218.4189">-team</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="44" x="12" y="232.2549">-sponsor</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="97" y1="238.6719" y2="238.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="39" x="12" y="254.0908">+Drive()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="12" y="267.9268">+Turn()</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="36" x="12" y="281.7627">+Stop()</text><!--link F1Driver to F1Machine--><path d="M52,111.361 C52,128.487 52,147.801 52,165.734 " fill="none" id="F1Driver-F1Machine" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="52,170.752,56,161.752,52,165.752,48,161.752,52,170.752" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+skinparam classAttributeIconSize 0
+
+F1Driver ..> F1Machine
+
+F1Driver : - nationality
+F1Driver : - age
+F1Driver : - career
+F1Driver : + Drive()
+
+F1Machine : - team
+F1Machine : - sponsor
+F1Machine : + Drive()
+F1Machine : + Turn()
+F1Machine : + Stop()
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%AD%E3%83%BC%E3%83%AB%E5%90%8Drole-name">&#x30ED;&#x30FC;&#x30EB;&#x540D;(Role name)</h3>
+
+<ul>
+<li>&#x95A2;&#x9023;&#x306E;&#x7AEF;&#x306B;&#x66F8;&#x304B;&#x308C;&#x308B;&#x3001;&#x95A2;&#x9023;&#x5148;&#x306E;&#x5F79;&#x5272;&#x3092;&#x8868;&#x3059;&#x540D;&#x524D;&#x3002;</li>
+<li>&#x8A2D;&#x8A08;&#x30EC;&#x30D9;&#x30EB;&#x3067;&#x306F;&#x3001;&#x95A2;&#x9023;&#x5148;&#x3092;&#x4FDD;&#x6301;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x540D;&#x524D;&#x3001;&#x3064;&#x307E;&#x308A;&#x5C5E;&#x6027;&#x540D;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x3053;&#x3068;&#x304C;&#x591A;&#x3044;&#x3002;</li>
+</ul>
+<h3 class="mume-header" id="%E5%A4%9A%E9%87%8D%E5%BA%A6multiplicity">&#x591A;&#x91CD;&#x5EA6;(Multiplicity)</h3>
+
+<ul>
+<li>&#x95A2;&#x9023;&#x306E;&#x7AEF;&#x306B;&#x66F8;&#x304B;&#x308C;&#x3001;&#x95A2;&#x9023;&#x306E;&#x5F35;&#x3089;&#x308C;&#x305F;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x9593;&#x306E;&#x6570;&#x7684;&#x95A2;&#x4FC2;&#x3092;&#x8868;&#x3059;&#x3002;</li>
+<li>&#x5177;&#x4F53;&#x7684;&#x306A;&#x6570;&#x5024;&#x306E;&#x4ED6;&#x306B;&#x3001;&quot;0..n&quot;&#x3084;&quot;*&quot;(&#x5171;&#x306B;0&#x4EE5;&#x4E0A;)&#x3001;&quot;1..n&quot;(1&#x4EE5;&#x4E0A;)&#x3001;&quot;2..7&quot;(2&#x304B;&#x3089;7)&#x306E;&#x3088;&#x3046;&#x306B;&#x4EFB;&#x610F;&#x306E;&#x5024;&#x3092;&#x8A2D;&#x5B9A;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&#x30AF;&#x30E9;&#x30B9;&#x540D; &quot;&#x591A;&#x91CD;&#x5EA6;&quot; &#x7DDA;&#x7A2E; &quot;&#x591A;&#x91CD;&#x5EA6;&quot; &#x30AF;&#x30E9;&#x30B9;&#x540D; [: &#x30E9;&#x30D9;&#x30EB;]
+</code></pre><p>&#x591A;&#x91CD;&#x5EA6;&#x306E;&#x8868;&#x8A18;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</p>
+<p><img src="2018-12-25-13-46-21.png" alt=""></p>
+<p>&#x591A;&#x91CD;&#x5EA6;&#x3092;&#x8A18;&#x5165;&#x3057;&#x305F;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306E;&#x4F8B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Car &quot;1&quot; *--- &quot;4&quot; Tire
+Car &quot;1&quot; o--- &quot;0..*&quot; ParkingLot : 1 - Many
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="255px" preserveAspectRatio="none" style="width:196px;height:255px;" version="1.1" viewBox="0 0 196 255" width="196px" zoomAndPan="magnify"><defs><filter height="300%" id="f1895xlsfdt3xn" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Car--><rect fill="#FEFECE" filter="url(#f1895xlsfdt3xn)" height="48" id="Car" style="stroke: #A80036; stroke-width: 1.5;" width="52" x="59.5" y="8"/><ellipse cx="74.5" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M77.2031,29.4375 Q76.2813,30.3594 74.0156,30.3594 Q72.75,30.3594 71.8281,29.4375 Q70.1719,27.7813 70.1719,24.25 Q70.1719,20.1406 71.9531,18.3438 Q72.8906,17.4219 74.0781,17.4219 Q76.3438,17.4219 77.0781,18.1406 Q78.4688,19.5469 78.4063,21.9375 L75.9375,21.9375 Q75.875,19.8125 75.1406,19.0781 Q74.75,18.6719 74.0781,18.6719 Q74.0781,18.6719 74.0156,19.1406 Q72.6875,20.4688 72.6875,24.125 Q72.6875,27.3125 73.8281,28.4375 Q74.3594,28.9688 74.3594,28.9688 Q74.6094,28.9688 75.1406,28.4375 Q75.8125,27.7813 75.875,25.3906 L78.4688,25.3906 Q78.2656,28.375 77.2031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="20" x="88.5" y="28.9102">Car</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="60.5" x2="110.5" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="60.5" x2="110.5" y1="48" y2="48"/><!--class Tire--><rect fill="#FEFECE" filter="url(#f1895xlsfdt3xn)" height="48" id="Tire" style="stroke: #A80036; stroke-width: 1.5;" width="53" x="6" y="196"/><ellipse cx="21" cy="212" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,217.4375 Q22.7813,218.3594 20.5156,218.3594 Q19.25,218.3594 18.3281,217.4375 Q16.6719,215.7813 16.6719,212.25 Q16.6719,208.1406 18.4531,206.3438 Q19.3906,205.4219 20.5781,205.4219 Q22.8438,205.4219 23.5781,206.1406 Q24.9688,207.5469 24.9063,209.9375 L22.4375,209.9375 Q22.375,207.8125 21.6406,207.0781 Q21.25,206.6719 20.5781,206.6719 Q20.5781,206.6719 20.5156,207.1406 Q19.1875,208.4688 19.1875,212.125 Q19.1875,215.3125 20.3281,216.4375 Q20.8594,216.9688 20.8594,216.9688 Q21.1094,216.9688 21.6406,216.4375 Q22.3125,215.7813 22.375,213.3906 L24.9688,213.3906 Q24.7656,216.375 23.7031,217.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="21" x="35" y="216.9102">Tire</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="58" y1="228" y2="228"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="58" y1="236" y2="236"/><!--class ParkingLot--><rect fill="#FEFECE" filter="url(#f1895xlsfdt3xn)" height="48" id="ParkingLot" style="stroke: #A80036; stroke-width: 1.5;" width="91" x="94" y="196"/><ellipse cx="109" cy="212" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M111.7031,217.4375 Q110.7813,218.3594 108.5156,218.3594 Q107.25,218.3594 106.3281,217.4375 Q104.6719,215.7813 104.6719,212.25 Q104.6719,208.1406 106.4531,206.3438 Q107.3906,205.4219 108.5781,205.4219 Q110.8438,205.4219 111.5781,206.1406 Q112.9688,207.5469 112.9063,209.9375 L110.4375,209.9375 Q110.375,207.8125 109.6406,207.0781 Q109.25,206.6719 108.5781,206.6719 Q108.5781,206.6719 108.5156,207.1406 Q107.1875,208.4688 107.1875,212.125 Q107.1875,215.3125 108.3281,216.4375 Q108.8594,216.9688 108.8594,216.9688 Q109.1094,216.9688 109.6406,216.4375 Q110.3125,215.7813 110.375,213.3906 L112.9688,213.3906 Q112.7656,216.375 111.7031,217.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="59" x="123" y="216.9102">ParkingLot</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="95" x2="184" y1="228" y2="228"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="95" x2="184" y1="236" y2="236"/><!--link Car to Tire--><path d="M75.2457,68.987 C64.5727,106.443 48.1751,163.9893 39.1051,195.8198 " fill="none" id="Car-Tire" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="78.8947,56.181,73.4035,60.855,75.6059,67.7215,81.0972,63.0475,78.8947,56.181" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="69.4315" y="77.5631">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="32.9008" y="185.1138">4</text><!--link Car to ParkingLot--><path d="M95.9478,68.987 C106.822,106.443 123.529,163.9893 132.77,195.8198 " fill="none" id="Car-ParkingLot" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="92.23,56.181,90.0614,63.0583,95.5755,67.7052,97.7442,60.8279,92.23,56.181" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="51" x="114.5" y="131.4951">1 - Many</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="86.0173" y="77.5631">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="20" x="108.4829" y="185.1138">0..*</text><!--
+@startuml
+Car "1" *- - - "4" Tire
+Car "1" o- - - "0..*" ParkingLot : 1 - Many
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%82%B9%E3%83%86%E3%83%AC%E3%82%AA%E3%82%BF%E3%82%A4%E3%83%97stereotype">&#x30B9;&#x30C6;&#x30EC;&#x30AA;&#x30BF;&#x30A4;&#x30D7;(Stereotype)</h3>
+
+<ul>
+<li>UML&#x306E;&#x62E1;&#x5F35;&#x30E1;&#x30AB;&#x30CB;&#x30BA;&#x30E0;&#x3067;&#x3001;&#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3084;&#x554F;&#x984C;&#x9818;&#x57DF;&#x56FA;&#x6709;&#x306E;&#x610F;&#x5473;&#x3092;&#x3001;&#x308F;&#x304B;&#x308A;&#x3084;&#x3059;&#x304F;&#x30E2;&#x30C7;&#x30EB;&#x306B;&#x8868;&#x73FE;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x4ED8;&#x52A0;&#x3059;&#x308B;&#x6587;&#x5B57;&#x5217;&#x3002;</li>
+<li>&#x540C;&#x4E00;&#x306E;&#x30E2;&#x30C7;&#x30EB;&#x8981;&#x7D20;&#x3092;&#x3001;&#x610F;&#x5473;&#x7684;&#x306B;&#x5206;&#x985E;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+<li>&#x4F8B;&#x3048;&#x3070;&#x3001;interface&#x306E;&#x30B9;&#x30C6;&#x30EC;&#x30AA;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x3064;&#x3051;&#x305F;&#x30AF;&#x30E9;&#x30B9;&#x306F;&#x3001;&#x632F;&#x308B;&#x821E;&#x3044;&#x306E;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x306E;&#x307F;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x30AF;&#x30E9;&#x30B9;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x660E;&#x793A;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<h3 class="mume-header" id="%E5%88%B6%E7%B4%84constraint">&#x5236;&#x7D04;(Constraint)</h3>
+
+<ul>
+<li>{}&#x306B;&#x56F2;&#x3093;&#x3067;&#x5236;&#x7D04;&#x3092;&#x8AB2;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<p>&#x4E0B;&#x8A18;&#x306F;&#x3001;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306B;&#x4E0E;&#x3048;&#x3089;&#x308C;&#x308B;&#x30C7;&#x30FC;&#x30BF;&#x304C;&#x5E74;&#x6708;&#x65E5;&#x306B;&#x3088;&#x3063;&#x3066;&#x6574;&#x5217;&#x3055;&#x308C;&#x305F;&#x72B6;&#x614B;&#x3067;&#x4FDD;&#x6301;&#x3055;&#x308C;&#x308B;&#x5834;&#x5408;&#x306E;&#x4F8B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>skinparam classAttributeIconSize 0
+
+Controller &quot;1&quot; o--&gt; &quot;0..n&quot; Data : {sort by date}
+
+Data : - id
+Data : - date
+Data : - arrivalTime
+Data : - leavingTime
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="248px" preserveAspectRatio="none" style="width:139px;height:248px;" version="1.1" viewBox="0 0 139 248" width="139px" zoomAndPan="magnify"><defs><filter height="300%" id="f127b78cmufb8n" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Controller--><rect fill="#FEFECE" filter="url(#f127b78cmufb8n)" height="48" id="Controller" style="stroke: #A80036; stroke-width: 1.5;" width="86" x="6" y="8"/><ellipse cx="21" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,29.4375 Q22.7813,30.3594 20.5156,30.3594 Q19.25,30.3594 18.3281,29.4375 Q16.6719,27.7813 16.6719,24.25 Q16.6719,20.1406 18.4531,18.3438 Q19.3906,17.4219 20.5781,17.4219 Q22.8438,17.4219 23.5781,18.1406 Q24.9688,19.5469 24.9063,21.9375 L22.4375,21.9375 Q22.375,19.8125 21.6406,19.0781 Q21.25,18.6719 20.5781,18.6719 Q20.5781,18.6719 20.5156,19.1406 Q19.1875,20.4688 19.1875,24.125 Q19.1875,27.3125 20.3281,28.4375 Q20.8594,28.9688 20.8594,28.9688 Q21.1094,28.9688 21.6406,28.4375 Q22.3125,27.7813 22.375,25.3906 L24.9688,25.3906 Q24.7656,28.375 23.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="54" x="35" y="28.9102">Controller</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="91" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="91" y1="48" y2="48"/><!--class Data--><rect fill="#FEFECE" filter="url(#f127b78cmufb8n)" height="103.3438" id="Data" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="13" y="134"/><ellipse cx="34.3" cy="150" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M37.0031,155.4375 Q36.0813,156.3594 33.8156,156.3594 Q32.55,156.3594 31.6281,155.4375 Q29.9719,153.7813 29.9719,150.25 Q29.9719,146.1406 31.7531,144.3438 Q32.6906,143.4219 33.8781,143.4219 Q36.1438,143.4219 36.8781,144.1406 Q38.2688,145.5469 38.2063,147.9375 L35.7375,147.9375 Q35.675,145.8125 34.9406,145.0781 Q34.55,144.6719 33.8781,144.6719 Q33.8781,144.6719 33.8156,145.1406 Q32.4875,146.4688 32.4875,150.125 Q32.4875,153.3125 33.6281,154.4375 Q34.1594,154.9688 34.1594,154.9688 Q34.4094,154.9688 34.9406,154.4375 Q35.6125,153.7813 35.675,151.3906 L38.2688,151.3906 Q38.0656,154.375 37.0031,155.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="26" x="49.7" y="154.9102">Data</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="14" x2="84" y1="166" y2="166"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="12" x="19" y="181.4189">-id</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="25" x="19" y="195.2549">-date</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="56" x="19" y="209.0908">-arrivalTime</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="60" x="19" y="222.9268">-leavingTime</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="14" x2="84" y1="229.3438" y2="229.3438"/><!--link Controller to Data--><path d="M49,69.159 C49,84.601 49,103.096 49,120.707 " fill="none" id="Controller-Data" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="49,133.936,53,124.936,49,128.936,45,124.936,49,133.936" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="49" x2="49.0001" y1="128.936" y2="120.936"/><polygon fill="#FFFFFF" points="49,56.01,45,62.01,49,68.01,53,62.01,49,56.01" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="77" x="50" y="100.4951">{sort by date}</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="7" x="41.1469" y="77.3504">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="22" x="25.4531" y="123.0555">0..n</text><!--
+@startuml
+skinparam classAttributeIconSize 0
+
+Controller "1" o- -> "0..n" Data : {sort by date}
+
+Data : - id
+Data : - date
+Data : - arrivalTime
+Data : - leavingTime
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E7%89%B9%E6%AE%8A%E3%82%AF%E3%83%A9%E3%82%B9">&#x7279;&#x6B8A;&#x30AF;&#x30E9;&#x30B9;</h3>
+
+<p><img src="2018-12-25-14-32-52.png" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>enum FigureType {
+    unknown = -1
+    rectangle
+    polygon
+    ellipse
+}
+
+abstract Figure
+
+class Rectangle
+
+interface Comparable {
+    {abstract} int compare(Comparable *other)
+}
+
+Figure &lt;|-- Rectangle
+Rectangle .|&gt; Comparable
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="243px" preserveAspectRatio="none" style="width:311px;height:243px;" version="1.1" viewBox="0 0 311 243" width="311px" zoomAndPan="magnify"><defs><filter height="300%" id="fq4ivmp1hxznt" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class FigureType--><rect fill="#FEFECE" filter="url(#fq4ivmp1hxznt)" height="103.3438" id="FigureType" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="118.5" y="8"/><ellipse cx="133.5" cy="24" fill="#EB937F" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M132.0313,22.8594 L136.5469,22.8594 L136.5469,24.125 L132.0313,24.125 L132.0313,29.1094 L137.2656,29.1094 L137.2656,30.3594 L129.5,30.3594 L129.5,17.4219 L136.9375,17.4219 L136.9375,18.6719 L132.0313,18.6719 L132.0313,22.8594 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="61" x="147.5" y="28.9102">FigureType</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="119.5" x2="210.5" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="67" x="124.5" y="55.4189">unknown = -1</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="45" x="124.5" y="69.2549">rectangle</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="38" x="124.5" y="83.0908">polygon</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="30" x="124.5" y="96.9268">ellipse</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="119.5" x2="210.5" y1="103.3438" y2="103.3438"/><!--class Figure--><rect fill="#FEFECE" filter="url(#fq4ivmp1hxznt)" height="48" id="Figure" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="16.5" y="35.5"/><ellipse cx="31.5" cy="51.5" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M29.3594,57.3594 L26.7656,57.3594 L30.0938,44.4219 L32.4219,44.4219 L35.7344,57.3594 L33.1406,57.3594 L32.2188,53.5781 L30.2969,53.5781 L29.3594,57.3594 Z M30.8125,47.9375 L30.8125,47.9375 L30.625,52.3125 L31.875,52.3125 L30.8125,47.9375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="35" x="45.5" y="56.4102">Figure</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="17.5" x2="82.5" y1="67.5" y2="67.5"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="17.5" x2="82.5" y1="75.5" y2="75.5"/><!--class Rectangle--><rect fill="#FEFECE" filter="url(#fq4ivmp1hxznt)" height="48" id="Rectangle" style="stroke: #A80036; stroke-width: 1.5;" width="88" x="6" y="178"/><ellipse cx="21" cy="194" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,199.4375 Q22.7813,200.3594 20.5156,200.3594 Q19.25,200.3594 18.3281,199.4375 Q16.6719,197.7813 16.6719,194.25 Q16.6719,190.1406 18.4531,188.3438 Q19.3906,187.4219 20.5781,187.4219 Q22.8438,187.4219 23.5781,188.1406 Q24.9688,189.5469 24.9063,191.9375 L22.4375,191.9375 Q22.375,189.8125 21.6406,189.0781 Q21.25,188.6719 20.5781,188.6719 Q20.5781,188.6719 20.5156,189.1406 Q19.1875,190.4688 19.1875,194.125 Q19.1875,197.3125 20.3281,198.4375 Q20.8594,198.9688 20.8594,198.9688 Q21.1094,198.9688 21.6406,198.4375 Q22.3125,197.7813 22.375,195.3906 L24.9688,195.3906 Q24.7656,198.375 23.7031,199.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="56" x="35" y="198.9102">Rectangle</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="93" y1="210" y2="210"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="93" y1="218" y2="218"/><!--class Comparable--><rect fill="#FEFECE" filter="url(#fq4ivmp1hxznt)" height="61.8359" id="Comparable" style="stroke: #A80036; stroke-width: 1.5;" width="171" x="129.5" y="171"/><ellipse cx="175.75" cy="187" fill="#B4A7E5" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M176.7344,191.9063 L177.4688,191.9063 L177.4688,193.3594 L173.4688,193.3594 L173.4688,191.9063 L174.2031,191.9063 L174.2031,181.875 L173.4688,181.875 L173.4688,180.4219 L177.4688,180.4219 L177.4688,181.875 L176.7344,181.875 L176.7344,191.9063 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="70" x="196.25" y="191.9102">Comparable</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="130.5" x2="299.5" y1="203" y2="203"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="130.5" x2="299.5" y1="211" y2="211"/><text fill="#000000" font-family="sans-serif" font-size="11" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="159" x="135.5" y="226.4189">int compare(Comparable *other)</text><!--link Figure to Rectangle--><path d="M50,103.851 C50,128.239 50,157.7212 50,177.7648 " fill="none" id="Figure-Rectangle" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="43.0001,103.701,50,83.701,57.0001,103.701,43.0001,103.701" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Rectangle to Comparable--><path d="M94.1504,202 C99.0629,202 103.9753,202 108.888,202 " fill="none" id="Rectangle-Comparable" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="109.084,194.9999,129.083,202,109.083,208.9999,109.084,194.9999" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+enum FigureType {
+    unknown = -1
+    rectangle
+    polygon
+    ellipse
+}
+
+abstract Figure
+
+class Rectangle
+
+interface Comparable {
+    {abstract} int compare(Comparable *other)
+}
+
+Figure <|- - Rectangle
+Rectangle .|> Comparable
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%AD%E3%83%AA%E3%83%9D%E3%83%83%E3%83%97">&#x30ED;&#x30EA;&#x30DD;&#x30C3;&#x30D7;</h3>
+
+<ul>
+<li>&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x63D0;&#x4F9B;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x3092;&#x5F37;&#x8ABF;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;&#x30ED;&#x30EA;&#x30DD;&#x30C3;&#x30D7;(&#x68D2;&#x4ED8;&#x304D;&#x30AD;&#x30E3;&#x30F3;&#x30C7;&#x30A3;&#x30FC;)&#x3067;&#x7701;&#x7565;&#x8868;&#x8A18;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3042;&#x308B;&#x3002;</li>
+<li>PlantUML&#x3067;&#x306F;&#x3001;&#x95A2;&#x4FC2;&#x306E;&#x7DDA;&#x7A2E;&#x306B; ()-- &#x3092;&#x4F7F;&#x3046;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Comparable ()-- RationalNumber
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="137px" preserveAspectRatio="none" style="width:140px;height:137px;" version="1.1" viewBox="0 0 140 137" width="140px" zoomAndPan="magnify"><defs><filter height="300%" id="fwfnx566rh2dd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class RationalNumber--><rect fill="#FEFECE" filter="url(#fwfnx566rh2dd)" height="48" id="RationalNumber" style="stroke: #A80036; stroke-width: 1.5;" width="123" x="6" y="78"/><ellipse cx="21" cy="94" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,99.4375 Q22.7813,100.3594 20.5156,100.3594 Q19.25,100.3594 18.3281,99.4375 Q16.6719,97.7813 16.6719,94.25 Q16.6719,90.1406 18.4531,88.3438 Q19.3906,87.4219 20.5781,87.4219 Q22.8438,87.4219 23.5781,88.1406 Q24.9688,89.5469 24.9063,91.9375 L22.4375,91.9375 Q22.375,89.8125 21.6406,89.0781 Q21.25,88.6719 20.5781,88.6719 Q20.5781,88.6719 20.5156,89.1406 Q19.1875,90.4688 19.1875,94.125 Q19.1875,97.3125 20.3281,98.4375 Q20.8594,98.9688 20.8594,98.9688 Q21.1094,98.9688 21.6406,98.4375 Q22.3125,97.7813 22.375,95.3906 L24.9688,95.3906 Q24.7656,98.375 23.7031,99.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="91" x="35" y="98.9102">RationalNumber</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="128" y1="110" y2="110"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="128" y1="118" y2="118"/><ellipse cx="67.5" cy="13" fill="#FEFECE" filter="url(#fwfnx566rh2dd)" rx="5" ry="5" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="69" x="33" y="30.457">Comparable</text><!--link RationalNumberlol5693 to RationalNumber--><path d="M67.5,18.196 C67.5,28.7863 67.5,57.2179 67.5,77.8142 " fill="none" id="RationalNumberlol5693-RationalNumber" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+Comparable ()- - RationalNumber
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E5%AE%9A%E7%BE%A9">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x5B9A;&#x7FA9;</h3>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>package &quot;Package 1&quot; {
+    ClassA &lt;|-- CLassB
+}
+
+package &quot;Package 2&quot; {
+    ClassA &lt;|-- ClassC
+    ClassC *- ClassD
+}
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="244px" preserveAspectRatio="none" style="width:393px;height:244px;" version="1.1" viewBox="0 0 393 244" width="393px" zoomAndPan="magnify"><defs><filter height="300%" id="f7q3jpq8usqpq" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster Package 1--><polygon fill="#FFFFFF" filter="url(#f7q3jpq8usqpq)" points="22,24,99,24,106,47.6094,132,47.6094,132,232,22,232,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="106" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="71" x="26" y="40.5332">Package 1</text><!--cluster Package 2--><polygon fill="#FFFFFF" filter="url(#f7q3jpq8usqpq)" points="156,132,233,132,240,155.6094,371,155.6094,371,232,156,232,156,132" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="156" x2="240" y1="155.6094" y2="155.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="71" x="160" y="148.5332">Package 2</text><!--class ClassA--><rect fill="#FEFECE" filter="url(#f7q3jpq8usqpq)" height="48" id="ClassA" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="42" y="60"/><ellipse cx="57" cy="76" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M59.7031,81.4375 Q58.7813,82.3594 56.5156,82.3594 Q55.25,82.3594 54.3281,81.4375 Q52.6719,79.7813 52.6719,76.25 Q52.6719,72.1406 54.4531,70.3438 Q55.3906,69.4219 56.5781,69.4219 Q58.8438,69.4219 59.5781,70.1406 Q60.9688,71.5469 60.9063,73.9375 L58.4375,73.9375 Q58.375,71.8125 57.6406,71.0781 Q57.25,70.6719 56.5781,70.6719 Q56.5781,70.6719 56.5156,71.1406 Q55.1875,72.4688 55.1875,76.125 Q55.1875,79.3125 56.3281,80.4375 Q56.8594,80.9688 56.8594,80.9688 Q57.1094,80.9688 57.6406,80.4375 Q58.3125,79.7813 58.375,77.3906 L60.9688,77.3906 Q60.7656,80.375 59.7031,81.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="71" y="80.9102">ClassA</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="43" x2="113" y1="92" y2="92"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="43" x2="113" y1="100" y2="100"/><!--class CLassB--><rect fill="#FEFECE" filter="url(#f7q3jpq8usqpq)" height="48" id="CLassB" style="stroke: #A80036; stroke-width: 1.5;" width="77" x="38.5" y="168"/><ellipse cx="53.5" cy="184" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M56.2031,189.4375 Q55.2813,190.3594 53.0156,190.3594 Q51.75,190.3594 50.8281,189.4375 Q49.1719,187.7813 49.1719,184.25 Q49.1719,180.1406 50.9531,178.3438 Q51.8906,177.4219 53.0781,177.4219 Q55.3438,177.4219 56.0781,178.1406 Q57.4688,179.5469 57.4063,181.9375 L54.9375,181.9375 Q54.875,179.8125 54.1406,179.0781 Q53.75,178.6719 53.0781,178.6719 Q53.0781,178.6719 53.0156,179.1406 Q51.6875,180.4688 51.6875,184.125 Q51.6875,187.3125 52.8281,188.4375 Q53.3594,188.9688 53.3594,188.9688 Q53.6094,188.9688 54.1406,188.4375 Q54.8125,187.7813 54.875,185.3906 L57.4688,185.3906 Q57.2656,188.375 56.2031,189.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="45" x="67.5" y="188.9102">CLassB</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39.5" x2="114.5" y1="200" y2="200"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="39.5" x2="114.5" y1="208" y2="208"/><!--class ClassC--><rect fill="#FEFECE" filter="url(#f7q3jpq8usqpq)" height="48" id="ClassC" style="stroke: #A80036; stroke-width: 1.5;" width="74" x="172" y="168"/><ellipse cx="187" cy="184" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M189.7031,189.4375 Q188.7813,190.3594 186.5156,190.3594 Q185.25,190.3594 184.3281,189.4375 Q182.6719,187.7813 182.6719,184.25 Q182.6719,180.1406 184.4531,178.3438 Q185.3906,177.4219 186.5781,177.4219 Q188.8438,177.4219 189.5781,178.1406 Q190.9688,179.5469 190.9063,181.9375 L188.4375,181.9375 Q188.375,179.8125 187.6406,179.0781 Q187.25,178.6719 186.5781,178.6719 Q186.5781,178.6719 186.5156,179.1406 Q185.1875,180.4688 185.1875,184.125 Q185.1875,187.3125 186.3281,188.4375 Q186.8594,188.9688 186.8594,188.9688 Q187.1094,188.9688 187.6406,188.4375 Q188.3125,187.7813 188.375,185.3906 L190.9688,185.3906 Q190.7656,188.375 189.7031,189.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="201" y="188.9102">ClassC</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="173" x2="245" y1="200" y2="200"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="173" x2="245" y1="208" y2="208"/><!--class ClassD--><rect fill="#FEFECE" filter="url(#f7q3jpq8usqpq)" height="48" id="ClassD" style="stroke: #A80036; stroke-width: 1.5;" width="74" x="281" y="168"/><ellipse cx="296" cy="184" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M298.7031,189.4375 Q297.7813,190.3594 295.5156,190.3594 Q294.25,190.3594 293.3281,189.4375 Q291.6719,187.7813 291.6719,184.25 Q291.6719,180.1406 293.4531,178.3438 Q294.3906,177.4219 295.5781,177.4219 Q297.8438,177.4219 298.5781,178.1406 Q299.9688,179.5469 299.9063,181.9375 L297.4375,181.9375 Q297.375,179.8125 296.6406,179.0781 Q296.25,178.6719 295.5781,178.6719 Q295.5781,178.6719 295.5156,179.1406 Q294.1875,180.4688 294.1875,184.125 Q294.1875,187.3125 295.3281,188.4375 Q295.8594,188.9688 295.8594,188.9688 Q296.1094,188.9688 296.6406,188.4375 Q297.3125,187.7813 297.375,185.3906 L299.9688,185.3906 Q299.7656,188.375 298.7031,189.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="310" y="188.9102">ClassD</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="282" x2="354" y1="200" y2="200"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="282" x2="354" y1="208" y2="208"/><!--link ClassA to CLassB--><path d="M77.5941,128.024 C77.4662,141.579 77.3298,156.0381 77.22,167.6784 " fill="none" id="ClassA-CLassB" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="70.5946,127.933,77.783,108,84.5939,128.066,70.5946,127.933" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ClassA to ClassC--><path d="M127.194,120.237 C128.823,121.496 130.429,122.753 132,124 C149.629,137.989 168.717,154.5874 183.478,167.7636 " fill="none" id="ClassA-ClassC" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="122.721,125.633,110.908,108.042,131.113,114.426,122.721,125.633" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ClassC to ClassD--><path d="M259.113,192 C266.375,192 273.636,192 280.897,192 " fill="none" id="ClassC-ClassD" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="246.043,192,252.043,196,258.043,192,252.043,188,246.043,192" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+package "Package 1" {
+    ClassA <|- - CLassB
+}
+
+package "Package 2" {
+    ClassA <|- - ClassC
+    ClassC *- ClassD
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x30B9;&#x30BF;&#x30A4;&#x30EB;</h3>
+
+<ul>
+<li>&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x306E;&#x30C7;&#x30D5;&#x30A9;&#x30EB;&#x30C8;&#x306F;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x3002;</li>
+<li>&#x30B9;&#x30C6;&#x30EC;&#x30AA;&#x30BF;&#x30A4;&#x30D7;&#x3067;&#x5225;&#x306E;&#x30BF;&#x30A4;&#x30D7;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x3001;&#x5F62;&#x72B6;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>package NodeStyle &lt;&lt;Node&gt;&gt; {
+    class Class1
+}
+
+package FrameStyle &lt;&lt;Frame&gt;&gt; {
+    class Class2
+}
+
+package CloudStyle &lt;&lt;Cloud&gt;&gt; {
+    class Class3
+}
+
+package DatabaseStyle &lt;&lt;Database&gt;&gt; {
+    class Class4
+}
+
+package FolderStyle &lt;&lt;Folder&gt;&gt; {
+    class Class5
+}
+
+package RectStyle &lt;&lt;Rectangle&gt;&gt; {
+    class Class6
+}
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="153px" preserveAspectRatio="none" style="width:831px;height:153px;" version="1.1" viewBox="0 0 831 153" width="831px" zoomAndPan="magnify"><defs><filter height="300%" id="fdxwl1l6q71uf" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster NodeStyle--><polygon fill="#FFFFFF" filter="url(#fdxwl1l6q71uf)" points="22,44,32,34,169,34,169,129,159,139,22,139,22,44" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="159" x2="168" y1="44" y2="35"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="159" y1="44" y2="44"/><line style="stroke: #000000; stroke-width: 1.5;" x1="159" x2="159" y1="44" y2="139"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="71" x="56" y="61.5332">NodeStyle</text><!--cluster FrameStyle--><rect fill="#FFFFFF" filter="url(#fdxwl1l6q71uf)" height="100" style="stroke: #000000; stroke-width: 1.5;" width="104" x="193" y="39"/><path d="M281,40 L281,49.6094 L271,59.6094 L193,59.6094 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="78" x="196" y="54.5332">FrameStyle</text><!--cluster CloudStyle--><path d="M324,46 C324,43 326,41 329,41 C332,41 334,43 334,46 C334,43 336,41 339,41 C342,41 344,43 344,46 C344,43 346,41 349,41 C352,41 354,43 354,46 C354,43 356,41 359,41 C362,41 364,43 364,46 C364,43 366,41 369,41 C372,41 374,43 374,46 C374,43 376,41 379,41 C382,41 384,43 384,46 C384,43 386,41 389,41 C392,41 394,43 394,46 C394,43 396,41 399,41 C402,41 404,43 404,46 C404,43 406,41 409,41 C412,41 414,43 414,46 C414,43 416,41 419,41 C422,41 424,43 424,46 C427,46 429,48 429,51 C429,54 427,56 424,56 C427,56 429,58 429,61 C429,64 427,66 424,66 C427,66 429,68 429,71 C429,74 427,76 424,76 C427,76 429,78 429,81 C429,84 427,86 424,86 C427,86 429,88 429,91 C429,94 427,96 424,96 C427,96 429,98 429,101 C429,104 427,106 424,106 C427,106 429,108 429,111 C429,114 427,116 424,116 C427,116 429,118 429,121 C429,124 427,126 424,126 C427,126 429,128 429,131 C429,134 427,136 424,136 C424,139 421,141 419,141 C416,141 414,139 414,136 C414,139 411,141 409,141 C406,141 404,139 404,136 C404,139 401,141 399,141 C396,141 394,139 394,136 C394,139 391,141 389,141 C386,141 384,139 384,136 C384,139 381,141 379,141 C376,141 374,139 374,136 C374,139 371,141 369,141 C366,141 364,139 364,136 C364,139 361,141 359,141 C356,141 354,139 354,136 C354,139 351,141 349,141 C346,141 344,139 344,136 C344,139 341,141 339,141 C336,141 334,139 334,136 C334,139 331,141 329,141 C326,141 324,139 324,136 C321,136 319,134 319,131 C319,128 321,126 324,126 C321,126 319,124 319,121 C319,118 321,116 324,116 C321,116 319,114 319,111 C319,108 321,106 324,106 C321,106 319,104 319,101 C319,98 321,96 324,96 C321,96 319,94 319,91 C319,88 321,86 324,86 C321,86 319,84 319,81 C319,78 321,76 324,76 C321,76 319,74 319,71 C319,68 321,66 324,66 C321,66 319,64 319,61 C319,58 321,56 324,56 C321,56 319,54 319,51 C319,48 321,46 324,46 " fill="#FFFFFF" filter="url(#fdxwl1l6q71uf)" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="75" x="335.5" y="66.5332">CloudStyle</text><!--cluster DatabaseStyle--><path d="M449,34 C449,24 506.5,24 506.5,24 C506.5,24 564,24 564,34 L564,129 C564,139 506.5,139 506.5,139 C506.5,139 449,139 449,129 L449,34 " fill="#FFFFFF" filter="url(#fdxwl1l6q71uf)" style="stroke: #000000; stroke-width: 1.5;"/><path d="M449,34 C449,44 506.5,44 506.5,44 C506.5,44 564,44 564,34 " fill="none" style="stroke: #000000; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="99" x="457" y="60.5332">DatabaseStyle</text><!--cluster FolderStyle--><polygon fill="#FFFFFF" filter="url(#fdxwl1l6q71uf)" points="588,39,674,39,681,62.6094,692,62.6094,692,139,588,139,588,39" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="588" x2="681" y1="62.6094" y2="62.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="80" x="592" y="55.5332">FolderStyle</text><!--cluster RectStyle--><rect fill="#FFFFFF" filter="url(#fdxwl1l6q71uf)" height="100" style="stroke: #000000; stroke-width: 1.5;" width="104" x="716" y="39"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="66" x="735" y="55.5332">RectStyle</text><!--class Class1--><rect fill="#FEFECE" filter="url(#fdxwl1l6q71uf)" height="48" id="Class1" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="59" y="75"/><ellipse cx="74" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M76.7031,96.4375 Q75.7813,97.3594 73.5156,97.3594 Q72.25,97.3594 71.3281,96.4375 Q69.6719,94.7813 69.6719,91.25 Q69.6719,87.1406 71.4531,85.3438 Q72.3906,84.4219 73.5781,84.4219 Q75.8438,84.4219 76.5781,85.1406 Q77.9688,86.5469 77.9063,88.9375 L75.4375,88.9375 Q75.375,86.8125 74.6406,86.0781 Q74.25,85.6719 73.5781,85.6719 Q73.5781,85.6719 73.5156,86.1406 Q72.1875,87.4688 72.1875,91.125 Q72.1875,94.3125 73.3281,95.4375 Q73.8594,95.9688 73.8594,95.9688 Q74.1094,95.9688 74.6406,95.4375 Q75.3125,94.7813 75.375,92.3906 L77.9688,92.3906 Q77.7656,95.375 76.7031,96.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="88" y="95.9102">Class1</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="60" x2="130" y1="107" y2="107"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="60" x2="130" y1="115" y2="115"/><!--class Class2--><rect fill="#FEFECE" filter="url(#fdxwl1l6q71uf)" height="48" id="Class2" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="209" y="75"/><ellipse cx="224" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M226.7031,96.4375 Q225.7813,97.3594 223.5156,97.3594 Q222.25,97.3594 221.3281,96.4375 Q219.6719,94.7813 219.6719,91.25 Q219.6719,87.1406 221.4531,85.3438 Q222.3906,84.4219 223.5781,84.4219 Q225.8438,84.4219 226.5781,85.1406 Q227.9688,86.5469 227.9063,88.9375 L225.4375,88.9375 Q225.375,86.8125 224.6406,86.0781 Q224.25,85.6719 223.5781,85.6719 Q223.5781,85.6719 223.5156,86.1406 Q222.1875,87.4688 222.1875,91.125 Q222.1875,94.3125 223.3281,95.4375 Q223.8594,95.9688 223.8594,95.9688 Q224.1094,95.9688 224.6406,95.4375 Q225.3125,94.7813 225.375,92.3906 L227.9688,92.3906 Q227.7656,95.375 226.7031,96.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="238" y="95.9102">Class2</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="210" x2="280" y1="107" y2="107"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="210" x2="280" y1="115" y2="115"/><!--class Class3--><rect fill="#FEFECE" filter="url(#fdxwl1l6q71uf)" height="48" id="Class3" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="337" y="75"/><ellipse cx="352" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M354.7031,96.4375 Q353.7813,97.3594 351.5156,97.3594 Q350.25,97.3594 349.3281,96.4375 Q347.6719,94.7813 347.6719,91.25 Q347.6719,87.1406 349.4531,85.3438 Q350.3906,84.4219 351.5781,84.4219 Q353.8438,84.4219 354.5781,85.1406 Q355.9688,86.5469 355.9063,88.9375 L353.4375,88.9375 Q353.375,86.8125 352.6406,86.0781 Q352.25,85.6719 351.5781,85.6719 Q351.5781,85.6719 351.5156,86.1406 Q350.1875,87.4688 350.1875,91.125 Q350.1875,94.3125 351.3281,95.4375 Q351.8594,95.9688 351.8594,95.9688 Q352.1094,95.9688 352.6406,95.4375 Q353.3125,94.7813 353.375,92.3906 L355.9688,92.3906 Q355.7656,95.375 354.7031,96.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="366" y="95.9102">Class3</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="338" x2="408" y1="107" y2="107"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="338" x2="408" y1="115" y2="115"/><!--class Class4--><rect fill="#FEFECE" filter="url(#fdxwl1l6q71uf)" height="48" id="Class4" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="470" y="75"/><ellipse cx="485" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M487.7031,96.4375 Q486.7813,97.3594 484.5156,97.3594 Q483.25,97.3594 482.3281,96.4375 Q480.6719,94.7813 480.6719,91.25 Q480.6719,87.1406 482.4531,85.3438 Q483.3906,84.4219 484.5781,84.4219 Q486.8438,84.4219 487.5781,85.1406 Q488.9688,86.5469 488.9063,88.9375 L486.4375,88.9375 Q486.375,86.8125 485.6406,86.0781 Q485.25,85.6719 484.5781,85.6719 Q484.5781,85.6719 484.5156,86.1406 Q483.1875,87.4688 483.1875,91.125 Q483.1875,94.3125 484.3281,95.4375 Q484.8594,95.9688 484.8594,95.9688 Q485.1094,95.9688 485.6406,95.4375 Q486.3125,94.7813 486.375,92.3906 L488.9688,92.3906 Q488.7656,95.375 487.7031,96.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="499" y="95.9102">Class4</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="471" x2="541" y1="107" y2="107"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="471" x2="541" y1="115" y2="115"/><!--class Class5--><rect fill="#FEFECE" filter="url(#fdxwl1l6q71uf)" height="48" id="Class5" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="604" y="75"/><ellipse cx="619" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M621.7031,96.4375 Q620.7813,97.3594 618.5156,97.3594 Q617.25,97.3594 616.3281,96.4375 Q614.6719,94.7813 614.6719,91.25 Q614.6719,87.1406 616.4531,85.3438 Q617.3906,84.4219 618.5781,84.4219 Q620.8438,84.4219 621.5781,85.1406 Q622.9688,86.5469 622.9063,88.9375 L620.4375,88.9375 Q620.375,86.8125 619.6406,86.0781 Q619.25,85.6719 618.5781,85.6719 Q618.5781,85.6719 618.5156,86.1406 Q617.1875,87.4688 617.1875,91.125 Q617.1875,94.3125 618.3281,95.4375 Q618.8594,95.9688 618.8594,95.9688 Q619.1094,95.9688 619.6406,95.4375 Q620.3125,94.7813 620.375,92.3906 L622.9688,92.3906 Q622.7656,95.375 621.7031,96.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="633" y="95.9102">Class5</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="605" x2="675" y1="107" y2="107"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="605" x2="675" y1="115" y2="115"/><!--class Class6--><rect fill="#FEFECE" filter="url(#fdxwl1l6q71uf)" height="48" id="Class6" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="732" y="75"/><ellipse cx="747" cy="91" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M749.7031,96.4375 Q748.7813,97.3594 746.5156,97.3594 Q745.25,97.3594 744.3281,96.4375 Q742.6719,94.7813 742.6719,91.25 Q742.6719,87.1406 744.4531,85.3438 Q745.3906,84.4219 746.5781,84.4219 Q748.8438,84.4219 749.5781,85.1406 Q750.9688,86.5469 750.9063,88.9375 L748.4375,88.9375 Q748.375,86.8125 747.6406,86.0781 Q747.25,85.6719 746.5781,85.6719 Q746.5781,85.6719 746.5156,86.1406 Q745.1875,87.4688 745.1875,91.125 Q745.1875,94.3125 746.3281,95.4375 Q746.8594,95.9688 746.8594,95.9688 Q747.1094,95.9688 747.6406,95.4375 Q748.3125,94.7813 748.375,92.3906 L750.9688,92.3906 Q750.7656,95.375 749.7031,96.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="761" y="95.9102">Class6</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="733" x2="803" y1="107" y2="107"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="733" x2="803" y1="115" y2="115"/><!--
+@startuml
+package NodeStyle <<Node>> {
+    class Class1
+}
+
+package FrameStyle <<Frame>> {
+    class Class2
+}
+
+package CloudStyle <<Cloud>> {
+    class Class3
+}
+
+package DatabaseStyle <<Database>> {
+    class Class4
+}
+
+package FolderStyle <<Folder>> {
+    class Class5
+}
+
+package RectStyle <<Rectangle>> {
+    class Class6
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%8D%E3%83%BC%E3%83%A0%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9">&#x30CD;&#x30FC;&#x30E0;&#x30B9;&#x30DA;&#x30FC;&#x30B9;</h3>
+
+<ul>
+<li>&#x540C;&#x3058;&#x540D;&#x524D;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x540D;&#x3092;&#x30CD;&#x30FC;&#x30E0;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x3067;&#x5206;&#x3051;&#x3066;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;<strong>namespace</strong>&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3002;</li>
+<li>namespace&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x306F;&#x3001;package&#x3068;&#x540C;&#x3058;&#x30B9;&#x30BF;&#x30A4;&#x30EB;&#x3067;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x30CD;&#x30FC;&#x30E0;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x3092;&#x307E;&#x305F;&#x3044;&#x3067;&#x30AF;&#x30E9;&#x30B9;&#x95A2;&#x4FC2;&#x3092;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;<strong>&#x30D4;&#x30EA;&#x30AA;&#x30C9;</strong>&#x3067;&#x3064;&#x306A;&#x3044;&#x3067;&quot;&#x30CD;&#x30FC;&#x30E0;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x540D;&quot;.&quot;&#x30AF;&#x30E9;&#x30B9;&#x540D;&quot;&#x3068;&#x3044;&#x3046;&#x5F62;&#x5F0F;&#x3067;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>abstract class AbstPerson
+
+namespace Space1 {
+    .AbstPerson &lt;|-- Person
+    Meeting o-- Person
+    .AbstPerson &lt;|-- Meeting
+}
+
+namespace Space2 {
+    Space1.Person &lt;|-- Person
+    .AbstPerson &lt;|-- Person
+    Space1.Meeting o-- Person
+}
+
+AbstPerson &lt;|-- Space3.Person
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="424px" preserveAspectRatio="none" style="width:401px;height:424px;" version="1.1" viewBox="0 0 401 424" width="401px" zoomAndPan="magnify"><defs><filter height="300%" id="famqh980a9jdi" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster Space1--><polygon fill="#FFFFFF" filter="url(#famqh980a9jdi)" points="26.3035,80,83.3035,80,90.3035,103.6094,134.303,103.6094,134.303,288,26.3035,288,26.3035,80" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="26.3035" x2="90.3035" y1="103.6094" y2="103.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="51" x="30.3035" y="96.5332">Space1</text><!--cluster Space2--><polygon fill="#FFFFFF" filter="url(#famqh980a9jdi)" points="115.303,312,172.303,312,179.303,335.6094,219.303,335.6094,219.303,412,115.303,412,115.303,312" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="115.303" x2="179.303" y1="335.6094" y2="335.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="51" x="119.303" y="328.5332">Space2</text><!--cluster Space3--><polygon fill="#FFFFFF" filter="url(#famqh980a9jdi)" points="275.303,80,332.303,80,339.303,103.6094,379.303,103.6094,379.303,180,275.303,180,275.303,80" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="275.303" x2="339.303" y1="103.6094" y2="103.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="51" x="279.303" y="96.5332">Space3</text><!--class Space1.Person--><rect fill="#FEFECE" filter="url(#famqh980a9jdi)" height="48" id="Space1.Person" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="42.3035" y="224"/><ellipse cx="57.3035" cy="240" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M60.0066,245.4375 Q59.0848,246.3594 56.8191,246.3594 Q55.5535,246.3594 54.6316,245.4375 Q52.9754,243.7813 52.9754,240.25 Q52.9754,236.1406 54.7566,234.3438 Q55.6941,233.4219 56.8816,233.4219 Q59.1473,233.4219 59.8816,234.1406 Q61.2723,235.5469 61.2098,237.9375 L58.741,237.9375 Q58.6785,235.8125 57.9441,235.0781 Q57.5535,234.6719 56.8816,234.6719 Q56.8816,234.6719 56.8191,235.1406 Q55.491,236.4688 55.491,240.125 Q55.491,243.3125 56.6316,244.4375 Q57.1629,244.9688 57.1629,244.9688 Q57.4129,244.9688 57.9441,244.4375 Q58.616,243.7813 58.6785,241.3906 L61.2723,241.3906 Q61.0691,244.375 60.0066,245.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="71.3035" y="244.9102">Person</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="43.3035" x2="113.3035" y1="256" y2="256"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="43.3035" x2="113.3035" y1="264" y2="264"/><!--class Space1.Meeting--><rect fill="#FEFECE" filter="url(#famqh980a9jdi)" height="48" id="Space1.Meeting" style="stroke: #A80036; stroke-width: 1.5;" width="75" x="42.8035" y="116"/><ellipse cx="57.8035" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M60.5066,137.4375 Q59.5848,138.3594 57.3191,138.3594 Q56.0535,138.3594 55.1316,137.4375 Q53.4754,135.7813 53.4754,132.25 Q53.4754,128.1406 55.2566,126.3438 Q56.1941,125.4219 57.3816,125.4219 Q59.6473,125.4219 60.3816,126.1406 Q61.7723,127.5469 61.7098,129.9375 L59.241,129.9375 Q59.1785,127.8125 58.4441,127.0781 Q58.0535,126.6719 57.3816,126.6719 Q57.3816,126.6719 57.3191,127.1406 Q55.991,128.4688 55.991,132.125 Q55.991,135.3125 57.1316,136.4375 Q57.6629,136.9688 57.6629,136.9688 Q57.9129,136.9688 58.4441,136.4375 Q59.116,135.7813 59.1785,133.3906 L61.7723,133.3906 Q61.5691,136.375 60.5066,137.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="43" x="71.8035" y="136.9102">Meeting</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="43.8035" x2="116.8035" y1="148" y2="148"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="43.8035" x2="116.8035" y1="156" y2="156"/><!--class Space2.Person--><rect fill="#FEFECE" filter="url(#famqh980a9jdi)" height="48" id="Space2.Person" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="131.303" y="348"/><ellipse cx="146.303" cy="364" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M149.0061,369.4375 Q148.0843,370.3594 145.8186,370.3594 Q144.553,370.3594 143.6311,369.4375 Q141.9749,367.7813 141.9749,364.25 Q141.9749,360.1406 143.7561,358.3438 Q144.6936,357.4219 145.8811,357.4219 Q148.1468,357.4219 148.8811,358.1406 Q150.2718,359.5469 150.2093,361.9375 L147.7405,361.9375 Q147.678,359.8125 146.9436,359.0781 Q146.553,358.6719 145.8811,358.6719 Q145.8811,358.6719 145.8186,359.1406 Q144.4905,360.4688 144.4905,364.125 Q144.4905,367.3125 145.6311,368.4375 Q146.1624,368.9688 146.1624,368.9688 Q146.4124,368.9688 146.9436,368.4375 Q147.6155,367.7813 147.678,365.3906 L150.2718,365.3906 Q150.0686,368.375 149.0061,369.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="160.303" y="368.9102">Person</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="132.303" x2="202.303" y1="380" y2="380"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="132.303" x2="202.303" y1="388" y2="388"/><!--class Space3.Person--><rect fill="#FEFECE" filter="url(#famqh980a9jdi)" height="48" id="Space3.Person" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="291.303" y="116"/><ellipse cx="306.303" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M309.0061,137.4375 Q308.0843,138.3594 305.8186,138.3594 Q304.553,138.3594 303.6311,137.4375 Q301.9749,135.7813 301.9749,132.25 Q301.9749,128.1406 303.7561,126.3438 Q304.6936,125.4219 305.8811,125.4219 Q308.1468,125.4219 308.8811,126.1406 Q310.2718,127.5469 310.2093,129.9375 L307.7405,129.9375 Q307.678,127.8125 306.9436,127.0781 Q306.553,126.6719 305.8811,126.6719 Q305.8811,126.6719 305.8186,127.1406 Q304.4905,128.4688 304.4905,132.125 Q304.4905,135.3125 305.6311,136.4375 Q306.1624,136.9688 306.1624,136.9688 Q306.4124,136.9688 306.9436,136.4375 Q307.6155,135.7813 307.678,133.3906 L310.2718,133.3906 Q310.0686,136.375 309.0061,137.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="320.303" y="136.9102">Person</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="292.303" x2="362.303" y1="148" y2="148"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="292.303" x2="362.303" y1="156" y2="156"/><!--class AbstPerson--><rect fill="#FEFECE" filter="url(#famqh980a9jdi)" height="48" id="AbstPerson" style="stroke: #A80036; stroke-width: 1.5;" width="96" x="111.303" y="8"/><ellipse cx="126.303" cy="24" fill="#A9DCDF" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M124.1624,29.8594 L121.5686,29.8594 L124.8968,16.9219 L127.2249,16.9219 L130.5374,29.8594 L127.9436,29.8594 L127.0218,26.0781 L125.0999,26.0781 L124.1624,29.8594 Z M125.6155,20.4375 L125.6155,20.4375 L125.428,24.8125 L126.678,24.8125 L125.6155,20.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="64" x="140.303" y="28.9102">AbstPerson</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="112.303" x2="206.303" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="112.303" x2="206.303" y1="48" y2="48"/><!--link AbstPerson to Space1.Person--><path d="M91.3498,36.266 C66.5307,41.166 40.7756,51.383 25.3035,72 C-5.6417,113.236 6.8556,139.858 25.3035,188 C30.4767,201.5 40.3224,213.851 50.1374,223.725 " fill="none" id="AbstPerson-Space1.Person" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="90.4778,29.319,111.284,33.334,92.5152,43.17,90.4778,29.319" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Space1.Meeting to Space1.Person--><path d="M79.6179,177.338 C79.3284,192.681 78.9997,210.098 78.7435,223.678 " fill="none" id="Space1.Meeting-Space1.Person" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="79.8695,164,75.7568,169.9233,79.6427,175.9979,83.7554,170.0745,79.8695,164" style="stroke: #A80036; stroke-width: 1.0;"/><!--link AbstPerson to Space1.Meeting--><path d="M130.105,72.178 C119.208,86.8 107.186,102.929 97.6847,115.678 " fill="none" id="AbstPerson-Space1.Meeting" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="124.597,67.854,142.162,56,135.823,76.22,124.597,67.854" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Space1.Person to Space2.Person--><path d="M107.237,288.662 C121.518,308.238 138.246,331.1683 150.417,347.8521 " fill="none" id="Space1.Person-Space2.Person" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="101.3851,292.517,95.2532,272.234,112.695,284.266,101.3851,292.517" style="stroke: #A80036; stroke-width: 1.0;"/><!--link AbstPerson to Space2.Person--><path d="M162.216,76.278 C164.666,114.974 167.976,173.242 169.303,224 C170.14,255.989 169.73,264.003 169.303,296 C169.073,313.322 168.542,332.8891 168.085,347.6927 " fill="none" id="AbstPerson-Space2.Person" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="155.224,76.624,160.911,56.212,169.194,75.715,155.224,76.624" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Space1.Meeting to Space2.Person--><path d="M104.6475,175.206 C114.069,189.706 124.258,207.129 131.303,224 C148.819,265.945 159.102,318.331 163.928,347.8905 " fill="none" id="Space1.Meeting-Space2.Person" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="97.3307,164.27,97.3426,171.4811,104.0036,174.2436,103.9917,167.0325,97.3307,164.27" style="stroke: #A80036; stroke-width: 1.0;"/><!--link AbstPerson to Space3.Person--><path d="M226.41,52.655 C239.519,57.927 252.764,64.342 264.303,72 C282.13,83.83 298.556,101.633 310.163,115.914 " fill="none" id="AbstPerson-Space3.Person" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="223.891,59.187,207.516,45.739,228.703,46.04,223.891,59.187" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+abstract class AbstPerson
+
+namespace Space1 {
+    .AbstPerson <|- - Person
+    Meeting o- - Person
+    .AbstPerson <|- - Meeting
+}
+
+namespace Space2 {
+    Space1.Person <|- - Person
+    .AbstPerson <|- - Person
+    Space1.Meeting o- - Person
+}
+
+AbstPerson <|- - Space3.Person
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E3%83%8E%E3%83%BC%E3%83%88">&#x30CE;&#x30FC;&#x30C8;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E3%82%AF%E3%83%A9%E3%82%B9%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8B%E3%83%8E%E3%83%BC%E3%83%88">&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30CE;&#x30FC;&#x30C8;</h3>
+
+<p>&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x30CE;&#x30FC;&#x30C8;(&#x30B3;&#x30E1;&#x30F3;&#x30C8;)&#x3092;&#x4ED8;&#x3051;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>note position of &#x30AF;&#x30E9;&#x30B9;&#x540D; : &#x30B3;&#x30E1;&#x30F3;&#x30C8;
+</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5B9A;&#x7FA9;
+note position : &#x30B3;&#x30E1;&#x30F3;&#x30C8;
+</code></pre><p>position&#x306B;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x304B;&#x3089;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3002;</p>
+<ul>
+<li>top</li>
+<li>bottom</li>
+<li>left</li>
+<li>right</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>class Class1
+class Class2
+
+Class1 - Class2
+
+note top of Class1 : Class1&#x306E;&#x4E0A;&#x5074;&#x306B;\n&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;
+note left of Class1 : Class1&#x306E;&#x5DE6;&#x5074;&#x306B;\n&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;
+note bottom of Class2 : Class2&#x306E;&#x4E0B;&#x5074;&#x306B;\n&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;
+note right of Class2 : Class2&#x306E;&#x53F3;&#x5074;&#x306B;\n&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="273px" preserveAspectRatio="none" style="width:494px;height:273px;" version="1.1" viewBox="0 0 494 273" width="494px" zoomAndPan="magnify"><defs><filter height="300%" id="floj79l7k3ogx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Class1--><rect fill="#FEFECE" filter="url(#floj79l7k3ogx)" height="48" id="Class1" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="154.5" y="111"/><ellipse cx="169.5" cy="127" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M172.2031,132.4375 Q171.2813,133.3594 169.0156,133.3594 Q167.75,133.3594 166.8281,132.4375 Q165.1719,130.7813 165.1719,127.25 Q165.1719,123.1406 166.9531,121.3438 Q167.8906,120.4219 169.0781,120.4219 Q171.3438,120.4219 172.0781,121.1406 Q173.4688,122.5469 173.4063,124.9375 L170.9375,124.9375 Q170.875,122.8125 170.1406,122.0781 Q169.75,121.6719 169.0781,121.6719 Q169.0781,121.6719 169.0156,122.1406 Q167.6875,123.4688 167.6875,127.125 Q167.6875,130.3125 168.8281,131.4375 Q169.3594,131.9688 169.3594,131.9688 Q169.6094,131.9688 170.1406,131.4375 Q170.8125,130.7813 170.875,128.3906 L173.4688,128.3906 Q173.2656,131.375 172.2031,132.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="183.5" y="131.9102">Class1</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="155.5" x2="225.5" y1="143" y2="143"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="155.5" x2="225.5" y1="151" y2="151"/><!--class Class2--><rect fill="#FEFECE" filter="url(#floj79l7k3ogx)" height="48" id="Class2" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="261.5" y="111"/><ellipse cx="276.5" cy="127" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M279.2031,132.4375 Q278.2813,133.3594 276.0156,133.3594 Q274.75,133.3594 273.8281,132.4375 Q272.1719,130.7813 272.1719,127.25 Q272.1719,123.1406 273.9531,121.3438 Q274.8906,120.4219 276.0781,120.4219 Q278.3438,120.4219 279.0781,121.1406 Q280.4688,122.5469 280.4063,124.9375 L277.9375,124.9375 Q277.875,122.8125 277.1406,122.0781 Q276.75,121.6719 276.0781,121.6719 Q276.0781,121.6719 276.0156,122.1406 Q274.6875,123.4688 274.6875,127.125 Q274.6875,130.3125 275.8281,131.4375 Q276.3594,131.9688 276.3594,131.9688 Q276.6094,131.9688 277.1406,131.4375 Q277.8125,130.7813 277.875,128.3906 L280.4688,128.3906 Q280.2656,131.375 279.2031,132.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="290.5" y="131.9102">Class2</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="262.5" x2="332.5" y1="143" y2="143"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="262.5" x2="332.5" y1="151" y2="151"/><path d="M134,8 L134,50.7031 A0,0 0 0 0 134,50.7031 L186.5,50.7031 L190.5,110.926 L194.5,50.7031 L247,50.7031 A0,0 0 0 0 247,50.7031 L247,18 L237,8 L134,8 A0,0 0 0 0 134,8 " fill="#FBFB77" filter="url(#floj79l7k3ogx)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M237,8 L237,18 L247,18 L237,8 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="140" y="26.4951">Class1&#x306E;&#x4E0A;&#x5074;&#x306B;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="140" y="42.8467">&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;</text><path d="M6,113.5 L6,156.2031 A0,0 0 0 0 6,156.2031 L119,156.2031 A0,0 0 0 0 119,156.2031 L119,139 L154.471,135 L119,131 L119,123.5 L109,113.5 L6,113.5 A0,0 0 0 0 6,113.5 " fill="#FBFB77" filter="url(#floj79l7k3ogx)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M109,113.5 L109,123.5 L119,123.5 L109,113.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="12" y="131.9951">Class1&#x306E;&#x5DE6;&#x5074;&#x306B;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="12" y="148.3467">&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;</text><path d="M241,219 L241,261.7031 A0,0 0 0 0 241,261.7031 L354,261.7031 A0,0 0 0 0 354,261.7031 L354,229 L344,219 L301.5,219 L297.5,159.227 L293.5,219 L241,219 A0,0 0 0 0 241,219 " fill="#FBFB77" filter="url(#floj79l7k3ogx)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M344,219 L344,229 L354,229 L344,219 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="247" y="237.4951">Class2&#x306E;&#x4E0B;&#x5074;&#x306B;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="247" y="253.8467">&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;</text><path d="M369,113.5 L369,131 L334,135 L369,139 L369,156.2031 A0,0 0 0 0 369,156.2031 L482,156.2031 A0,0 0 0 0 482,156.2031 L482,123.5 L472,113.5 L369,113.5 A0,0 0 0 0 369,113.5 " fill="#FBFB77" filter="url(#floj79l7k3ogx)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M472,113.5 L472,123.5 L482,123.5 L472,113.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="92" x="375" y="131.9951">Class2&#x306E;&#x53F3;&#x5074;&#x306B;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="375" y="148.3467">&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x8868;&#x793A;</text><!--link Class1 to Class2--><path d="M226.863,135 C238.36,135 249.857,135 261.354,135 " fill="none" id="Class1-Class2" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+class Class1
+class Class2
+
+Class1 - Class2
+
+note top of Class1 : Class1の上側に\nコメント表示
+note left of Class1 : Class1の左側に\nコメント表示
+note bottom of Class2 : Class2の下側に\nコメント表示
+note right of Class2 : Class2の右側に\nコメント表示
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E9%96%A2%E4%BF%82%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%83%8E%E3%83%BC%E3%83%88">&#x95A2;&#x4FC2;&#x3092;&#x4F7F;&#x3063;&#x305F;&#x30CE;&#x30FC;&#x30C8;</h3>
+
+<p>&#x5225;&#x540D;&#x306E;&#x3064;&#x3051;&#x3066;&#x30CE;&#x30FC;&#x30C8;&#x306E;&#x8981;&#x7D20;&#x3092;&#x4F5C;&#x308A;&#x3001;&#x305D;&#x308C;&#x3092;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x30EA;&#x30F3;&#x30AF;&#x3055;&#x305B;&#x308B;&#x3053;&#x3068;&#x3067;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>class Class1
+class Class2
+
+Class1 &lt;|-- Class2
+
+note &quot;Class1&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&quot; as Note1
+Class1 . Note1
+
+note &quot;Class1&#x3068;2&#x306E;&#x4E21;&#x65B9;&#x306B;\n&#x5BFE;&#x3059;&#x308B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;&quot; as Note2
+Class1 .. Note2
+Note2 .. Class2
+
+note &quot;&#x5BFE;&#x8C61;&#x3092;&#x3057;&#x3066;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;\n&#x30D5;&#x30ED;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306B;&#x306A;&#x308B;&quot; as Note3
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="278px" preserveAspectRatio="none" style="width:476px;height:278px;" version="1.1" viewBox="0 0 476 278" width="476px" zoomAndPan="magnify"><defs><filter height="300%" id="f1vy6qz0l31f0g" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Class1--><rect fill="#FEFECE" filter="url(#f1vy6qz0l31f0g)" height="48" id="Class1" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="6" y="8"/><ellipse cx="21" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,29.4375 Q22.7813,30.3594 20.5156,30.3594 Q19.25,30.3594 18.3281,29.4375 Q16.6719,27.7813 16.6719,24.25 Q16.6719,20.1406 18.4531,18.3438 Q19.3906,17.4219 20.5781,17.4219 Q22.8438,17.4219 23.5781,18.1406 Q24.9688,19.5469 24.9063,21.9375 L22.4375,21.9375 Q22.375,19.8125 21.6406,19.0781 Q21.25,18.6719 20.5781,18.6719 Q20.5781,18.6719 20.5156,19.1406 Q19.1875,20.4688 19.1875,24.125 Q19.1875,27.3125 20.3281,28.4375 Q20.8594,28.9688 20.8594,28.9688 Q21.1094,28.9688 21.6406,28.4375 Q22.3125,27.7813 22.375,25.3906 L24.9688,25.3906 Q24.7656,28.375 23.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="35" y="28.9102">Class1</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="77" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="77" y1="48" y2="48"/><!--class Class2--><rect fill="#FEFECE" filter="url(#f1vy6qz0l31f0g)" height="48" id="Class2" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="6" y="219"/><ellipse cx="21" cy="235" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,240.4375 Q22.7813,241.3594 20.5156,241.3594 Q19.25,241.3594 18.3281,240.4375 Q16.6719,238.7813 16.6719,235.25 Q16.6719,231.1406 18.4531,229.3438 Q19.3906,228.4219 20.5781,228.4219 Q22.8438,228.4219 23.5781,229.1406 Q24.9688,230.5469 24.9063,232.9375 L22.4375,232.9375 Q22.375,230.8125 21.6406,230.0781 Q21.25,229.6719 20.5781,229.6719 Q20.5781,229.6719 20.5156,230.1406 Q19.1875,231.4688 19.1875,235.125 Q19.1875,238.3125 20.3281,239.4375 Q20.8594,239.9688 20.8594,239.9688 Q21.1094,239.9688 21.6406,239.4375 Q22.3125,238.7813 22.375,236.3906 L24.9688,236.3906 Q24.7656,239.375 23.7031,240.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="35" y="239.9102">Class2</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="77" y1="251" y2="251"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="77" y1="259" y2="259"/><path d="M113.5,19 L113.5,28 L78.0938,32 L113.5,36 L113.5,45.3516 A0,0 0 0 0 113.5,45.3516 L278.5,45.3516 A0,0 0 0 0 278.5,45.3516 L278.5,29 L268.5,19 L113.5,19 A0,0 0 0 0 113.5,19 " fill="#FBFB77" filter="url(#f1vy6qz0l31f0g)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M268.5,19 L268.5,29 L278.5,29 L268.5,19 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="144" x="119.5" y="37.4951">Class1&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;</text><path d="M35.5,116 L35.5,158.7031 L168.5,158.7031 L168.5,126 L158.5,116 L35.5,116 " fill="#FBFB77" filter="url(#f1vy6qz0l31f0g)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M158.5,116 L158.5,126 L168.5,126 L158.5,116 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="112" x="41.5" y="134.4951">Class1&#x3068;2&#x306E;&#x4E21;&#x65B9;&#x306B;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="41.5" y="150.8467">&#x5BFE;&#x3059;&#x308B;&#x30B3;&#x30E1;&#x30F3;&#x30C8;</text><path d="M313.5,10.5 L313.5,53.2031 L464.5,53.2031 L464.5,20.5 L454.5,10.5 L313.5,10.5 " fill="#FBFB77" filter="url(#f1vy6qz0l31f0g)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M454.5,10.5 L454.5,20.5 L464.5,20.5 L454.5,10.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="130" x="319.5" y="28.9951">&#x5BFE;&#x8C61;&#x3092;&#x3057;&#x3066;&#x3057;&#x306A;&#x3051;&#x308C;&#x3070;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="130" x="319.5" y="45.3467">&#x30D5;&#x30ED;&#x30FC;&#x30C6;&#x30A3;&#x30F3;&#x30B0;&#x306B;&#x306A;&#x308B;</text><!--link Class1 to Class2--><path d="M27.2187,75.52 C23.4326,88.365 19.8965,102.614 18,116 C15.3192,134.922 15.3192,140.078 18,159 C20.9248,179.6439 27.749,202.3395 33.3758,218.7726 " fill="none" id="Class1-Class2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="20.6264,73.152,33.3758,56.227,33.9637,77.409,20.6264,73.152" style="stroke: #A80036; stroke-width: 1.0;"/><!--link Class1 to Note2--><path d="M55.4652,56.227 C65.8304,74.107 80.0253,98.594 90.0034,115.806 " fill="none" id="Class1-Note2" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><!--link Note2 to Class2--><path d="M89.8581,159.445 C79.8593,176.6927 65.6992,201.1189 55.3765,218.9255 " fill="none" id="Note2-Class2" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><!--
+@startuml
+class Class1
+class Class2
+
+Class1 <|- - Class2
+
+note "Class1に対するコメント" as Note1
+Class1 . Note1
+
+note "Class1と2の両方に\n対するコメント" as Note2
+Class1 .. Note2
+Note2 .. Class2
+
+note "対象をしてしなければ\nフローティングになる" as Note3
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%AA%E3%83%B3%E3%82%AF%E3%81%B8%E3%81%AE%E3%83%8E%E3%83%BC%E3%83%88">&#x30EA;&#x30F3;&#x30AF;&#x3078;&#x306E;&#x30CE;&#x30FC;&#x30C8;</h3>
+
+<p>&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x95A2;&#x4FC2;&#x306E;&#x8A18;&#x8FF0;&#x306E;&#x76F4;&#x4E0B;&#x306B;&#x30CE;&#x30FC;&#x30C8;&#x3092;&#x66F8;&#x304F;&#x3068;&#x95A2;&#x4FC2;&#x306E;&#x30EA;&#x30F3;&#x30AF;&#x3078;&#x306E;&#x30CE;&#x30FC;&#x30C8;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>&#x30AF;&#x30E9;&#x30B9;&#x95A2;&#x4FC2;&#x306E;&#x8A18;&#x8FF0;
+note position on link : &#x30B3;&#x30E1;&#x30F3;&#x30C8;
+</code></pre><pre data-role="codeBlock" data-info="" class="language-"><code>class Class1
+
+Class1 --&gt; Class2 : link 1
+note on link : link1&#x306B;&#x5BFE;&#x3059;&#x308B;\n&#x30B3;&#x30E1;&#x30F3;&#x30C8;
+
+Class1 --&gt; Class3 : link 2
+note right on link : link2&#x306B;&#x5BFE;&#x3059;&#x308B;\n&#x30B3;&#x30E1;&#x30F3;&#x30C8;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="250px" preserveAspectRatio="none" style="width:333px;height:250px;" version="1.1" viewBox="0 0 333 250" width="333px" zoomAndPan="magnify"><defs><filter height="300%" id="f144wh47ijv04p" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class Class1--><rect fill="#FEFECE" filter="url(#f144wh47ijv04p)" height="48" id="Class1" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="83" y="8"/><ellipse cx="98" cy="24" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M100.7031,29.4375 Q99.7813,30.3594 97.5156,30.3594 Q96.25,30.3594 95.3281,29.4375 Q93.6719,27.7813 93.6719,24.25 Q93.6719,20.1406 95.4531,18.3438 Q96.3906,17.4219 97.5781,17.4219 Q99.8438,17.4219 100.5781,18.1406 Q101.9688,19.5469 101.9063,21.9375 L99.4375,21.9375 Q99.375,19.8125 98.6406,19.0781 Q98.25,18.6719 97.5781,18.6719 Q97.5781,18.6719 97.5156,19.1406 Q96.1875,20.4688 96.1875,24.125 Q96.1875,27.3125 97.3281,28.4375 Q97.8594,28.9688 97.8594,28.9688 Q98.1094,28.9688 98.6406,28.4375 Q99.3125,27.7813 99.375,25.3906 L101.9688,25.3906 Q101.7656,28.375 100.7031,29.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="112" y="28.9102">Class1</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="84" x2="154" y1="40" y2="40"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="84" x2="154" y1="48" y2="48"/><!--class Class2--><rect fill="#FEFECE" filter="url(#f144wh47ijv04p)" height="48" id="Class2" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="6" y="191"/><ellipse cx="21" cy="207" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M23.7031,212.4375 Q22.7813,213.3594 20.5156,213.3594 Q19.25,213.3594 18.3281,212.4375 Q16.6719,210.7813 16.6719,207.25 Q16.6719,203.1406 18.4531,201.3438 Q19.3906,200.4219 20.5781,200.4219 Q22.8438,200.4219 23.5781,201.1406 Q24.9688,202.5469 24.9063,204.9375 L22.4375,204.9375 Q22.375,202.8125 21.6406,202.0781 Q21.25,201.6719 20.5781,201.6719 Q20.5781,201.6719 20.5156,202.1406 Q19.1875,203.4688 19.1875,207.125 Q19.1875,210.3125 20.3281,211.4375 Q20.8594,211.9688 20.8594,211.9688 Q21.1094,211.9688 21.6406,211.4375 Q22.3125,210.7813 22.375,208.3906 L24.9688,208.3906 Q24.7656,211.375 23.7031,212.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="35" y="211.9102">Class2</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="77" y1="223" y2="223"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="77" y1="231" y2="231"/><!--class Class3--><rect fill="#FEFECE" filter="url(#f144wh47ijv04p)" height="48" id="Class3" style="stroke: #A80036; stroke-width: 1.5;" width="72" x="160" y="191"/><ellipse cx="175" cy="207" fill="#ADD1B2" rx="11" ry="11" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M177.7031,212.4375 Q176.7813,213.3594 174.5156,213.3594 Q173.25,213.3594 172.3281,212.4375 Q170.6719,210.7813 170.6719,207.25 Q170.6719,203.1406 172.4531,201.3438 Q173.3906,200.4219 174.5781,200.4219 Q176.8438,200.4219 177.5781,201.1406 Q178.9688,202.5469 178.9063,204.9375 L176.4375,204.9375 Q176.375,202.8125 175.6406,202.0781 Q175.25,201.6719 174.5781,201.6719 Q174.5781,201.6719 174.5156,202.1406 Q173.1875,203.4688 173.1875,207.125 Q173.1875,210.3125 174.3281,211.4375 Q174.8594,211.9688 174.8594,211.9688 Q175.1094,211.9688 175.6406,211.4375 Q176.3125,210.7813 176.375,208.3906 L178.9688,208.3906 Q178.7656,211.375 177.7031,212.4375 Z "/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="40" x="189" y="211.9102">Class3</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="161" x2="231" y1="223" y2="223"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="161" x2="231" y1="231" y2="231"/><!--link Class1 to Class2--><path d="M82.8475,47.284 C66.3261,55.853 48.3802,68.534 39,86 C22.3668,116.972 27.4306,158.5292 33.731,185.7716 " fill="none" id="Class1-Class2" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="34.9169,190.686,36.6939,180.9988,33.7439,185.8255,28.9171,182.8756,34.9169,190.686" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="31" x="80.5" y="100.4951">link 1</text><path d="M44,109.3516 L44,151.3516 L144,151.3516 L144,119.3516 L134,109.3516 L44,109.3516 " fill="#FBFB77" filter="url(#f144wh47ijv04p)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M134,109.3516 L134,119.3516 L144,119.3516 L134,109.3516 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="79" x="50" y="127.8467">link1&#x306B;&#x5BFE;&#x3059;&#x308B;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="50" y="144.1982">&#x30B3;&#x30E1;&#x30F3;&#x30C8;</text><!--link Class1 to Class3--><path d="M138.156,56.223 C144.813,65.129 151.885,75.646 157,86 C173.111,118.608 184.102,159.2063 190.211,185.8256 " fill="none" id="Class1-Class3" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="191.367,190.9566,193.2897,181.2972,190.2673,186.079,185.4855,183.0567,191.367,190.9566" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="31" x="184" y="129.1709">link 2</text><path d="M221,100.5 L221,142.5 L321,142.5 L321,110.5 L311,100.5 L221,100.5 " fill="#FBFB77" filter="url(#f144wh47ijv04p)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M311,100.5 L311,110.5 L321,110.5 L311,100.5 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="79" x="227" y="118.9951">link2&#x306B;&#x5BFE;&#x3059;&#x308B;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="227" y="135.3467">&#x30B3;&#x30E1;&#x30F3;&#x30C8;</text><!--
+@startuml
+class Class1
+
+Class1 - -> Class2 : link 1
+note on link : link1に対する\nコメント
+
+Class1 - -> Class3 : link 2
+note right on link : link2に対する\nコメント
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E5%9B%B3">&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x56F3;</h2>
+
+<hr>
+<ul>
+<li>class&#x306E;&#x4EE3;&#x308F;&#x308A;&#x306B;object&#x3092;&#x4F7F;&#x3046;&#x3068;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x56F3;&#x3068;&#x306A;&#x308B;&#x3002;</li>
+<li>&#x30D6;&#x30ED;&#x30C3;&#x30AF;&#x306B;&#x3088;&#x308B;&#x5B9A;&#x7FA9;&#x3067;&#x306F;&#x82F1;&#x6570;&#x5B57;&#x3057;&#x304B;&#x4F7F;&#x3048;&#x306A;&#x3044;&#x3002;</li>
+<li>&#x305D;&#x308C;&#x4EE5;&#x5916;&#x306E;&#x6587;&#x5B57;&#x3092;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x4E00;&#x5EA6;<strong>as</strong>&#x3067;&#x5225;&#x540D;&#x3092;&#x4ED8;&#x3051;&#x305F;&#x5F8C;&#x306B;&#x30E1;&#x30F3;&#x30D0;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x3068;&#x3044;&#x3046;&#x96C6;&#x5408;&#x306E;&#x4E2D;&#x306B;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x5C5E;&#x3057;&#x3066;&#x3044;&#x308B;&#x3068;&#x8003;&#x3048;&#x308B;&#x3002;</li>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x3060;&#x3051;&#x3067;&#x306F;&#x62BD;&#x8C61;&#x7684;&#x306A;&#x56F3;&#x3057;&#x304B;&#x66F8;&#x3051;&#x306A;&#x3044;&#x306E;&#x3067;&#x3001;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x56F3;&#x3067;&#x3082;&#x3063;&#x3068;&#x8A73;&#x3057;&#x3044;&#x88DC;&#x8DB3;&#x3092;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="71px" preserveAspectRatio="none" style="width:214px;height:71px;" version="1.1" viewBox="0 0 214 71" width="214px" zoomAndPan="magnify"><defs><filter height="300%" id="f1x2xt1fw50xjx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FEFECE" filter="url(#f1x2xt1fw50xjx)" height="52.25" style="stroke: #A80036; stroke-width: 1.5;" width="84" x="6" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="42" x="27" y="22.457">Object1</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="89" y1="27.0938" y2="27.0938"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="45" x="12" y="41.4746">id = 1234</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="72" x="12" y="54.0527">name = &quot;Alice&quot;</text><rect fill="#FEFECE" filter="url(#f1x2xt1fw50xjx)" height="52.25" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="125" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" text-decoration="underline" textLength="63" x="132.5" y="22.457">bar:Object2</text><line style="stroke: #000000; stroke-width: 1.0;" x1="132.5" x2="195.5" y1="24.457" y2="24.457"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="126" x2="202" y1="27.0938" y2="27.0938"/><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="45" x="131" y="41.4746">id = 4321</text><text fill="#000000" font-family="sans-serif" font-size="10" lengthAdjust="spacingAndGlyphs" textLength="66" x="131" y="54.0527">name = &quot;Bob&quot;</text><!--
+@startuml
+object Object1 {
+    id = 1234
+    name = "Alice"
+}
+
+object "<u>bar:Object2</u>" as bar
+bar : id = 4321
+bar : name = "Bob"
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E5%9B%B3">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x56F3;</h2>
+
+<hr>
+<ul>
+<li>&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x540C;&#x58EB;&#x306E;&#x4F9D;&#x5B58;&#x95A2;&#x4FC2;&#x3092;&#x63CF;&#x753B;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x8AD6;&#x7406;&#x7684;&#x306A;&#x30B0;&#x30EB;&#x30FC;&#x30D4;&#x30F3;&#x30B0;&#x3092;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x56F3;&#x3002;</li>
+<li>&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x306E;&#x5834;&#x5408;&#x306F;&#x5BFE;&#x8C61;&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3084;&#x8981;&#x7D20;&#x304C;&#x53D6;&#x308A;&#x8FBC;&#x307E;&#x308C;&#x308B;&#x304C;&#x3001;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x306E;&#x5834;&#x5408;&#x306F;&#x53D6;&#x308A;&#x8FBC;&#x307E;&#x306A;&#x3044;&#x3002;</li>
+<li>&#x547C;&#x3073;&#x51FA;&#x3059;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x306E;&#x306F;&#x3001;&#x30A4;&#x30F3;&#x30DD;&#x30FC;&#x30C8;&#x3059;&#x308B;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x307F;&#x3002;</li>
+<li>PlantUML&#x306B;&#x306F;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x56F3;&#x304C;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x3002;</li>
+<li>&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8; - &#x30AF;&#x30E9;&#x30B9;&#x9593;&#x306E;&#x30EA;&#x30F3;&#x30AF;&#x306F;&#x3067;&#x304D;&#x306A;&#x3044;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="324px" preserveAspectRatio="none" style="width:280px;height:324px;" version="1.1" viewBox="0 0 280 324" width="280px" zoomAndPan="magnify"><defs><filter height="300%" id="fly1bn318wpmt" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><polygon fill="#FFFFFF" filter="url(#fly1bn318wpmt)" points="25.5,8,80.5,8,87.5,31.6094,94.5,31.6094,94.5,63.2188,25.5,63.2188,25.5,8" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="25.5" x2="87.5" y1="31.6094" y2="31.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="49" x="29.5" y="24.5332">Search</text><polygon fill="#FFFFFF" filter="url(#fly1bn318wpmt)" points="181.5,8,244.5,8,251.5,31.6094,258.5,31.6094,258.5,63.2188,181.5,63.2188,181.5,8" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="181.5" x2="251.5" y1="31.6094" y2="31.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="57" x="185.5" y="24.5332">Drawing</text><polygon fill="#FFFFFF" filter="url(#fly1bn318wpmt)" points="6,141,100,141,107,164.6094,114,164.6094,114,196.2188,6,196.2188,6,141" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="6" x2="107" y1="164.6094" y2="164.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="88" x="10" y="157.5332">Input/Output</text><polygon fill="#FFFFFF" filter="url(#fly1bn318wpmt)" points="17.5,257,88.5,257,95.5,280.6094,102.5,280.6094,102.5,312.2188,17.5,312.2188,17.5,257" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="17.5" x2="95.5" y1="280.6094" y2="280.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="65" x="21.5" y="273.5332">Database</text><!--link Search to Drawing--><path d="M94.7176,35.5 C118.671,35.5 150.701,35.5 176.378,35.5 " fill="none" id="Search-Drawing" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="181.425,35.5,172.425,31.5,176.425,35.5,172.425,39.5,181.425,35.5" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="50" x="113" y="28.9951">&#xAB;import&#xBB;</text><!--link Search to io--><path d="M60,63.01 C60,83.912 60,113.144 60,135.376 " fill="none" id="Search-io" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="60,140.58,64,131.58,60,135.58,56,131.58,60,140.58" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="56" x="61" y="107.4951">&#xAB;access&#xBB;</text><!--link io to Database--><path d="M60,211.346 C60,226.5871 60,243.3876 60,256.9395 " fill="none" id="io-Database" style="stroke: #A80036; stroke-width: 1.0;"/><ellipse cx="60" cy="204.228" fill="#FFFFFF" rx="8" ry="8" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="60" x2="60" y1="212.228" y2="196.228"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="52" x2="68" y1="204.228" y2="204.228"/><!--
+@startuml
+package Search{
+}
+
+package Drawing{
+}
+
+Search .> Drawing : <<import>>
+
+package "Input/Output" as io{
+}
+
+Search ..> io : <<access>>
+
+package Database{
+}
+
+io +- - Database
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</h2>
+
+<hr>
+<ul>
+<li><a href="http://plantuml.com/class-diagram">PlantUML&#x306E;&#x516C;&#x5F0F;&#x30C9;&#x30AD;&#x30E5;&#x30E1;&#x30F3;&#x30C8;</a></li>
+<li><a href="http://www.itsenka.com/contents/development/uml/class.html">IT&#x5C02;&#x79D1; &gt; UML&#x5165;&#x9580; &gt; &#x30AF;&#x30E9;&#x30B9;&#x56F3;</a></li>
+<li><a href="http://objectclub.jp/technicaldoc/uml/umlintro">UML&#x8D85;&#x5165;&#x9580;</a></li>
+<li><a href="http://yohshiy.blog.fc2.com/">&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DE;&#x30FC;&#x30BA;&#x96D1;&#x8A18;&#x5E33;</a></li>
+<li><a href="https://www.ogis-ri.co.jp/otc/swec/process/am-res/am/artifacts/index.html">&#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x30A8;&#x30C3;&#x30BB;&#x30F3;&#x30B9;: &#x30A2;&#x30B8;&#x30E3;&#x30A4;&#x30EB;&#x306B;&#x4F5C;&#x308C;&#x308B;&#x6210;&#x679C;&#x7269;</a></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
