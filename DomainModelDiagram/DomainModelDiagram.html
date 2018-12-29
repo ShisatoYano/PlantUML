@@ -1,0 +1,687 @@
+<!DOCTYPE html><html><head>
+      <title>DomainModelDiagram</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\shisa\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.11\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</h1>
+
+<h2 class="mume-header" id="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</h2>
+
+<hr>
+<p>&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x306E;&#x4ED5;&#x69D8;&#x66F8;&#x3001;&#x8A2D;&#x8A08;&#x66F8;&#x306E;&#x4F5C;&#x6210;&#x3084;&#x7BA1;&#x7406;&#x3092;&#x52B9;&#x7387;&#x5316;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;Markdown + PlantUML&#x306B;&#x3088;&#x308B;&#x4F5C;&#x6210;&#x65B9;&#x6CD5;&#x3092;&#x65E5;&#x3005;&#x6A21;&#x7D22;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>
+&#x3057;&#x304B;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;&#x305D;&#x3082;&#x305D;&#x3082;UML&#x56F3;&#x306E;&#x6B63;&#x5F0F;&#x306A;&#x66F8;&#x304D;&#x65B9;&#x3068;&#x3044;&#x3046;&#x3082;&#x306E;&#x3092;&#x3061;&#x3083;&#x3093;&#x3068;&#x5206;&#x304B;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x306E;&#x304C;&#x6B63;&#x76F4;&#x306A;&#x3068;&#x3053;&#x308D;&#x306A;&#x306E;&#x3067;&#x3001;PlantUML&#x3092;&#x901A;&#x3058;&#x3066;UML&#x306E;&#x5404;&#x7A2E;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x52C9;&#x5F37;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x672C;&#x7A3F;&#x306E;&#x30C6;&#x30FC;&#x30DE;&#x306F;&#x3001;&#x300C;UML&#x306B;&#x3088;&#x308B;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x300D;&#x3067;&#x3059;&#x3002;</li>
+<li>&#x672C;&#x7A3F;&#x306B;&#x304A;&#x3051;&#x308B;UML&#x56F3;&#x306E;&#x4F5C;&#x6210;&#x306F;&#x3001;Markdown + PlantUML&#x304C;&#x30D9;&#x30FC;&#x30B9;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x524D;&#x63D0;&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</h2>
+
+<hr>
+<ul>
+<li><a href="#plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</a>
+<ul>
+<li><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</a></li>
+<li><a href="#%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</a></li>
+<li><a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E9%96%8B%E5%A7%8B%E6%99%82%E3%81%AB%E3%82%84%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8">&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x958B;&#x59CB;&#x6642;&#x306B;&#x3084;&#x308B;&#x3079;&#x304D;&#x3053;&#x3068;</a></li>
+<li><a href="#%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%A8%E3%81%AF">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3068;&#x306F;</a></li>
+<li><a href="#%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%82%92%E6%8F%8F%E3%81%8F%E6%89%8B%E9%A0%86">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3092;&#x63CF;&#x304F;&#x624B;&#x9806;</a>
+<ul>
+<li><a href="#1-%E5%90%8D%E8%A9%9E%E3%81%AE%E6%8A%BD%E5%87%BA">1. &#x300C;&#x540D;&#x8A5E;&#x300D;&#x306E;&#x62BD;&#x51FA;</a></li>
+<li><a href="#2-%E3%83%A2%E3%83%87%E3%83%AB%E5%90%8C%E5%A3%AB%E3%81%AE%E9%96%A2%E4%BF%82%E3%82%92%E7%B7%9A%E3%81%A8%E7%9F%A2%E5%8D%B0%E3%81%A7%E8%A1%A8%E3%81%99">2. &#x30E2;&#x30C7;&#x30EB;&#x540C;&#x58EB;&#x306E;&#x95A2;&#x4FC2;&#x3092;&#x7DDA;&#x3068;&#x77E2;&#x5370;&#x3067;&#x8868;&#x3059;</a></li>
+<li><a href="#3-%E4%B8%AD%E5%BF%83%E3%81%A8%E3%81%AA%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AB%E8%89%B2%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B">3. &#x4E2D;&#x5FC3;&#x3068;&#x306A;&#x308B;&#x30E2;&#x30C7;&#x30EB;&#x306B;&#x8272;&#x3092;&#x4ED8;&#x3051;&#x308B;</a></li>
+</ul>
+</li>
+<li><a href="#%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%82%92%E7%94%A8%E3%81%84%E3%82%8B%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3092;&#x7528;&#x3044;&#x308B;&#x969B;&#x306E;&#x6CE8;&#x610F;&#x70B9;</a></li>
+<li><a href="#%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%AE%E6%B4%BB%E7%94%A8%E6%96%B9%E6%B3%95">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x6D3B;&#x7528;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%AE%E4%BD%9C%E6%88%90%E4%BE%8B">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x4F5C;&#x6210;&#x4F8B;</a>
+<ul>
+<li><a href="#%E4%BE%8B1-%E8%AA%8D%E8%A8%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;1. &#x8A8D;&#x8A3C;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x5834;&#x5408;</a></li>
+<li><a href="#%E4%BE%8B2-%E8%AA%B2%E9%87%91%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;2. &#x8AB2;&#x91D1;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x5834;&#x5408;</a></li>
+<li><a href="#%E4%BE%8B3-%E6%9C%AC%E5%B1%8B%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;3. &#x672C;&#x5C4B;&#x306E;&#x5834;&#x5408;</a></li>
+<li><a href="#%E4%BE%8B4-%E6%8A%95%E7%A8%BF%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;4. &#x6295;&#x7A3F;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x5834;&#x5408;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E9%96%8B%E5%A7%8B%E6%99%82%E3%81%AB%E3%82%84%E3%82%8B%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8">&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x958B;&#x59CB;&#x6642;&#x306B;&#x3084;&#x308B;&#x3079;&#x304D;&#x3053;&#x3068;</h2>
+
+<hr>
+<ul>
+<li>&#x8A2D;&#x8A08;&#x5BFE;&#x8C61;&#x3067;&#x3042;&#x308B;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x304C;&#x53D6;&#x308A;&#x6271;&#x3046;&#x3082;&#x306E;&#x306E;&#x6982;&#x5FF5;&#x306B;&#x3064;&#x3044;&#x3066;&#x3001;&#x30C1;&#x30FC;&#x30E0;&#x5185;&#x3067;&#x5171;&#x901A;&#x8A8D;&#x8B58;&#x3092;&#x7BC9;&#x304F;</li>
+<li>&#x305D;&#x308C;&#x3089;&#x306E;&#x6982;&#x5FF5;&#x306E;&#x7E4B;&#x304C;&#x308A;&#x3092;&#x8868;&#x73FE;&#x3057;&#x305F;&#x306E;&#x304C;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%A8%E3%81%AF">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3068;&#x306F;</h2>
+
+<hr>
+<ul>
+<li>&#x30E6;&#x30FC;&#x30B6;&#x306E;&#x8996;&#x70B9;&#x3067;&#x898B;&#x305F;&#x3001;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306B;&#x767B;&#x5834;&#x3059;&#x308B;&#x300C;&#x3082;&#x306E;&#x300D;&#x306E;&#x6982;&#x5FF5;(&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30AF;&#x30E9;&#x30B9;)&#x3092;&#x96C6;&#x3081;&#x305F;&#x56F3;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+<li>&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x7528;&#x8A9E;&#x96C6;&#x3092;&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x98A8;&#x306B;&#x8868;&#x73FE;&#x3057;&#x305F;&#x56F3;&#x3068;&#x3044;&#x3046;&#x3053;&#x3068;&#x306B;&#x3082;&#x306A;&#x308B;&#x3002;</li>
+<li>&#x81EA;&#x7136;&#x8A00;&#x8A9E;&#x3067;&#x69CB;&#x6210;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;&#x8981;&#x4EF6;&#x5B9A;&#x7FA9;&#x3084;&#x4ED5;&#x69D8;&#x306E;&#x628A;&#x63E1;&#x306B;&#x6709;&#x52B9;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%82%92%E6%8F%8F%E3%81%8F%E6%89%8B%E9%A0%86">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3092;&#x63CF;&#x304F;&#x624B;&#x9806;</h2>
+
+<hr>
+<p>&#x4F8B;&#x3068;&#x3057;&#x3066;&#x3001;&#x901A;&#x8CA9;&#x30B5;&#x30A4;&#x30C8;&#x306E;&#x8981;&#x4EF6;&#x304B;&#x3089;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3092;&#x63CF;&#x304F;&#x5834;&#x5408;&#x3092;&#x8003;&#x3048;&#x308B;&#x3002;</p>
+<h3 class="mume-header" id="1-%E5%90%8D%E8%A9%9E%E3%81%AE%E6%8A%BD%E5%87%BA">1. &#x300C;&#x540D;&#x8A5E;&#x300D;&#x306E;&#x62BD;&#x51FA;</h3>
+
+<p>&#x901A;&#x8CA9;&#x30B5;&#x30A4;&#x30C8;&#x306E;&#x8981;&#x4EF6;&#x304B;&#x3089;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306A;&#x540D;&#x8A5E;&#x304C;&#x62BD;&#x51FA;&#x3055;&#x308C;&#x305F;&#x3068;&#x3059;&#x308B;&#x3002;</p>
+<p>&#x300C;&#x5546;&#x54C1;&#x3001;&#x578B;&#x756A;&#x3001;&#x4FA1;&#x683C;&#x3001;&#x30AB;&#x30C6;&#x30B4;&#x30EA;&#x3001;&#x30AB;&#x30FC;&#x30C8;&#x3001;&#x6CE8;&#x6587;&#x3001;&#x30EC;&#x30D3;&#x30E5;&#x30FC;&#x3001;&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x3001;&#x767B;&#x9332;&#x60C5;&#x5831;&#x3001;&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x300D;</p>
+<p>&#x3053;&#x308C;&#x3089;&#x306E;&#x540D;&#x8A5E;&#x3092;&#x56F3;&#x306B;&#x4E26;&#x3079;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="387px" preserveAspectRatio="none" style="width:320px;height:387px;" version="1.1" viewBox="0 0 320 387" width="320px" zoomAndPan="magnify"><defs><filter height="300%" id="fd0mkzqx5tbtw" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster DomainModel--><polygon fill="#FFFFFF" filter="url(#fd0mkzqx5tbtw)" points="22,24,124,24,131,47.6094,298,47.6094,298,375,22,375,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="131" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="26" y="40.5332">DomainModel</text><!--class 商品--><rect fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" height="60.7656" id="&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="42" y="60"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="47" y="77.457">&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="43" x2="75" y1="85.0938" y2="85.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="48" y="100.5127">&#x578B;&#x756A;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="48" y="114.3486">&#x4FA1;&#x683C;</text><!--class カテゴリ--><rect fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" height="33.0938" id="&#x30AB;&#x30C6;&#x30B4;&#x30EA;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="111" y="74"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="114" y="91.457">&#x30AB;&#x30C6;&#x30B4;&#x30EA;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="112" x2="164" y1="99.0938" y2="99.0938"/><!--class レビュー--><rect fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" height="33.0938" id="&#x30EC;&#x30D3;&#x30E5;&#x30FC;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="200" y="74"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="203" y="91.457">&#x30EC;&#x30D3;&#x30E5;&#x30FC;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="201" x2="253" y1="99.0938" y2="99.0938"/><!--class カート--><rect fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" height="33.0938" id="&#x30AB;&#x30FC;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="38" y="181"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="41" y="198.457">&#x30AB;&#x30FC;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="79" y1="206.0938" y2="206.0938"/><!--class 注文--><rect fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" height="33.0938" id="&#x6CE8;&#x6587;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="115" y="181"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="118" y="198.457">&#x6CE8;&#x6587;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="116" x2="144" y1="206.0938" y2="206.0938"/><!--class ウィッシュリスト--><rect fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" height="33.0938" id="&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="180" y="181"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="183" y="198.457">&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="181" x2="281" y1="206.0938" y2="206.0938"/><!--class 登録情報--><rect fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" height="46.9297" id="&#x767B;&#x9332;&#x60C5;&#x5831;" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="38.5" y="293"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="59" y="310.457">&#x767B;&#x9332;&#x60C5;&#x5831;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39.5" x2="126.5" y1="318.0938" y2="318.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="44.5" y="333.5127">&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</text><!--entity ユーザ--><ellipse cx="184" cy="284" fill="#FEFECE" filter="url(#fd0mkzqx5tbtw)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M184,292 L184,319 M171,300 L197,300 M184,319 L171,334 M184,319 L197,334 " fill="none" filter="url(#fd0mkzqx5tbtw)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="163" y="355.5332">&#x30E6;&#x30FC;&#x30B6;</text><!--link 商品 to カテゴリ--><!--link カテゴリ to レビュー--><!--link 商品 to カート--><!--link カート to 注文--><!--link 注文 to ウィッシュリスト--><!--link カート to 登録情報--><!--link 登録情報 to ユーザ--><!--
+@startuml
+hide circle
+hide method
+
+package DomainModel {
+    class 商品
+    class カテゴリ
+    class レビュー
+    class カート
+    class 注文
+    class ウィッシュリスト
+    class 登録情報
+    mix_actor ユーザ
+
+    商品 : 型番
+    商品 : 価格
+    登録情報 : メールアドレス
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><p>&#x540D;&#x8A5E;&#x306F;&#x300C;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30AF;&#x30E9;&#x30B9;&#x3001;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5C5E;&#x6027;&#x3001;&#x30A2;&#x30AF;&#x30BF;&#x300D;&#x306E;&#xFF13;&#x7A2E;&#x985E;&#x306B;&#x5206;&#x3051;&#x3089;&#x308C;&#x3001;&#x5224;&#x5225;&#x65B9;&#x6CD5;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<ul>
+<li>&#x30A2;&#x30AF;&#x30BF;: &#x30E6;&#x30FC;&#x30B6;&#x3084;&#x5916;&#x90E8;&#x30B7;&#x30B9;&#x30C6;&#x30E0;</li>
+<li>&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x5C5E;&#x6027;: &#x5546;&#x54C1;&#x306E;&#x578B;&#x756A;&#x3084;&#x5024;&#x6BB5;&#x306A;&#x3069;&#x3001;&#x25CB;&#x25CB;&#x306E;&#x25B3;&#x25B3;&#x3068;&#x3044;&#x3046;&#x5F62;&#x3067;&#x66F8;&#x3051;&#x308B;&#x3082;&#x306E;</li>
+<li>&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30AF;&#x30E9;&#x30B9;: &#x4E0A;&#x8A18;&#x4EE5;&#x5916;&#x306E;&#x540D;&#x8A5E;</li>
+</ul>
+<h3 class="mume-header" id="2-%E3%83%A2%E3%83%87%E3%83%AB%E5%90%8C%E5%A3%AB%E3%81%AE%E9%96%A2%E4%BF%82%E3%82%92%E7%B7%9A%E3%81%A8%E7%9F%A2%E5%8D%B0%E3%81%A7%E8%A1%A8%E3%81%99">2. &#x30E2;&#x30C7;&#x30EB;&#x540C;&#x58EB;&#x306E;&#x95A2;&#x4FC2;&#x3092;&#x7DDA;&#x3068;&#x77E2;&#x5370;&#x3067;&#x8868;&#x3059;</h3>
+
+<p>&#x7DDA;&#x306E;&#x7A2E;&#x985E;&#x306F;&#x3001;&#x300C;has-one, has-many, is-a-kind-of&#x300D;&#x306E;&#xFF13;&#x7A2E;&#x985E;&#x3068;&#x3059;&#x308B;&#x3002;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="326px" preserveAspectRatio="none" style="width:596px;height:326px;" version="1.1" viewBox="0 0 596 326" width="596px" zoomAndPan="magnify"><defs><filter height="300%" id="fx6nwzue8rstq" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster DomainModel--><polygon fill="#FFFFFF" filter="url(#fx6nwzue8rstq)" points="22,24,124,24,131,47.6094,574,47.6094,574,314,22,314,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="131" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="26" y="40.5332">DomainModel</text><!--class 商品--><rect fill="#FEFECE" filter="url(#fx6nwzue8rstq)" height="60.7656" id="&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="409" y="148.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="414" y="165.957">&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="410" x2="442" y1="173.5938" y2="173.5938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="415" y="189.0127">&#x578B;&#x756A;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="415" y="202.8486">&#x4FA1;&#x683C;</text><!--class カテゴリ--><rect fill="#FEFECE" filter="url(#fx6nwzue8rstq)" height="33.0938" id="&#x30AB;&#x30C6;&#x30B4;&#x30EA;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="504" y="162.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="507" y="179.957">&#x30AB;&#x30C6;&#x30B4;&#x30EA;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="505" x2="557" y1="187.5938" y2="187.5938"/><!--class レビュー--><rect fill="#FEFECE" filter="url(#fx6nwzue8rstq)" height="33.0938" id="&#x30EC;&#x30D3;&#x30E5;&#x30FC;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="212" y="264.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="215" y="281.957">&#x30EC;&#x30D3;&#x30E5;&#x30FC;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="213" x2="265" y1="289.5938" y2="289.5938"/><!--class カート--><rect fill="#FEFECE" filter="url(#fx6nwzue8rstq)" height="33.0938" id="&#x30AB;&#x30FC;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="218" y="196.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="221" y="213.957">&#x30AB;&#x30FC;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="219" x2="259" y1="221.5938" y2="221.5938"/><!--class 注文--><rect fill="#FEFECE" filter="url(#fx6nwzue8rstq)" height="33.0938" id="&#x6CE8;&#x6587;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="224" y="128.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="227" y="145.957">&#x6CE8;&#x6587;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="225" x2="253" y1="153.5938" y2="153.5938"/><!--class ウィッシュリスト--><rect fill="#FEFECE" filter="url(#fx6nwzue8rstq)" height="33.0938" id="&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="188" y="60.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="191" y="77.957">&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="189" x2="289" y1="85.5938" y2="85.5938"/><!--class 登録情報--><rect fill="#FEFECE" filter="url(#fx6nwzue8rstq)" height="46.9297" id="&#x767B;&#x9332;&#x60C5;&#x5831;" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="38" y="63.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="58.5" y="80.957">&#x767B;&#x9332;&#x60C5;&#x5831;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="126" y1="88.5938" y2="88.5938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="44" y="104.0127">&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</text><!--entity ユーザ--><ellipse cx="82.5" cy="173.5" fill="#FEFECE" filter="url(#fx6nwzue8rstq)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M82.5,181.5 L82.5,208.5 M69.5,189.5 L95.5,189.5 M82.5,208.5 L69.5,223.5 M82.5,208.5 L95.5,223.5 " fill="none" filter="url(#fx6nwzue8rstq)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="61.5" y="245.0332">&#x30E6;&#x30FC;&#x30B6;</text><!--link ユーザ to 登録情報--><path d="M82.5,163.374 C82.5,147.575 82.5,130.045 82.5,115.768 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x767B;&#x9332;&#x60C5;&#x5831;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="82.5,110.665,78.5,119.665,82.5,115.665,86.5,119.665,82.5,110.665" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="46" x="47.5" y="142.4951">has-one</text><!--link ユーザ to カート--><path d="M103.6982,206.915 C131.689,208.183 182.258,210.474 212.72,211.855 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30AB;&#x30FC;&#x30C8;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="217.797,212.085,208.9868,207.6827,212.8021,211.8593,208.6256,215.6746,217.797,212.085" style="stroke: #A80036; stroke-width: 1.0;"/><!--link カート to 商品--><path d="M273.124,206.912 C308.11,200.482 362.726,190.445 396.047,184.321 " fill="none" id="&#x30AB;&#x30FC;&#x30C8;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.904,181.958,399.3292,179.6508,403.9864,182.8619,400.7754,187.519,408.904,181.958" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="403.9864" x2="396.1185" y1="182.8619" y2="184.308"/><polygon fill="#FFFFFF" points="260.15,209.297,266.7742,212.1465,271.9523,207.1277,265.3281,204.2783,260.15,209.297" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="57" x="321" y="185.4951">has-many</text><!--link 商品 to カテゴリ--><path d="M456.226,179 C466.824,179 478.981,179 490.329,179 " fill="none" id="&#x5546;&#x54C1;-&#x30AB;&#x30C6;&#x30B4;&#x30EA;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="503.609,179,497.609,175,491.609,179,497.609,183,503.609,179" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="443.094,179,452.094,183,448.094,179,452.094,175,443.094,179" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="448.094" x2="456.094" y1="179" y2="179"/><!--link ユーザ to 注文--><path d="M115.951,193.188 C144.282,182.002 184.896,165.967 211.359,155.518 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x6CE8;&#x6587;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="223.768,150.619,213.9279,150.2038,219.1174,152.4553,216.8659,157.6448,223.768,150.619" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="219.1174" x2="211.676" y1="152.4553" y2="155.393"/><polygon fill="#FFFFFF" points="103.6982,198.025,110.7479,199.5419,114.8596,193.6179,107.8099,192.101,103.6982,198.025" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 注文 to 商品--><path d="M267.495,146.881 C295.754,149.205 340.884,154.005 379,163 C384.647,164.333 390.573,166.101 396.221,167.975 " fill="none" id="&#x6CE8;&#x6587;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.636,172.385,401.4941,165.6032,403.9244,170.7114,398.8163,173.1417,408.636,172.385" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="403.9244" x2="396.386" y1="170.7114" y2="168.0335"/><polygon fill="#FFFFFF" points="254.382,145.883,260.061,150.327,266.3474,146.7942,260.6684,142.3501,254.382,145.883" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to ウィッシュリスト--><path d="M103.5664,186.186 C124.072,166.322 157.19,135.284 188,111 C194.163,106.143 200.989,101.223 207.567,96.692 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="212.07,93.622,202.3803,95.3853,207.9383,96.4379,206.8857,101.9959,212.07,93.622" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ウィッシュリスト to 商品--><path d="M286.191,99.472 C313.541,113.136 348.665,131.311 379,149 C385.123,152.571 391.569,156.597 397.635,160.514 " fill="none" id="&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.643,167.762,403.3253,159.4722,404.4668,165.0126,398.9263,166.1541,408.643,167.762" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="404.4668" x2="397.785" y1="165.0126" y2="160.6135"/><polygon fill="#FFFFFF" points="274.217,93.53,277.8135,99.7802,284.9662,98.8644,281.3697,92.6141,274.217,93.53" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to レビュー--><path d="M115.437,221.503 C139.955,233.4052 173.892,249.8795 199.84,262.4755 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30EC;&#x30D3;&#x30E5;&#x30FC;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="211.859,268.3104,205.5093,260.7817,207.361,266.1269,202.0157,267.9785,211.859,268.3104" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="207.361" x2="200.165" y1="266.1269" y2="262.6333"/><polygon fill="#FFFFFF" points="103.6982,215.805,107.3489,222.0237,114.4934,221.0457,110.8427,214.8269,103.6982,215.805" style="stroke: #A80036; stroke-width: 1.0;"/><!--link レビュー to 商品--><path d="M277.827,261.6119 C305.96,247.0111 345.171,226.279 379,207 C385.138,203.502 391.66,199.63 397.805,195.909 " fill="none" id="&#x30EC;&#x30D3;&#x30E5;&#x30FC;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="408.956,189.078,401.7502,188.8009,398.7229,195.3457,405.9287,195.6229,408.956,189.078" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="266.118,267.6665,275.9497,267.0855,270.5593,265.3698,272.275,259.9794,266.118,267.6665" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="270.5593" x2="277.665" y1="265.3698" y2="261.6953"/><!--
+@startuml
+left to right direction
+
+hide circle
+hide method
+
+package DomainModel {
+    class 商品
+    class カテゴリ
+    class レビュー
+    class カート
+    class 注文
+    class ウィッシュリスト
+    class 登録情報
+    mix_actor ユーザ
+
+    商品 : 型番
+    商品 : 価格
+    登録情報 : メールアドレス
+
+    ユーザ -> 登録情報 : has-one
+    ユーザ - -> カート
+    カート o- -> 商品 : has-many
+    商品 <- -o カテゴリ
+    ユーザ o- -> 注文
+    注文 o- -> 商品
+    ユーザ - -> ウィッシュリスト
+    ウィッシュリスト o- -> 商品
+    ユーザ o- -> レビュー
+    レビュー <- -o 商品
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><p>&#x3055;&#x3089;&#x306B;&#x3001;&#x5546;&#x54C1;&#x306B;&#x300C;&#x4E88;&#x7D04;&#x5546;&#x54C1;&#x3001;&#x5728;&#x5EAB;&#x5546;&#x54C1;&#x300D;&#x306E;&#xFF12;&#x7A2E;&#x985E;&#x304C;&#x3042;&#x308B;&#x3068;&#x3059;&#x308C;&#x3070;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x306A;&#x308B;&#x3002;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="326px" preserveAspectRatio="none" style="width:660px;height:326px;" version="1.1" viewBox="0 0 660 326" width="660px" zoomAndPan="magnify"><defs><filter height="300%" id="fb14dp9kcvc93" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster DomainModel--><polygon fill="#FFFFFF" filter="url(#fb14dp9kcvc93)" points="22,24,124,24,131,47.6094,638,47.6094,638,314,22,314,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="131" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="26" y="40.5332">DomainModel</text><!--class 商品--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="60.7656" id="&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="409" y="158.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="414" y="175.957">&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="410" x2="442" y1="183.5938" y2="183.5938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="415" y="199.0127">&#x578B;&#x756A;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="415" y="212.8486">&#x4FA1;&#x683C;</text><!--class 予約商品--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="33.0938" id="&#x4E88;&#x7D04;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="240.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="571" y="257.957">&#x4E88;&#x7D04;&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="569" x2="621" y1="265.5938" y2="265.5938"/><!--class 在庫商品--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="33.0938" id="&#x5728;&#x5EAB;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="172.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="571" y="189.957">&#x5728;&#x5EAB;&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="569" x2="621" y1="197.5938" y2="197.5938"/><!--class カテゴリ--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="33.0938" id="&#x30AB;&#x30C6;&#x30B4;&#x30EA;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="104.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="571" y="121.957">&#x30AB;&#x30C6;&#x30B4;&#x30EA;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="569" x2="621" y1="129.5938" y2="129.5938"/><!--class レビュー--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="33.0938" id="&#x30EC;&#x30D3;&#x30E5;&#x30FC;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="212" y="264.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="215" y="281.957">&#x30EC;&#x30D3;&#x30E5;&#x30FC;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="213" x2="265" y1="289.5938" y2="289.5938"/><!--class カート--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="33.0938" id="&#x30AB;&#x30FC;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="218" y="196.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="221" y="213.957">&#x30AB;&#x30FC;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="219" x2="259" y1="221.5938" y2="221.5938"/><!--class 注文--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="33.0938" id="&#x6CE8;&#x6587;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="224" y="128.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="227" y="145.957">&#x6CE8;&#x6587;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="225" x2="253" y1="153.5938" y2="153.5938"/><!--class ウィッシュリスト--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="33.0938" id="&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="188" y="60.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="191" y="77.957">&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="189" x2="289" y1="85.5938" y2="85.5938"/><!--class 登録情報--><rect fill="#FEFECE" filter="url(#fb14dp9kcvc93)" height="46.9297" id="&#x767B;&#x9332;&#x60C5;&#x5831;" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="38" y="63.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="58.5" y="80.957">&#x767B;&#x9332;&#x60C5;&#x5831;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="126" y1="88.5938" y2="88.5938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="44" y="104.0127">&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</text><!--entity ユーザ--><ellipse cx="82.5" cy="173.5" fill="#FEFECE" filter="url(#fb14dp9kcvc93)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M82.5,181.5 L82.5,208.5 M69.5,189.5 L95.5,189.5 M82.5,208.5 L69.5,223.5 M82.5,208.5 L95.5,223.5 " fill="none" filter="url(#fb14dp9kcvc93)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="61.5" y="245.0332">&#x30E6;&#x30FC;&#x30B6;</text><!--link ユーザ to 登録情報--><path d="M82.5,163.374 C82.5,147.575 82.5,130.045 82.5,115.768 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x767B;&#x9332;&#x60C5;&#x5831;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="82.5,110.665,78.5,119.665,82.5,115.665,86.5,119.665,82.5,110.665" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="46" x="47.5" y="142.4951">has-one</text><!--link ユーザ to カート--><path d="M103.6982,206.915 C131.689,208.183 182.258,210.474 212.72,211.855 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30AB;&#x30FC;&#x30C8;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="217.797,212.085,208.9868,207.6827,212.8021,211.8593,208.6256,215.6746,217.797,212.085" style="stroke: #A80036; stroke-width: 1.0;"/><!--link カート to 商品--><path d="M273.124,208.703 C307.954,204.184 362.238,197.142 395.599,192.814 " fill="none" id="&#x30AB;&#x30FC;&#x30C8;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.904,191.088,399.4641,188.2793,403.9456,191.7314,400.4935,196.2128,408.904,191.088" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="403.9456" x2="396.0125" y1="191.7314" y2="192.7605"/><polygon fill="#FFFFFF" points="260.15,210.386,266.6148,213.5807,272.0502,208.8419,265.5854,205.6472,260.15,210.386" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="57" x="321" y="191.4951">has-many</text><!--link 商品 to カテゴリ--><path d="M454.694,172.286 C460.632,169.005 466.944,165.735 473,163 C499.845,150.874 531.307,140.051 555.419,132.43 " fill="none" id="&#x5546;&#x54C1;-&#x30AB;&#x30C6;&#x30B4;&#x30EA;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="567.983,128.538,561.068,126.4929,556.5205,132.0894,563.4356,134.1345,567.983,128.538" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="443.233,178.874,453.0293,177.858,447.5682,176.3828,449.0434,170.9217,443.233,178.874" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="447.5682" x2="454.504" y1="176.3828" y2="172.396"/><!--link ユーザ to 注文--><path d="M115.951,193.188 C144.282,182.002 184.896,165.967 211.359,155.518 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x6CE8;&#x6587;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="223.768,150.619,213.9279,150.2038,219.1174,152.4553,216.8659,157.6448,223.768,150.619" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="219.1174" x2="211.676" y1="152.4553" y2="155.393"/><polygon fill="#FFFFFF" points="103.6982,198.025,110.7479,199.5419,114.8596,193.6179,107.8099,192.101,103.6982,198.025" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 注文 to 商品--><path d="M267.193,147.747 C295.538,151.059 341.038,157.649 379,169 C384.885,170.76 391.018,173.068 396.817,175.489 " fill="none" id="&#x6CE8;&#x6587;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.751,180.799,402.1541,173.4859,404.1827,178.7665,398.9021,180.7952,408.751,180.799" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="404.1827" x2="396.8735" y1="178.7665" y2="175.514"/><polygon fill="#FFFFFF" points="254.064,146.305,259.5917,150.9358,265.9923,147.6144,260.4646,142.9836,254.064,146.305" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to ウィッシュリスト--><path d="M103.5664,186.186 C124.072,166.322 157.19,135.284 188,111 C194.163,106.143 200.989,101.223 207.567,96.692 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="212.07,93.622,202.3803,95.3853,207.9383,96.4379,206.8857,101.9959,212.07,93.622" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ウィッシュリスト to 商品--><path d="M284.796,99.699 C312.516,114.259 348.51,134.104 379,154 C385.408,158.181 392.08,162.977 398.29,167.65 " fill="none" id="&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.811,175.77,404.1288,167.1053,404.8523,172.7157,399.2419,173.4392,408.811,175.77" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="404.8523" x2="398.5195" y1="172.7157" y2="167.8275"/><polygon fill="#FFFFFF" points="273.078,93.599,276.5537,99.9172,283.7227,99.1389,280.247,92.8207,273.078,93.599" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to レビュー--><path d="M115.437,221.503 C139.955,233.4052 173.892,249.8795 199.84,262.4755 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30EC;&#x30D3;&#x30E5;&#x30FC;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="211.859,268.3104,205.5093,260.7817,207.361,266.1269,202.0157,267.9785,211.859,268.3104" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="207.361" x2="200.165" y1="266.1269" y2="262.6333"/><polygon fill="#FFFFFF" points="103.6982,215.805,107.3489,222.0237,114.4934,221.0457,110.8427,214.8269,103.6982,215.805" style="stroke: #A80036; stroke-width: 1.0;"/><!--link レビュー to 商品--><path d="M277.849,262.1778 C313.209,244.5934 365.181,218.748 396.962,202.943 " fill="none" id="&#x30EC;&#x30D3;&#x30E5;&#x30FC;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="408.852,197.03,401.6985,196.1201,398.1073,202.3733,405.2608,203.2832,408.852,197.03" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="266.114,268.0138,275.9536,267.5879,270.591,265.7874,272.3915,260.4248,266.114,268.0138" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="270.591" x2="277.754" y1="265.7874" y2="262.2252"/><!--link 商品 to 予約商品--><path d="M460.895,209.056 C464.921,211.17 469.016,213.2 473,215 C504.816,229.372 543.117,241.9123 567.983,249.4624 " fill="none" id="&#x5546;&#x54C1;-&#x4E88;&#x7D04;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="457.236,215.03,443.233,199.126,464.097,202.826,457.236,215.03" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="474" y="211.4951">is-a-kind-of</text><!--link 商品 to 在庫商品--><path d="M463.198,189 C494.788,189 539.857,189 567.995,189 " fill="none" id="&#x5546;&#x54C1;-&#x5728;&#x5EAB;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="463.013,196,443.013,189,463.013,182,463.013,196" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="474" y="185.4951">is-a-kind-of</text><!--
+@startuml
+left to right direction
+
+hide circle
+hide method
+
+package DomainModel {
+    class 商品
+    class 予約商品
+    class 在庫商品
+    class カテゴリ
+    class レビュー
+    class カート
+    class 注文
+    class ウィッシュリスト
+    class 登録情報
+    mix_actor ユーザ
+
+    商品 : 型番
+    商品 : 価格
+    登録情報 : メールアドレス
+
+    ユーザ -> 登録情報 : has-one
+    ユーザ - -> カート
+    カート o- -> 商品 : has-many
+    商品 <- -o カテゴリ
+    ユーザ o- -> 注文
+    注文 o- -> 商品
+    ユーザ - -> ウィッシュリスト
+    ウィッシュリスト o- -> 商品
+    ユーザ o- -> レビュー
+    レビュー <- -o 商品
+
+    商品 <|- - 予約商品 : is-a-kind-of
+    商品 <|- - 在庫商品 : is-a-kind-of
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="3-%E4%B8%AD%E5%BF%83%E3%81%A8%E3%81%AA%E3%82%8B%E3%83%A2%E3%83%87%E3%83%AB%E3%81%AB%E8%89%B2%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B">3. &#x4E2D;&#x5FC3;&#x3068;&#x306A;&#x308B;&#x30E2;&#x30C7;&#x30EB;&#x306B;&#x8272;&#x3092;&#x4ED8;&#x3051;&#x308B;</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="326px" preserveAspectRatio="none" style="width:660px;height:326px;" version="1.1" viewBox="0 0 660 326" width="660px" zoomAndPan="magnify"><defs><filter height="300%" id="fasy80axuzjy2" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster DomainModel--><polygon fill="#FFFFFF" filter="url(#fasy80axuzjy2)" points="22,24,124,24,131,47.6094,638,47.6094,638,314,22,314,22,24" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="22" x2="131" y1="47.6094" y2="47.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="96" x="26" y="40.5332">DomainModel</text><!--class 商品--><rect fill="#F5A9BC" filter="url(#fasy80axuzjy2)" height="60.7656" id="&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="409" y="158.5"/><rect fill="#F5A9BC" height="25.0938" style="stroke: #A80036; stroke-width: 1.5;" width="34" x="409" y="158.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="414" y="175.957">&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="410" x2="442" y1="183.5938" y2="183.5938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="415" y="199.0127">&#x578B;&#x756A;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="415" y="212.8486">&#x4FA1;&#x683C;</text><!--class 予約商品--><rect fill="#F5A9BC" filter="url(#fasy80axuzjy2)" height="33.0938" id="&#x4E88;&#x7D04;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="240.5"/><rect fill="#F5A9BC" height="25.0938" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="240.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="571" y="257.957">&#x4E88;&#x7D04;&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="569" x2="621" y1="265.5938" y2="265.5938"/><!--class 在庫商品--><rect fill="#F5A9BC" filter="url(#fasy80axuzjy2)" height="33.0938" id="&#x5728;&#x5EAB;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="172.5"/><rect fill="#F5A9BC" height="25.0938" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="172.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="571" y="189.957">&#x5728;&#x5EAB;&#x5546;&#x54C1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="569" x2="621" y1="197.5938" y2="197.5938"/><!--class カテゴリ--><rect fill="#FEFECE" filter="url(#fasy80axuzjy2)" height="33.0938" id="&#x30AB;&#x30C6;&#x30B4;&#x30EA;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="568" y="104.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="571" y="121.957">&#x30AB;&#x30C6;&#x30B4;&#x30EA;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="569" x2="621" y1="129.5938" y2="129.5938"/><!--class レビュー--><rect fill="#FEFECE" filter="url(#fasy80axuzjy2)" height="33.0938" id="&#x30EC;&#x30D3;&#x30E5;&#x30FC;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="212" y="264.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="215" y="281.957">&#x30EC;&#x30D3;&#x30E5;&#x30FC;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="213" x2="265" y1="289.5938" y2="289.5938"/><!--class カート--><rect fill="#FEFECE" filter="url(#fasy80axuzjy2)" height="33.0938" id="&#x30AB;&#x30FC;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="218" y="196.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="221" y="213.957">&#x30AB;&#x30FC;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="219" x2="259" y1="221.5938" y2="221.5938"/><!--class 注文--><rect fill="#CEF6F5" filter="url(#fasy80axuzjy2)" height="33.0938" id="&#x6CE8;&#x6587;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="224" y="128.5"/><rect fill="#CEF6F5" height="25.0938" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="224" y="128.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="227" y="145.957">&#x6CE8;&#x6587;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="225" x2="253" y1="153.5938" y2="153.5938"/><!--class ウィッシュリスト--><rect fill="#FEFECE" filter="url(#fasy80axuzjy2)" height="33.0938" id="&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="188" y="60.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="191" y="77.957">&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="189" x2="289" y1="85.5938" y2="85.5938"/><!--class 登録情報--><rect fill="#A9C6F6" filter="url(#fasy80axuzjy2)" height="46.9297" id="&#x767B;&#x9332;&#x60C5;&#x5831;" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="38" y="63.5"/><rect fill="#A9C6F6" height="25.0938" style="stroke: #A80036; stroke-width: 1.5;" width="89" x="38" y="63.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="58.5" y="80.957">&#x767B;&#x9332;&#x60C5;&#x5831;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="39" x2="126" y1="88.5938" y2="88.5938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="77" x="44" y="104.0127">&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;</text><!--entity ユーザ--><ellipse cx="82.5" cy="173.5" fill="#FEFECE" filter="url(#fasy80axuzjy2)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M82.5,181.5 L82.5,208.5 M69.5,189.5 L95.5,189.5 M82.5,208.5 L69.5,223.5 M82.5,208.5 L95.5,223.5 " fill="none" filter="url(#fasy80axuzjy2)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="61.5" y="245.0332">&#x30E6;&#x30FC;&#x30B6;</text><!--link ユーザ to 登録情報--><path d="M82.5,163.374 C82.5,147.575 82.5,130.045 82.5,115.768 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x767B;&#x9332;&#x60C5;&#x5831;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="82.5,110.665,78.5,119.665,82.5,115.665,86.5,119.665,82.5,110.665" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="46" x="47.5" y="142.4951">has-one</text><!--link ユーザ to カート--><path d="M103.6982,206.915 C131.689,208.183 182.258,210.474 212.72,211.855 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30AB;&#x30FC;&#x30C8;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="217.797,212.085,208.9868,207.6827,212.8021,211.8593,208.6256,215.6746,217.797,212.085" style="stroke: #A80036; stroke-width: 1.0;"/><!--link カート to 商品--><path d="M273.124,208.703 C307.954,204.184 362.238,197.142 395.599,192.814 " fill="none" id="&#x30AB;&#x30FC;&#x30C8;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.904,191.088,399.4641,188.2793,403.9456,191.7314,400.4935,196.2128,408.904,191.088" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="403.9456" x2="396.0125" y1="191.7314" y2="192.7605"/><polygon fill="#FFFFFF" points="260.15,210.386,266.6148,213.5807,272.0502,208.8419,265.5854,205.6472,260.15,210.386" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="57" x="321" y="191.4951">has-many</text><!--link 商品 to カテゴリ--><path d="M454.694,172.286 C460.632,169.005 466.944,165.735 473,163 C499.845,150.874 531.307,140.051 555.419,132.43 " fill="none" id="&#x5546;&#x54C1;-&#x30AB;&#x30C6;&#x30B4;&#x30EA;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="567.983,128.538,561.068,126.4929,556.5205,132.0894,563.4356,134.1345,567.983,128.538" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="443.233,178.874,453.0293,177.858,447.5682,176.3828,449.0434,170.9217,443.233,178.874" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="447.5682" x2="454.504" y1="176.3828" y2="172.396"/><!--link ユーザ to 注文--><path d="M115.951,193.188 C144.282,182.002 184.896,165.967 211.359,155.518 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x6CE8;&#x6587;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="223.768,150.619,213.9279,150.2038,219.1174,152.4553,216.8659,157.6448,223.768,150.619" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="219.1174" x2="211.676" y1="152.4553" y2="155.393"/><polygon fill="#FFFFFF" points="103.6982,198.025,110.7479,199.5419,114.8596,193.6179,107.8099,192.101,103.6982,198.025" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 注文 to 商品--><path d="M267.193,147.747 C295.538,151.059 341.038,157.649 379,169 C384.885,170.76 391.018,173.068 396.817,175.489 " fill="none" id="&#x6CE8;&#x6587;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.751,180.799,402.1541,173.4859,404.1827,178.7665,398.9021,180.7952,408.751,180.799" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="404.1827" x2="396.8735" y1="178.7665" y2="175.514"/><polygon fill="#FFFFFF" points="254.064,146.305,259.5917,150.9358,265.9923,147.6144,260.4646,142.9836,254.064,146.305" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to ウィッシュリスト--><path d="M103.5664,186.186 C124.072,166.322 157.19,135.284 188,111 C194.163,106.143 200.989,101.223 207.567,96.692 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="212.07,93.622,202.3803,95.3853,207.9383,96.4379,206.8857,101.9959,212.07,93.622" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ウィッシュリスト to 商品--><path d="M284.796,99.699 C312.516,114.259 348.51,134.104 379,154 C385.408,158.181 392.08,162.977 398.29,167.65 " fill="none" id="&#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="408.811,175.77,404.1288,167.1053,404.8523,172.7157,399.2419,173.4392,408.811,175.77" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="404.8523" x2="398.5195" y1="172.7157" y2="167.8275"/><polygon fill="#FFFFFF" points="273.078,93.599,276.5537,99.9172,283.7227,99.1389,280.247,92.8207,273.078,93.599" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to レビュー--><path d="M115.437,221.503 C139.955,233.4052 173.892,249.8795 199.84,262.4755 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30EC;&#x30D3;&#x30E5;&#x30FC;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="211.859,268.3104,205.5093,260.7817,207.361,266.1269,202.0157,267.9785,211.859,268.3104" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="207.361" x2="200.165" y1="266.1269" y2="262.6333"/><polygon fill="#FFFFFF" points="103.6982,215.805,107.3489,222.0237,114.4934,221.0457,110.8427,214.8269,103.6982,215.805" style="stroke: #A80036; stroke-width: 1.0;"/><!--link レビュー to 商品--><path d="M277.849,262.1778 C313.209,244.5934 365.181,218.748 396.962,202.943 " fill="none" id="&#x30EC;&#x30D3;&#x30E5;&#x30FC;-&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="408.852,197.03,401.6985,196.1201,398.1073,202.3733,405.2608,203.2832,408.852,197.03" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="266.114,268.0138,275.9536,267.5879,270.591,265.7874,272.3915,260.4248,266.114,268.0138" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="270.591" x2="277.754" y1="265.7874" y2="262.2252"/><!--link 商品 to 予約商品--><path d="M460.895,209.056 C464.921,211.17 469.016,213.2 473,215 C504.816,229.372 543.117,241.9123 567.983,249.4624 " fill="none" id="&#x5546;&#x54C1;-&#x4E88;&#x7D04;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="457.236,215.03,443.233,199.126,464.097,202.826,457.236,215.03" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="474" y="211.4951">is-a-kind-of</text><!--link 商品 to 在庫商品--><path d="M463.198,189 C494.788,189 539.857,189 567.995,189 " fill="none" id="&#x5546;&#x54C1;-&#x5728;&#x5EAB;&#x5546;&#x54C1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="463.013,196,443.013,189,463.013,182,463.013,196" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="63" x="474" y="185.4951">is-a-kind-of</text><!--
+@startuml
+left to right direction
+
+hide circle
+hide method
+
+package DomainModel {
+    class 商品 #F5A9BC
+    class 予約商品 #F5A9BC
+    class 在庫商品 #F5A9BC
+    class カテゴリ
+    class レビュー
+    class カート
+    class 注文 #CEF6F5
+    class ウィッシュリスト
+    class 登録情報 #A9C6F6
+    mix_actor ユーザ
+
+    商品 : 型番
+    商品 : 価格
+    登録情報 : メールアドレス
+
+    ユーザ -> 登録情報 : has-one
+    ユーザ - -> カート
+    カート o- -> 商品 : has-many
+    商品 <- -o カテゴリ
+    ユーザ o- -> 注文
+    注文 o- -> 商品
+    ユーザ - -> ウィッシュリスト
+    ウィッシュリスト o- -> 商品
+    ユーザ o- -> レビュー
+    レビュー <- -o 商品
+
+    商品 <|- - 予約商品 : is-a-kind-of
+    商品 <|- - 在庫商品 : is-a-kind-of
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><p>&#x6700;&#x7D42;&#x7684;&#x306A;&#x4E0A;&#x8A18;&#x306E;&#x56F3;&#x3092;&#x63CF;&#x304F;PlantUML&#x306E;&#x30B3;&#x30FC;&#x30C9;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x901A;&#x308A;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>left to right direction
+
+hide circle
+hide method
+
+package DomainModel {
+    class &#x5546;&#x54C1; #F5A9BC
+    class &#x4E88;&#x7D04;&#x5546;&#x54C1; #F5A9BC
+    class &#x5728;&#x5EAB;&#x5546;&#x54C1; #F5A9BC
+    class &#x30AB;&#x30C6;&#x30B4;&#x30EA;
+    class &#x30EC;&#x30D3;&#x30E5;&#x30FC;
+    class &#x30AB;&#x30FC;&#x30C8;
+    class &#x6CE8;&#x6587; #CEF6F5
+    class &#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;
+    class &#x767B;&#x9332;&#x60C5;&#x5831; #A9C6F6
+    mix_actor &#x30E6;&#x30FC;&#x30B6;
+
+    &#x5546;&#x54C1; : &#x578B;&#x756A;
+    &#x5546;&#x54C1; : &#x4FA1;&#x683C;
+    &#x767B;&#x9332;&#x60C5;&#x5831; : &#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;
+
+    &#x30E6;&#x30FC;&#x30B6; -&gt; &#x767B;&#x9332;&#x60C5;&#x5831; : has-one
+    &#x30E6;&#x30FC;&#x30B6; --&gt; &#x30AB;&#x30FC;&#x30C8;
+    &#x30AB;&#x30FC;&#x30C8; o--&gt; &#x5546;&#x54C1; : has-many
+    &#x5546;&#x54C1; &lt;--o &#x30AB;&#x30C6;&#x30B4;&#x30EA;
+    &#x30E6;&#x30FC;&#x30B6; o--&gt; &#x6CE8;&#x6587;
+    &#x6CE8;&#x6587; o--&gt; &#x5546;&#x54C1;
+    &#x30E6;&#x30FC;&#x30B6; --&gt; &#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8;
+    &#x30A6;&#x30A3;&#x30C3;&#x30B7;&#x30E5;&#x30EA;&#x30B9;&#x30C8; o--&gt; &#x5546;&#x54C1;
+    &#x30E6;&#x30FC;&#x30B6; o--&gt; &#x30EC;&#x30D3;&#x30E5;&#x30FC;
+    &#x30EC;&#x30D3;&#x30E5;&#x30FC; &lt;--o &#x5546;&#x54C1;
+
+    &#x5546;&#x54C1; &lt;|-- &#x4E88;&#x7D04;&#x5546;&#x54C1; : is-a-kind-of
+    &#x5546;&#x54C1; &lt;|-- &#x5728;&#x5EAB;&#x5546;&#x54C1; : is-a-kind-of
+}
+</code></pre><h2 class="mume-header" id="%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%82%92%E7%94%A8%E3%81%84%E3%82%8B%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x3092;&#x7528;&#x3044;&#x308B;&#x969B;&#x306E;&#x6CE8;&#x610F;&#x70B9;</h2>
+
+<hr>
+<ul>
+<li>&#x5F8C;&#x306E;&#x8A73;&#x7D30;&#x8A2D;&#x8A08;&#x3092;&#x884C;&#x3046;&#x5DE5;&#x7A0B;&#x3067;&#x3082;&#x3001;&#x610F;&#x5473;&#x7684;&#x306A;&#x30E2;&#x30C7;&#x30EB;&#x3067;&#x3042;&#x308B;&#x3068;&#x3053;&#x308D;&#x306E;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x66F4;&#x65B0;&#x3092;&#x6020;&#x3089;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x8981;&#x4EF6;&#x3068;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x9593;&#x3067;&#x4ED5;&#x69D8;&#x306E;&#x98DF;&#x3044;&#x9055;&#x3044;&#x304C;&#x8D77;&#x3053;&#x3089;&#x306A;&#x3044;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x5225;&#x540D;&#x3068;&#x3057;&#x3066;&#x300C;&#x6982;&#x5FF5;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x300D;&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x3053;&#x3068;&#x3082;&#x3042;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%AE%E6%B4%BB%E7%94%A8%E6%96%B9%E6%B3%95">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x6D3B;&#x7528;&#x65B9;&#x6CD5;</h2>
+
+<hr>
+<ul>
+<li>&#x6700;&#x521D;&#x306B;&#x56F3;&#x3092;&#x63CF;&#x3044;&#x305F;&#x6642;&#x70B9;&#x3067;&#x306F;&#x3001;&#x5FC5;&#x305A;&#x56F3;&#x306E;&#x3069;&#x3053;&#x304B;&#x306B;&#x300C;&#x8A8D;&#x8B58;&#x304C;&#x3042;&#x3044;&#x307E;&#x3044;&#x306A;&#x90E8;&#x5206;&#x300D;&#x304C;&#x51FA;&#x3066;&#x304F;&#x308B;&#x3002;</li>
+<li>&#x3042;&#x3044;&#x307E;&#x3044;&#x306A;&#x90E8;&#x5206;&#x3092;&#x898B;&#x3064;&#x3051;&#x305F;&#x306E;&#x306F;&#x52DD;&#x5229;&#x3068;&#x898B;&#x306A;&#x3057;&#x3066;&#x3001;&#x4ED5;&#x69D8;&#x306E;&#x518D;&#x78BA;&#x8A8D;&#x3092;&#x884C;&#x3046;&#x3002;</li>
+<li>&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304C;&#x9032;&#x884C;&#x3057;&#x3066;&#x4ED5;&#x69D8;&#x5909;&#x66F4;&#x304C;&#x51FA;&#x3066;&#x304D;&#x305F;&#x3068;&#x304D;&#x3001;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306F;&#x6982;&#x5FF5;&#x306E;&#x518D;&#x78BA;&#x8A8D;&#x306E;&#x5834;&#x3068;&#x3057;&#x3066;&#x5F79;&#x306B;&#x7ACB;&#x3064;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%A2%E3%83%87%E3%83%AB%E5%9B%B3%E3%81%AE%E4%BD%9C%E6%88%90%E4%BE%8B">&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306E;&#x4F5C;&#x6210;&#x4F8B;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E4%BE%8B1-%E8%AA%8D%E8%A8%BC%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;1. &#x8A8D;&#x8A3C;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x5834;&#x5408;</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="189px" preserveAspectRatio="none" style="width:222px;height:189px;" version="1.1" viewBox="0 0 222 189" width="222px" zoomAndPan="magnify"><defs><filter height="300%" id="f48m399fc46yd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class ユーザ--><rect fill="#FEFECE" filter="url(#f48m399fc46yd)" height="60.7656" id="&#x30E6;&#x30FC;&#x30B6;" style="stroke: #A80036; stroke-width: 1.5;" width="78" x="6" y="60"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="27" y="77.457">&#x30E6;&#x30FC;&#x30B6;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="83" y1="85.0938" y2="85.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="66" x="12" y="100.5127">&#x30CB;&#x30C3;&#x30AF;&#x30CD;&#x30FC;&#x30E0;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="33" x="12" y="114.3486">&#x30E1;&#x30FC;&#x30EB;</text><!--class メール認証--><rect fill="#FEFECE" filter="url(#f48m399fc46yd)" height="60.7656" id="&#x30E1;&#x30FC;&#x30EB;&#x8A8D;&#x8A3C;" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="144" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="147.5" y="25.457">&#x30E1;&#x30FC;&#x30EB;&#x8A8D;&#x8A3C;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="145" x2="210" y1="33.0938" y2="33.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="150" y="48.5127">&#x30E6;&#x30FC;&#x30B6;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="150" y="62.3486">&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;</text><!--class OAuth認証--><rect fill="#FEFECE" filter="url(#f48m399fc46yd)" height="74.6016" id="OAuth&#x8A8D;&#x8A3C;" style="stroke: #A80036; stroke-width: 1.5;" width="67" x="144" y="104"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="57" x="149" y="121.457">OAuth&#x8A8D;&#x8A3C;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="145" x2="210" y1="129.0938" y2="129.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="150" y="144.5127">&#x30E6;&#x30FC;&#x30B6;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="150" y="158.3486">&#x30D7;&#x30ED;&#x30D0;&#x30A4;&#x30C0;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="44" x="150" y="172.1846">&#x30C8;&#x30FC;&#x30AF;&#x30F3;</text><!--link ユーザ to メール認証--><path d="M96.5134,70.372 C112.422,64.033 129.564,57.203 143.882,51.497 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30E1;&#x30FC;&#x30EB;&#x8A8D;&#x8A3C;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="84.0968,75.32,91.1513,76.8146,95.2442,70.8776,88.1897,69.383,84.0968,75.32" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to OAuth認証--><path d="M96.5134,110.2409 C112.422,116.458 129.564,123.1571 143.882,128.7529 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-OAuth&#x8A8D;&#x8A3C;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="84.0968,105.3884,88.2292,111.298,95.2736,109.7564,91.1412,103.8468,84.0968,105.3884" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+hide circle
+hide method
+
+class ユーザ
+class メール認証
+class OAuth認証
+
+ユーザ : ニックネーム
+ユーザ : メール
+メール認証 : ユーザID
+メール認証 : パスワード
+OAuth認証 : ユーザID
+OAuth認証 : プロバイダ
+OAuth認証 : トークン
+
+ユーザ o- - メール認証
+ユーザ o- - OAuth認証
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E4%BE%8B2-%E8%AA%B2%E9%87%91%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;2. &#x8AB2;&#x91D1;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x5834;&#x5408;</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="299px" preserveAspectRatio="none" style="width:446px;height:299px;" version="1.1" viewBox="0 0 446 299" width="446px" zoomAndPan="magnify"><defs><filter height="300%" id="fo5hwyb483yli" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class ユーザ--><rect fill="#FEFECE" filter="url(#fo5hwyb483yli)" height="33.0938" id="&#x30E6;&#x30FC;&#x30B6;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="36" y="125"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="39" y="142.457">&#x30E6;&#x30FC;&#x30B6;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="37" x2="77" y1="150.0938" y2="150.0938"/><!--class クレジットカード--><rect fill="#FEFECE" filter="url(#fo5hwyb483yli)" height="60.7656" id="&#x30AF;&#x30EC;&#x30B8;&#x30C3;&#x30C8;&#x30AB;&#x30FC;&#x30C9;" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="6" y="193"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="9" y="210.457">&#x30AF;&#x30EC;&#x30B8;&#x30C3;&#x30C8;&#x30AB;&#x30FC;&#x30C9;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="107" y1="218.0938" y2="218.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="12" y="233.5127">&#x30E6;&#x30FC;&#x30B6;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="44" x="12" y="247.3486">&#x30C8;&#x30FC;&#x30AF;&#x30F3;</text><!--class 継続課金--><rect fill="#FEFECE" filter="url(#fo5hwyb483yli)" height="74.6016" id="&#x7D99;&#x7D9A;&#x8AB2;&#x91D1;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="229.5" y="104"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="232.5" y="121.457">&#x7D99;&#x7D9A;&#x8AB2;&#x91D1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="230.5" x2="282.5" y1="129.0938" y2="129.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="235.5" y="144.5127">&#x30E6;&#x30FC;&#x30B6;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="235.5" y="158.3486">&#x30D7;&#x30E9;&#x30F3;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="31" x="235.5" y="172.1846">&#x672C;&#x5C4B;ID</text><!--class 本屋--><rect fill="#FEFECE" filter="url(#fo5hwyb483yli)" height="33.0938" id="&#x672C;&#x5C4B;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="405" y="125"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="408" y="142.457">&#x672C;&#x5C4B;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="406" x2="434" y1="150.0938" y2="150.0938"/><!--class 決済--><rect fill="#FEFECE" filter="url(#fo5hwyb483yli)" height="74.6016" id="&#x6C7A;&#x6E08;" style="stroke: #A80036; stroke-width: 1.5;" width="177" x="168" y="214"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="244.5" y="231.457">&#x6C7A;&#x6E08;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="169" x2="344" y1="239.0938" y2="239.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="174" y="254.5127">&#x7D99;&#x7D9A;&#x8AB2;&#x91D1;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="64" x="174" y="268.3486">&#x30A4;&#x30F3;&#x30DC;&#x30A4;&#x30B9;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="165" x="174" y="282.1846">&#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&#xFF08;&#x5B8C;&#x4E86;&#x3001;&#x5931;&#x6557;&#x3001;&#x5F85;&#x3061;&#xFF09;</text><!--class 課金プラン--><rect fill="#FEFECE" filter="url(#fo5hwyb483yli)" height="60.7656" id="&#x8AB2;&#x91D1;&#x30D7;&#x30E9;&#x30F3;" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="223.5" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="226.5" y="25.457">&#x8AB2;&#x91D1;&#x30D7;&#x30E9;&#x30F3;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="224.5" x2="288.5" y1="33.0938" y2="33.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="229.5" y="48.5127">&#x671F;&#x9593;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="229.5" y="62.3486">&#x91D1;&#x984D;</text><!--link ユーザ to 継続課金--><path d="M91.1169,141.5 C129.96,141.5 193.56,141.5 229.192,141.5 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x7D99;&#x7D9A;&#x8AB2;&#x91D1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="78.0242,141.5,84.0242,145.5,90.0242,141.5,84.0242,137.5,78.0242,141.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to クレジットカード--><path d="M57,171.498 C57,178.582 57,185.666 57,192.75 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30AF;&#x30EC;&#x30B8;&#x30C3;&#x30C8;&#x30AB;&#x30FC;&#x30C9;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="57,158.316,53,164.316,57,170.316,61,164.316,57,158.316" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 課金プラン to 継続課金--><path d="M256.5,82.309 C256.5,89.432 256.5,96.556 256.5,103.68 " fill="none" id="&#x8AB2;&#x91D1;&#x30D7;&#x30E9;&#x30F3;-&#x7D99;&#x7D9A;&#x8AB2;&#x91D1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="256.5,69.053,252.5,75.053,256.5,81.053,260.5,75.053,256.5,69.053" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 継続課金 to 決済--><path d="M256.5,192.0101 C256.5,199.2359 256.5,206.4617 256.5,213.6875 " fill="none" id="&#x7D99;&#x7D9A;&#x8AB2;&#x91D1;-&#x6C7A;&#x6E08;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="256.5,179.004,252.5,185.004,256.5,191.004,260.5,185.004,256.5,179.004" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 継続課金 to 本屋--><path d="M283.807,141.5 C313.456,141.5 361.435,141.5 391.547,141.5 " fill="none" id="&#x7D99;&#x7D9A;&#x8AB2;&#x91D1;-&#x672C;&#x5C4B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="404.735,141.5,398.735,137.5,392.735,141.5,398.735,145.5,404.735,141.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+hide circle
+hide method
+
+class ユーザ
+class クレジットカード
+class 継続課金
+class 本屋
+class 決済
+class 課金プラン
+
+課金プラン : 期間
+課金プラン : 金額
+継続課金 : ユーザID
+継続課金 : プランID
+継続課金 : 本屋ID
+決済 : 継続課金ID
+決済 : インボイスID
+決済 : ステータス（完了、失敗、待ち）
+クレジットカード : ユーザID
+クレジットカード : トークン
+
+ユーザ o- - 継続課金
+ユーザ o- クレジットカード
+課金プラン o- 継続課金
+継続課金 o- 決済
+継続課金 - -o 本屋
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E4%BE%8B3-%E6%9C%AC%E5%B1%8B%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;3. &#x672C;&#x5C4B;&#x306E;&#x5834;&#x5408;</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="203px" preserveAspectRatio="none" style="width:285px;height:203px;" version="1.1" viewBox="0 0 285 203" width="285px" zoomAndPan="magnify"><defs><filter height="300%" id="f1bmwqlf25ld9s" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class 投稿--><rect fill="#FEFECE" filter="url(#f1bmwqlf25ld9s)" height="33.0938" id="&#x6295;&#x7A3F;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="6" y="36"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="9" y="53.457">&#x6295;&#x7A3F;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="35" y1="61.0938" y2="61.0938"/><!--class 本屋--><rect fill="#FEFECE" filter="url(#f1bmwqlf25ld9s)" height="88.4375" id="&#x672C;&#x5C4B;" style="stroke: #A80036; stroke-width: 1.5;" width="76" x="96" y="8.5"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="122" y="25.957">&#x672C;&#x5C4B;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="97" x2="171" y1="33.5938" y2="33.5938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="22" x="102" y="49.0127">&#x540D;&#x524D;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="53" x="102" y="62.8486">&#x30AB;&#x30D0;&#x30FC;URL</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="64" x="102" y="76.6846">&#x30A2;&#x30A4;&#x30B3;&#x30F3;URL</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="55" x="102" y="90.5205">&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</text><!--class 従業員--><rect fill="#FEFECE" filter="url(#f1bmwqlf25ld9s)" height="60.7656" id="&#x5F93;&#x696D;&#x54E1;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="107" y="132"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="116" y="149.457">&#x5F93;&#x696D;&#x54E1;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="108" x2="160" y1="157.0938" y2="157.0938"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="42" x="113" y="172.5127">&#x30E6;&#x30FC;&#x30B6;ID</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="31" x="113" y="186.3486">&#x672C;&#x5C4B;ID</text><!--class ユーザ--><rect fill="#FEFECE" filter="url(#f1bmwqlf25ld9s)" height="33.0938" id="&#x30E6;&#x30FC;&#x30B6;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="232" y="146"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="235" y="163.457">&#x30E6;&#x30FC;&#x30B6;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="233" x2="273" y1="171.0938" y2="171.0938"/><!--link 投稿 to 本屋--><path d="M36.0582,52.5 C47.9006,52.5 65.5916,52.5 82.6318,52.5 " fill="none" id="&#x6295;&#x7A3F;-&#x672C;&#x5C4B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="95.7298,52.5,89.7298,48.5,83.7298,52.5,89.7298,56.5,95.7298,52.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 本屋 to 従業員--><path d="M134,109.8679 C134,117.2427 134,124.6174 134,131.9922 " fill="none" id="&#x672C;&#x5C4B;-&#x5F93;&#x696D;&#x54E1;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="134,96.5933,130,102.5933,134,108.5933,138,102.5933,134,96.5933" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 従業員 to ユーザ--><path d="M161.257,162.5 C182.547,162.5 212.123,162.5 231.647,162.5 " fill="none" id="&#x5F93;&#x696D;&#x54E1;-&#x30E6;&#x30FC;&#x30B6;" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+hide circle
+hide method
+
+class 投稿
+class 本屋
+class 従業員
+class ユーザ
+
+本屋 : 名前
+本屋 : カバーURL
+本屋 : アイコンURL
+本屋 : メッセージ
+従業員 : ユーザID
+従業員 : 本屋ID
+
+投稿 - -o 本屋
+本屋 o- 従業員
+従業員 - - ユーザ
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E4%BE%8B4-%E6%8A%95%E7%A8%BF%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AE%E5%A0%B4%E5%90%88">&#x4F8B;4. &#x6295;&#x7A3F;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x5834;&#x5408;</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="120px" preserveAspectRatio="none" style="width:353px;height:120px;" version="1.1" viewBox="0 0 353 120" width="353px" zoomAndPan="magnify"><defs><filter height="300%" id="f1wprsa2b9bejf" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--class 投稿--><rect fill="#FEFECE" filter="url(#f1wprsa2b9bejf)" height="33.0938" id="&#x6295;&#x7A3F;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="222" y="42"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="225" y="59.457">&#x6295;&#x7A3F;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="223" x2="251" y1="67.0938" y2="67.0938"/><!--class 本屋--><rect fill="#FEFECE" filter="url(#f1wprsa2b9bejf)" height="33.0938" id="&#x672C;&#x5C4B;" style="stroke: #A80036; stroke-width: 1.5;" width="30" x="312" y="42"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="24" x="315" y="59.457">&#x672C;&#x5C4B;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="313" x2="341" y1="67.0938" y2="67.0938"/><!--class コメント--><rect fill="#FEFECE" filter="url(#f1wprsa2b9bejf)" height="33.0938" id="&#x30B3;&#x30E1;&#x30F3;&#x30C8;" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="108" y="8"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="111" y="25.457">&#x30B3;&#x30E1;&#x30F3;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="109" x2="161" y1="33.0938" y2="33.0938"/><!--class ユーザ--><rect fill="#FEFECE" filter="url(#f1wprsa2b9bejf)" height="33.0938" id="&#x30E6;&#x30FC;&#x30B6;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="6" y="42"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="9" y="59.457">&#x30E6;&#x30FC;&#x30B6;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="7" x2="47" y1="67.0938" y2="67.0938"/><!--class いいね--><rect fill="#FEFECE" filter="url(#f1wprsa2b9bejf)" height="33.0938" id="&#x3044;&#x3044;&#x306D;" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="114" y="76"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="36" x="117" y="93.457">&#x3044;&#x3044;&#x306D;</text><line style="stroke: #A80036; stroke-width: 1.5;" x1="115" x2="155" y1="101.0938" y2="101.0938"/><!--link ユーザ to いいね--><path d="M60.9124,69.0568 C78.2859,74.6294 99.0392,81.2861 113.984,86.0799 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x3044;&#x3044;&#x306D;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="48.4379,65.0555,52.9295,70.6969,59.8645,68.7206,55.3729,63.0792,48.4379,65.0555" style="stroke: #A80036; stroke-width: 1.0;"/><!--link ユーザ to コメント--><path d="M60.9352,47.9359 C76.0818,43.0775 93.7934,37.3965 107.985,32.8445 " fill="none" id="&#x30E6;&#x30FC;&#x30B6;-&#x30B3;&#x30E1;&#x30F3;&#x30C8;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="48.4379,51.9445,55.3729,53.9208,59.8645,48.2794,52.9295,46.3031,48.4379,51.9445" style="stroke: #A80036; stroke-width: 1.0;"/><!--link いいね to 投稿--><path d="M156.236,85.6196 C171.485,80.4351 192.541,73.2762 209.19,67.6155 " fill="none" id="&#x3044;&#x3044;&#x306D;-&#x6295;&#x7A3F;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="221.914,63.2891,214.9458,61.4332,210.5526,67.1515,217.5208,69.0075,221.914,63.2891" style="stroke: #A80036; stroke-width: 1.0;"/><!--link コメント to 投稿--><path d="M162.013,33.3443 C176.485,38.2648 194.471,44.38 209.085,49.3489 " fill="none" id="&#x30B3;&#x30E1;&#x30F3;&#x30C8;-&#x6295;&#x7A3F;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="221.839,53.6853,217.4464,47.9665,210.478,49.8216,214.8706,55.5405,221.839,53.6853" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 投稿 to 本屋--><path d="M252.139,58.5 C264.583,58.5 283.062,58.5 298.423,58.5 " fill="none" id="&#x6295;&#x7A3F;-&#x672C;&#x5C4B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#FFFFFF" points="311.896,58.5,305.896,54.5,299.896,58.5,305.896,62.5,311.896,58.5" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+hide circle
+hide method
+
+class 投稿
+class 本屋
+class コメント
+class ユーザ
+class いいね
+
+ユーザ o- - いいね
+ユーザ o- - コメント
+いいね - -o 投稿
+コメント - -o 投稿
+投稿 - -o 本屋
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</h2>
+
+<hr>
+<ul>
+<li><a href="http://blog.asial.co.jp/archive/category/UML">Asial/Developers/Blog UML&#x3092;&#x63CF;&#x3053;&#x3046;</a></li>
+<li><a href="http://little-staff.hatenablog.com/entry/2017/10/07/125845">&#x50D5;&#x3089;&#x304C;&#x672C;&#x5C4B;&#x306E;&#x672A;&#x6765;&#x3092;&#x5909;&#x3048;&#x308B;&#x307E;&#x3067; &#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x306E;&#x8A2D;&#x8A08;&#x56F3;</a></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
