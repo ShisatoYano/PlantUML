@@ -1,0 +1,650 @@
+<!DOCTYPE html><html><head>
+      <title>UsecaseDiagram</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\shisa\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.11\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</h1>
+
+<h2 class="mume-header" id="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</h2>
+
+<hr>
+<p>&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x306E;&#x4ED5;&#x69D8;&#x66F8;&#x3001;&#x8A2D;&#x8A08;&#x66F8;&#x306E;&#x4F5C;&#x6210;&#x3084;&#x7BA1;&#x7406;&#x3092;&#x52B9;&#x7387;&#x5316;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;Markdown + PlantUML&#x306B;&#x3088;&#x308B;&#x4F5C;&#x6210;&#x65B9;&#x6CD5;&#x3092;&#x65E5;&#x3005;&#x6A21;&#x7D22;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>
+&#x3057;&#x304B;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;&#x305D;&#x3082;&#x305D;&#x3082;UML&#x56F3;&#x306E;&#x6B63;&#x5F0F;&#x306A;&#x66F8;&#x304D;&#x65B9;&#x3068;&#x3044;&#x3046;&#x3082;&#x306E;&#x3092;&#x3061;&#x3083;&#x3093;&#x3068;&#x5206;&#x304B;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x306E;&#x304C;&#x6B63;&#x76F4;&#x306A;&#x3068;&#x3053;&#x308D;&#x306A;&#x306E;&#x3067;&#x3001;PlantUML&#x3092;&#x901A;&#x3058;&#x3066;UML&#x306E;&#x5404;&#x7A2E;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x52C9;&#x5F37;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x672C;&#x7A3F;&#x306E;&#x30C6;&#x30FC;&#x30DE;&#x306F;&#x3001;&#x300C;UML&#x306B;&#x3088;&#x308B;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x300D;&#x3067;&#x3059;&#x3002;</li>
+<li>&#x672C;&#x7A3F;&#x306B;&#x304A;&#x3051;&#x308B;UML&#x56F3;&#x306E;&#x4F5C;&#x6210;&#x306F;&#x3001;Markdown + PlantUML&#x304C;&#x30D9;&#x30FC;&#x30B9;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x524D;&#x63D0;&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</h2>
+
+<hr>
+<ul>
+<li><a href="#plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</a>
+<ul>
+<li><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</a></li>
+<li><a href="#%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</a></li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E8%A8%98%E8%BF%B0%E3%81%A8%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x8A18;&#x8FF0;&#x3068;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;</a></li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%82%92%E6%B4%97%E3%81%84%E5%87%BA%E3%81%99%E9%9A%9B%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x6D17;&#x3044;&#x51FA;&#x3059;&#x969B;&#x306E;&#x30DD;&#x30A4;&#x30F3;&#x30C8;</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E3%82%B3%E3%83%BC%E3%82%B9%E3%81%A8%E4%BB%A3%E6%9B%BF%E3%82%B3%E3%83%BC%E3%82%B9">&#x57FA;&#x672C;&#x30B3;&#x30FC;&#x30B9;&#x3068;&#x4EE3;&#x66FF;&#x30B3;&#x30FC;&#x30B9;</a></li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x3092;&#x69CB;&#x6210;&#x3059;&#x308B;&#x8981;&#x7D20;</a>
+<ul>
+<li><a href="#%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC">&#x30A2;&#x30AF;&#x30BF;&#x30FC;</a></li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;</a></li>
+<li><a href="#%E5%AF%BE%E8%B1%A1">&#x5BFE;&#x8C61;</a></li>
+</ul>
+</li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3%E3%82%92%E6%8F%8F%E3%81%8F%E6%B5%81%E3%82%8C">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x3092;&#x63CF;&#x304F;&#x6D41;&#x308C;</a>
+<ul>
+<li><a href="#1-%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%92%E5%88%97%E6%8C%99%E3%81%99%E3%82%8B">1. &#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;</a></li>
+<li><a href="#2-%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E6%AF%8E%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%82%92%E5%88%97%E6%8C%99%E3%81%99%E3%82%8B">2. &#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x6BCE;&#x306E;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;</a></li>
+<li><a href="#3-%E5%AF%BE%E8%B1%A1%E3%81%AB%E5%8F%8E%E3%82%81%E3%82%8B">3. &#x5BFE;&#x8C61;&#x306B;&#x53CE;&#x3081;&#x308B;</a></li>
+<li><a href="#4-%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%82%92%E6%95%B4%E7%90%86%E3%81%99%E3%82%8B">4. &#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x6574;&#x7406;&#x3059;&#x308B;</a></li>
+</ul>
+</li>
+<li><a href="#%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%81%AE%E8%A1%A8%E7%8F%BE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306E;&#x8868;&#x73FE;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</a>
+<ul>
+<li><a href="#%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B31-%E6%B1%8E%E5%8C%96generalization">&#x30D1;&#x30BF;&#x30FC;&#x30F3;1: &#x6C4E;&#x5316;(Generalization)</a></li>
+<li><a href="#%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B32-%E5%8C%85%E5%90%ABinclude">&#x30D1;&#x30BF;&#x30FC;&#x30F3;2: &#x5305;&#x542B;(Include)</a></li>
+<li><a href="#%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B33-%E6%8B%A1%E5%BC%B5extend">&#x30D1;&#x30BF;&#x30FC;&#x30F3;3: &#x62E1;&#x5F35;(Extend)</a></li>
+<li><a href="#%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B34-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">&#x30D1;&#x30BF;&#x30FC;&#x30F3;4: &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E8%A8%98%E8%BF%B0%E3%81%A8%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x8A18;&#x8FF0;&#x3068;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;</h2>
+
+<hr>
+<ul>
+<li>&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x958B;&#x767A;&#x306E;&#x8981;&#x4EF6;&#x5B9A;&#x7FA9;&#x3067;&#x306F;&#x3001;&#x632F;&#x308B;&#x821E;&#x3044;&#x30E2;&#x30C7;&#x30EB;&#x3068;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x306E;&#xFF12;&#x3064;&#x3092;&#x67F1;&#x3068;&#x3057;&#x3066;&#x8981;&#x4EF6;&#x3092;&#x5206;&#x6790;&#x30FB;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x632F;&#x308B;&#x821E;&#x3044;&#x30E2;&#x30C7;&#x30EB;&#x306F;&#x3001;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x30E2;&#x30C7;&#x30EB;&#x306B;&#x3042;&#x305F;&#x308B;&#x3002;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3068;&#x306F;&#x3001;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x5229;&#x7528;&#x4F8B;&#x3001;&#x3064;&#x307E;&#x308A;&#x306F;&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x5229;&#x7528;&#x3067;&#x304D;&#x308B;&#x5177;&#x4F53;&#x7684;&#x306A;&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306E;&#x3053;&#x3068;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+<li>&#x901A;&#x8CA9;&#x30B5;&#x30A4;&#x30C8;&#x3092;&#x4F8B;&#x306B;&#x3059;&#x308B;&#x3068;&#x3001;&#x300C;&#x5546;&#x54C1;&#x3092;&#x30AB;&#x30FC;&#x30C8;&#x306B;&#x5165;&#x308C;&#x308B;&#x300D;&#x300C;&#x6CE8;&#x6587;&#x3059;&#x308B;&#x300D;&#x306A;&#x3069;&#x304C;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306B;&#x3042;&#x305F;&#x308B;&#x3002;</li>
+<li>&#x5404;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x4F55;&#x3092;&#x3057;&#x3066;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x304C;&#x3069;&#x3046;&#x632F;&#x308B;&#x821E;&#x3046;&#x304B;&#x3092;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3068;&#x3057;&#x3066;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x8A18;&#x8FF0;&#x3068;&#x3044;&#x3046;&#x3002;</li>
+<li>&#x8A18;&#x8FF0;&#x3057;&#x305F;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306E;&#x4E2D;&#x3067;&#x3001;&#x767B;&#x5834;&#x4EBA;&#x7269;(&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3084;&#x30E6;&#x30FC;&#x30B6;&#x306A;&#x3069;)&#x304C;&#x9054;&#x6210;&#x3059;&#x308B;&#x76EE;&#x7684;&#x3084;&#x7BC4;&#x56F2;&#x3092;&#x56F3;&#x793A;&#x3057;&#x305F;&#x3082;&#x306E;&#x304C;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%82%92%E6%B4%97%E3%81%84%E5%87%BA%E3%81%99%E9%9A%9B%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x6D17;&#x3044;&#x51FA;&#x3059;&#x969B;&#x306E;&#x30DD;&#x30A4;&#x30F3;&#x30C8;</h2>
+
+<hr>
+<ul>
+<li>&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x66F8;&#x304D;&#x59CB;&#x3081;&#x308B;&#x3068;&#x7C92;&#x5EA6;&#x304C;&#x5206;&#x304B;&#x3089;&#x306A;&#x304F;&#x306A;&#x3063;&#x3066;&#x3057;&#x307E;&#x3046;&#x3053;&#x3068;&#x304C;&#x591A;&#x3044;&#x3002;</li>
+<li>&#x300C;&#x25CB;&#x25CB;&#x304C;&#xD7;&#xD7;&#x3092;&#x25B3;&#x25B3;&#x3059;&#x308B;&#x300D;&#x3068;&#x3044;&#x3063;&#x305F;SVO&#x5F62;&#x5F0F;&#x3067;&#x6587;&#x3092;&#x7D71;&#x4E00;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x4E8B;&#x524D;&#x306B;&#x63CF;&#x3044;&#x305F;&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x30E2;&#x30C7;&#x30EB;&#x56F3;&#x306B;&#x767B;&#x5834;&#x3059;&#x308B;&#x7528;&#x8A9E;&#x3092;&#x4F7F;&#x3044;&#x3001;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x3068;&#x306E;&#x9593;&#x306E;&#x6574;&#x5408;&#x6027;&#x3092;&#x53D6;&#x308A;&#x3084;&#x3059;&#x304F;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x5177;&#x4F53;&#x7684;&#x306A;&#x8868;&#x73FE;&#x3092;&#x5FC3;&#x639B;&#x3051;&#x308B;&#x3002;&#x66D6;&#x6627;&#x3067;&#x307C;&#x3084;&#x3051;&#x3066;&#x3044;&#x308B;&#x3068;&#x3001;&#x305D;&#x306E;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30C6;&#x30B9;&#x30C8;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x3082;&#x66F8;&#x304D;&#x3065;&#x3089;&#x304F;&#x306A;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E5%9F%BA%E6%9C%AC%E3%82%B3%E3%83%BC%E3%82%B9%E3%81%A8%E4%BB%A3%E6%9B%BF%E3%82%B3%E3%83%BC%E3%82%B9">&#x57FA;&#x672C;&#x30B3;&#x30FC;&#x30B9;&#x3068;&#x4EE3;&#x66FF;&#x30B3;&#x30FC;&#x30B9;</h2>
+
+<hr>
+<ul>
+<li>&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306E;&#x8A18;&#x8FF0;&#x306F;&#x3001;&#x300C;&#x57FA;&#x672C;&#x30B3;&#x30FC;&#x30B9;&#x300D;&#x3068;&#x300C;&#x4EE3;&#x66FF;&#x30B3;&#x30FC;&#x30B9;&#x300D;&#x306E;&#xFF12;&#x30D1;&#x30FC;&#x30C8;&#x304B;&#x3089;&#x6210;&#x308B;&#x3002;</li>
+<li>&#x57FA;&#x672C;&#x30B3;&#x30FC;&#x30B9;: &#x6B63;&#x5E38;&#x7CFB;&#x306E;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x6587;&#x7AE0;</li>
+<li>&#x4EE3;&#x66FF;&#x30B3;&#x30FC;&#x30B9;: &#x7570;&#x5E38;&#x7CFB;&#x30FB;&#x5206;&#x5C90;&#x7CFB;&#x306E;&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x6587;&#x7AE0;</li>
+<li>&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x8A18;&#x8FF0;&#x3067;&#x306F;&#x7279;&#x306B;&#x3001;&#x4EE3;&#x66FF;&#x30B3;&#x30FC;&#x30B9;&#x3092;&#x304D;&#x3061;&#x3093;&#x3068;&#x6F0F;&#x308C;&#x306A;&#x304F;&#x66F8;&#x304F;&#x3053;&#x3068;&#x304C;&#x91CD;&#x8981;&#x306B;&#x306A;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x3092;&#x69CB;&#x6210;&#x3059;&#x308B;&#x8981;&#x7D20;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC">&#x30A2;&#x30AF;&#x30BF;&#x30FC;</h3>
+
+<ul>
+<li>&#x30E6;&#x30FC;&#x30B6;&#x3084;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x4E8B;&#x3092;&#x3001;&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x3068;&#x3044;&#x3046;&#x767B;&#x5834;&#x4EBA;&#x7269;&#x3068;&#x3057;&#x3066;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x4F55;&#x3089;&#x304B;&#x306E;&#x5F79;&#x5272;&#x3092;&#x6301;&#x3064;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3060;&#x3068;&#x8003;&#x3048;&#x308B;&#x3002;</li>
+<li>&#x30B7;&#x30CA;&#x30EA;&#x30AA;&#x6587;&#x7AE0;&#x306E;&#x4E3B;&#x8A9E;&#x306B;&#x3042;&#x305F;&#x308B;&#x90E8;&#x5206;</li>
+<li>&#x4EBA;&#x3060;&#x308D;&#x3046;&#x304C;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3060;&#x308D;&#x3046;&#x304C;&#x68D2;&#x4EBA;&#x9593;&#x3067;&#x8868;&#x73FE;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x306B;&#x6CE8;&#x610F;</li>
+</ul>
+<p>PlantUML&#x3067;&#x306E;&#x8A18;&#x8FF0;&#x4F8B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>:System:
+:User:
+actor Client
+actor DB
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="248px" preserveAspectRatio="none" style="width:128px;height:248px;" version="1.1" viewBox="0 0 128 248" width="128px" zoomAndPan="magnify"><defs><filter height="300%" id="f19cfyq2am09kd" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity System--><ellipse cx="29" cy="18" fill="#FEFECE" filter="url(#f19cfyq2am09kd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M29,26 L29,53 M16,34 L42,34 M29,53 L16,68 M29,53 L42,68 " fill="none" filter="url(#f19cfyq2am09kd)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="46" x="6" y="89.5332">System</text><!--entity User--><ellipse cx="102" cy="18" fill="#FEFECE" filter="url(#f19cfyq2am09kd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M102,26 L102,53 M89,34 L115,34 M102,53 L89,68 M102,53 L115,68 " fill="none" filter="url(#f19cfyq2am09kd)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="87.5" y="89.5332">User</text><!--entity Client--><ellipse cx="29" cy="163" fill="#FEFECE" filter="url(#f19cfyq2am09kd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M29,171 L29,198 M16,179 L42,179 M29,198 L16,213 M29,198 L42,213 " fill="none" filter="url(#f19cfyq2am09kd)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="36" x="11" y="234.5332">Client</text><!--entity DB--><ellipse cx="97" cy="163" fill="#FEFECE" filter="url(#f19cfyq2am09kd)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M97,171 L97,198 M84,179 L110,179 M97,198 L84,213 M97,198 L110,213 " fill="none" filter="url(#f19cfyq2am09kd)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="19" x="87.5" y="234.5332">DB</text><!--link System to User--><!--link System to Client--><!--link Client to DB--><!--
+@startuml
+:System:
+:User:
+actor Client
+actor DB
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;</h3>
+
+<ul>
+<li>&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306F;&#x6955;&#x5186;&#x3067;&#x8868;&#x73FE;&#x3055;&#x308C;&#x308B;&#x3002;&#x7D30;&#x304B;&#x3044;&#x8868;&#x73FE;&#x306F;&#x3055;&#x3051;&#x3066;&#x3001;&#x25B3;&#x25B3;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x52D5;&#x8A5E;&#x3060;&#x3051;&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x521D;&#x3081;&#x306F;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x306B;&#x3059;&#x308B;&#x3088;&#x3046;&#x5FC3;&#x639B;&#x3051;&#x3001;&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x3084;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x304C;&#x51FA;&#x3057;&#x5207;&#x308C;&#x305F;&#x3068;&#x3053;&#x308D;&#x3067;&#x3001;&#x300C;&#xD7;&#xD7;&#x3092;&#x25B3;&#x25B3;&#x3059;&#x308B;&#x300D;&#x307F;&#x305F;&#x3044;&#x306B;&#x76EE;&#x7684;&#x8A9E;&#x3092;&#x4ED8;&#x3051;&#x3066;&#x30D6;&#x30E9;&#x30C3;&#x30B7;&#x30E5;&#x30A2;&#x30C3;&#x30D7;&#x3057;&#x3066;&#x3044;&#x304F;&#x3002;</li>
+</ul>
+<p>PlantUML&#x3067;&#x306E;&#x8A18;&#x8FF0;&#x4F8B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>(&#x25B3;&#x25B3;&#x3059;&#x308B;)
+(&#xD7;&#xD7;&#x3092;&#x25B3;&#x25B3;&#x3059;&#x308B;)
+usecase Payment
+usecase (Long name \n usecase) as long
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="163px" preserveAspectRatio="none" style="width:265px;height:163px;" version="1.1" viewBox="0 0 265 163" width="265px" zoomAndPan="magnify"><defs><filter height="300%" id="fmtd9cvkl093" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="48.598" cy="23.4517" fill="#FEFECE" filter="url(#fmtd9cvkl093)" rx="42.598" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="20.598" y="28.7564">&#x25B3;&#x25B3;&#x3059;&#x308B;</text><ellipse cx="190.3112" cy="23.4517" fill="#FEFECE" filter="url(#fmtd9cvkl093)" rx="63.8112" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="86" x="147.3112" y="28.7564">&#xD7;&#xD7;&#x3092;&#x25B3;&#x25B3;&#x3059;&#x308B;</text><ellipse cx="48.3909" cy="125.4517" fill="#FEFECE" filter="url(#fmtd9cvkl093)" rx="41.8909" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="55" x="20.8909" y="130.7564">Payment</text><ellipse cx="176.5073" cy="125.5655" fill="#FEFECE" filter="url(#fmtd9cvkl093)" rx="50.5073" ry="26.5655" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="71" x="141.0073" y="124.0147">Long name</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="53" x="150.0073" y="141.624">usecase</text><!--link △△する to ××を△△する--><!--link △△する to Payment--><!--link Payment to long--><!--
+@startuml
+(△△する)
+(××を△△する)
+usecase Payment
+usecase (Long name \n usecase) as long
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E5%AF%BE%E8%B1%A1">&#x5BFE;&#x8C61;</h3>
+
+<ul>
+<li>&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x304C;&#x5B9F;&#x73FE;&#x3059;&#x308B;&#x5BFE;&#x8C61;&#x3092;&#x793A;&#x3057;&#x3001;&#x9577;&#x65B9;&#x5F62;&#x3067;&#x8868;&#x73FE;&#x3055;&#x308C;&#x308B;&#x3002;</li>
+<li>&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x5883;&#x754C;&#x7DDA;&#x3068;&#x3082;&#x8A00;&#x3046;&#x3002;</li>
+<li>&#x3069;&#x306E;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3067;&#x5B9F;&#x73FE;&#x3059;&#x308B;&#x306E;&#x304B;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x7BC4;&#x56F2;&#x3092;&#x3057;&#x3063;&#x304B;&#x308A;&#x8868;&#x73FE;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x540D;&#x79F0;&#x306A;&#x3069;&#x306E;&#x30E9;&#x30D9;&#x30EB;&#x3092;&#x66F8;&#x304F;&#x3088;&#x3046;&#x306B;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<p>PlantUML&#x3067;&#x306E;&#x8A18;&#x8FF0;&#x4F8B;<br>
+&#x5BFE;&#x8C61;&#x306E;&#x4E2D;&#x306B;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x542B;&#x3081;&#x308B;&#x5F62;&#x3067;&#x63CF;&#x304F;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>left to right direction
+rectangle &#x5BFE;&#x8C61; {
+    actor &#x30A2;&#x30AF;&#x30BF;&#x30FC;
+    actor &#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;
+    &#x30A2;&#x30AF;&#x30BF;&#x30FC; --&gt; &#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;
+}
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="173px" preserveAspectRatio="none" style="width:265px;height:173px;" version="1.1" viewBox="0 0 265 173" width="265px" zoomAndPan="magnify"><defs><filter height="300%" id="f1o7glia4244g9" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster 対象--><rect fill="#FFFFFF" filter="url(#f1o7glia4244g9)" height="138" style="stroke: #000000; stroke-width: 1.5;" width="232" x="22" y="24"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="30" x="123" y="40.5332">&#x5BFE;&#x8C61;</text><!--entity アクター--><ellipse cx="66" cy="70.5" fill="#FEFECE" filter="url(#f1o7glia4244g9)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M66,78.5 L66,105.5 M53,86.5 L79,86.5 M66,105.5 L53,120.5 M66,105.5 L79,120.5 " fill="none" filter="url(#f1o7glia4244g9)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="38" y="142.0332">&#x30A2;&#x30AF;&#x30BF;&#x30FC;</text><!--entity ユースケース--><ellipse cx="196" cy="70.5" fill="#FEFECE" filter="url(#f1o7glia4244g9)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M196,78.5 L196,105.5 M183,86.5 L209,86.5 M196,105.5 L183,120.5 M196,105.5 L209,120.5 " fill="none" filter="url(#f1o7glia4244g9)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="84" x="154" y="142.0332">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;</text><!--link アクター to ユースケース--><path d="M94.1455,103 C109.976,103 130.37,103 148.672,103 " fill="none" id="&#x30A2;&#x30AF;&#x30BF;&#x30FC;-&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="153.773,103,144.773,99,148.773,103,144.773,107,153.773,103" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+rectangle 対象 {
+    actor アクター
+    actor ユースケース
+    アクター - -> ユースケース
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E5%9B%B3%E3%82%92%E6%8F%8F%E3%81%8F%E6%B5%81%E3%82%8C">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x3092;&#x63CF;&#x304F;&#x6D41;&#x308C;</h2>
+
+<hr>
+<p>&#x3053;&#x3053;&#x3067;&#x306F;&#x3001;EC&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x3092;&#x4F8B;&#x3068;&#x3057;&#x3066;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x3092;&#x63CF;&#x3044;&#x3066;&#x307F;&#x308B;&#x3002;</p>
+<h3 class="mume-header" id="1-%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%92%E5%88%97%E6%8C%99%E3%81%99%E3%82%8B">1. &#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;</h3>
+
+<ul>
+<li>&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x306B;&#x8003;&#x3048;&#x308B;&#x3068;&#x3001;&#x767B;&#x5834;&#x3059;&#x308B;&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x306F;&#x8CFC;&#x5165;&#x8005;&#x3068;&#x7BA1;&#x7406;&#x8005;&#x306E;&#xFF12;&#x7A2E;&#x985E;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="103px" preserveAspectRatio="none" style="width:137px;height:103px;" version="1.1" viewBox="0 0 137 103" width="137px" zoomAndPan="magnify"><defs><filter height="300%" id="frczb5zp578nk" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity 購入者--><ellipse cx="27" cy="18" fill="#FEFECE" filter="url(#frczb5zp578nk)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M27,26 L27,53 M14,34 L40,34 M27,53 L14,68 M27,53 L40,68 " fill="none" filter="url(#frczb5zp578nk)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="6" y="89.5332">&#x8CFC;&#x5165;&#x8005;</text><!--entity 管理者--><ellipse cx="104" cy="18" fill="#FEFECE" filter="url(#frczb5zp578nk)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M104,26 L104,53 M91,34 L117,34 M104,53 L91,68 M104,53 L117,68 " fill="none" filter="url(#frczb5zp578nk)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="83" y="89.5332">&#x7BA1;&#x7406;&#x8005;</text><!--
+@startuml
+:購入者:
+:管理者:
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="2-%E3%82%A2%E3%82%AF%E3%82%BF%E3%83%BC%E6%AF%8E%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%82%92%E5%88%97%E6%8C%99%E3%81%99%E3%82%8B">2. &#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x6BCE;&#x306E;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x5217;&#x6319;&#x3059;&#x308B;</h3>
+
+<ul>
+<li>&#x300C;&#x25CB;&#x25CB;&#x304C;&#xD7;&#xD7;&#x3059;&#x308B;&#x300D;&#x3068;&#x3044;&#x3046;&#x7C21;&#x6F54;&#x306A;&#x5F62;&#x3067;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x66F8;&#x304F;&#x3002;</li>
+<li>&#x3053;&#x306E;&#x6BB5;&#x968E;&#x3067;&#x306F;&#x3001;&#x7D30;&#x304B;&#x3044;&#x4E8B;&#x306F;&#x4E00;&#x65E6;&#x7701;&#x3044;&#x3066;&#x66F8;&#x304F;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="255px" preserveAspectRatio="none" style="width:465px;height:255px;" version="1.1" viewBox="0 0 465 255" width="465px" zoomAndPan="magnify"><defs><filter height="300%" id="f13broafv3gluh" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity 購入者--><ellipse cx="110" cy="18" fill="#FEFECE" filter="url(#f13broafv3gluh)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M110,26 L110,53 M97,34 L123,34 M110,53 L97,68 M110,53 L123,68 " fill="none" filter="url(#f13broafv3gluh)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="89" y="89.5332">&#x8CFC;&#x5165;&#x8005;</text><!--entity 管理者--><ellipse cx="352" cy="18" fill="#FEFECE" filter="url(#f13broafv3gluh)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M352,26 L352,53 M339,34 L365,34 M352,53 L339,68 M352,53 L365,68 " fill="none" filter="url(#f13broafv3gluh)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="331" y="89.5332">&#x7BA1;&#x7406;&#x8005;</text><ellipse cx="28.799" cy="229.4517" fill="#FEFECE" filter="url(#f13broafv3gluh)" rx="22.799" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="14.799" y="234.7564">&#x63A2;&#x3059;</text><ellipse cx="109.799" cy="229.4517" fill="#FEFECE" filter="url(#f13broafv3gluh)" rx="22.799" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="95.799" y="234.7564">&#x898B;&#x308B;</text><ellipse cx="190.799" cy="229.4517" fill="#FEFECE" filter="url(#f13broafv3gluh)" rx="22.799" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="176.799" y="234.7564">&#x8CB7;&#x3046;</text><ellipse cx="292.098" cy="229.4517" fill="#FEFECE" filter="url(#f13broafv3gluh)" rx="42.598" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="264.098" y="234.7564">&#x767B;&#x9332;&#x3059;&#x308B;</text><ellipse cx="412.098" cy="229.4517" fill="#FEFECE" filter="url(#f13broafv3gluh)" rx="42.598" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="384.098" y="234.7564">&#x767A;&#x9001;&#x3059;&#x308B;</text><!--link 購入者 to 探す--><path d="M90.8041,93.447 C73.9802,130.21 50.2997,181.9562 37.6942,209.5015 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x63A2;&#x3059;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="35.4736,214.3541,42.856,207.8349,37.5543,209.8076,35.5816,204.5058,35.4736,214.3541" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 見る--><path d="M110,93.447 C110,129.866 110,180.9885 110,208.7214 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x898B;&#x308B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="110,213.9448,114,204.9448,110,208.9448,106,204.9448,110,213.9448" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 買う--><path d="M129.196,93.447 C146.02,130.21 169.7,181.9562 182.306,209.5015 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x8CB7;&#x3046;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="184.526,214.3541,184.4184,204.5058,182.4455,209.8075,177.1439,207.8346,184.526,214.3541" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 管理者 to 登録する--><path d="M337.781,93.447 C325.384,130.017 307.961,181.4148 298.588,209.0668 " fill="none" id="&#x7BA1;&#x7406;&#x8005;-&#x767B;&#x9332;&#x3059;&#x308B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="296.934,213.9448,303.6114,206.7051,298.539,209.2094,296.0347,204.1371,296.934,213.9448" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 管理者 to 発送する--><path d="M366.219,93.447 C378.616,130.017 396.039,181.4148 405.412,209.0668 " fill="none" id="&#x7BA1;&#x7406;&#x8005;-&#x767A;&#x9001;&#x3059;&#x308B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="407.066,213.9448,407.9653,204.1371,405.461,209.2094,400.3886,206.7051,407.066,213.9448" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+:購入者:
+:管理者:
+
+購入者- - ->(探す)
+購入者- - ->(見る)
+購入者- - ->(買う)
+
+管理者- - ->(登録する)
+管理者- - ->(発送する)
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="3-%E5%AF%BE%E8%B1%A1%E3%81%AB%E5%8F%8E%E3%82%81%E3%82%8B">3. &#x5BFE;&#x8C61;&#x306B;&#x53CE;&#x3081;&#x308B;</h3>
+
+<ul>
+<li>&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x3068;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x304C;&#x5217;&#x6319;&#x51FA;&#x6765;&#x305F;&#x3089;&#x3001;&#x5BFE;&#x8C61;&#x306B;&#x53CE;&#x3081;&#x308B;&#x3002;</li>
+<li>&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x6BCE;&#x306E;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x304C;&#x5206;&#x304B;&#x308B;&#x3088;&#x3046;&#x306B;&#x3001;&#x914D;&#x7F6E;&#x306A;&#x3069;&#x3092;&#x6574;&#x7406;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="383px" preserveAspectRatio="none" style="width:429px;height:383px;" version="1.1" viewBox="0 0 429 383" width="429px" zoomAndPan="magnify"><defs><filter height="300%" id="fltoic9qh8ipz" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster ECシステム--><rect fill="#FFFFFF" filter="url(#fltoic9qh8ipz)" height="348" style="stroke: #000000; stroke-width: 1.5;" width="117" x="153" y="24"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="79" x="172" y="40.5332">EC&#x30B7;&#x30B9;&#x30C6;&#x30E0;</text><ellipse cx="211.299" cy="75.9517" fill="#FEFECE" filter="url(#fltoic9qh8ipz)" rx="22.799" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="197.299" y="81.2564">&#x63A2;&#x3059;</text><ellipse cx="211.299" cy="141.9517" fill="#FEFECE" filter="url(#fltoic9qh8ipz)" rx="22.799" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="197.299" y="147.2564">&#x898B;&#x308B;</text><ellipse cx="211.299" cy="207.9517" fill="#FEFECE" filter="url(#fltoic9qh8ipz)" rx="22.799" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="197.299" y="213.2564">&#x8CB7;&#x3046;</text><ellipse cx="211.598" cy="273.9517" fill="#FEFECE" filter="url(#fltoic9qh8ipz)" rx="42.598" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="183.598" y="279.2564">&#x767B;&#x9332;&#x3059;&#x308B;</text><ellipse cx="211.598" cy="339.9517" fill="#FEFECE" filter="url(#fltoic9qh8ipz)" rx="42.598" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="183.598" y="345.2564">&#x767A;&#x9001;&#x3059;&#x308B;</text><!--entity 購入者--><ellipse cx="27" cy="109.5" fill="#FEFECE" filter="url(#fltoic9qh8ipz)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M27,117.5 L27,144.5 M14,125.5 L40,125.5 M27,144.5 L14,159.5 M27,144.5 L40,159.5 " fill="none" filter="url(#fltoic9qh8ipz)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="6" y="181.0332">&#x8CFC;&#x5165;&#x8005;</text><!--entity 管理者--><ellipse cx="396" cy="274.5" fill="#FEFECE" filter="url(#fltoic9qh8ipz)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M396,282.5 L396,309.5 M383,290.5 L409,290.5 M396,309.5 L383,324.5 M396,309.5 L409,324.5 " fill="none" filter="url(#fltoic9qh8ipz)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="375" y="346.0332">&#x7BA1;&#x7406;&#x8005;</text><!--link 購入者 to 探す--><path d="M48.228,134.685 C81.9292,122.497 149.455,98.076 185.872,84.907 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x63A2;&#x3059;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="191.011,83.048,181.1871,82.3468,186.309,84.7482,183.9075,89.87,191.011,83.048" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 見る--><path d="M48.228,142 C81.1331,142 146.284,142 183.24,142 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x898B;&#x308B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="188.481,142,179.481,138,183.481,142,179.481,146,188.481,142" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 買う--><path d="M48.228,149.315 C81.9292,161.503 149.455,185.924 185.872,199.093 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x8CB7;&#x3046;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="191.011,200.952,183.9075,194.13,186.309,199.2518,181.1871,201.6532,191.011,200.952" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 登録する to 管理者--><path d="M254.841,281.656 C292.464,288.4593 345.834,298.1096 374.65,303.3202 " fill="none" id="&#x767B;&#x9332;&#x3059;&#x308B;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="249.872,280.758,258.0165,286.2958,254.7922,281.6478,259.4402,278.4234,249.872,280.758" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 発送する to 管理者--><path d="M254.841,332.3439 C292.464,325.5407 345.834,315.8904 374.65,310.6798 " fill="none" id="&#x767A;&#x9001;&#x3059;&#x308B;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="249.872,333.2423,259.4403,335.5764,254.7922,332.3523,258.0163,327.7042,249.872,333.2423" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+:購入者:
+:管理者:
+
+rectangle "ECシステム" {
+    購入者- - ->(探す)
+    購入者- - ->(見る)
+    購入者- - ->(買う)
+
+    (登録する)<- - -管理者
+    (発送する)<- - -管理者
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="4-%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%82%92%E6%95%B4%E7%90%86%E3%81%99%E3%82%8B">4. &#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x6574;&#x7406;&#x3059;&#x308B;</h3>
+
+<ul>
+<li>STEP2&#x3067;&#x4F5C;&#x3063;&#x305F;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306E;&#x5217;&#x6319;&#x3092;&#x6574;&#x7406;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x300C;&#x25CB;&#x25CB;&#x304C;&#x25B3;&#x25B3;&#x3092;&#xD7;&#xD7;&#x3059;&#x308B;&#x300D;&#x3068;&#x3044;&#x3046;&#x5F62;&#x306B;&#x5909;&#x66F4;&#x3057;&#x3066;&#x3044;&#x304F;&#x3002;</li>
+<li>&#x540C;&#x3058;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x304C;&#x4ED6;&#x306E;&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x3067;&#x3082;&#x767A;&#x751F;&#x3057;&#x306A;&#x3044;&#x304B;&#x8003;&#x3048;&#x308B;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="385px" preserveAspectRatio="none" style="width:482px;height:385px;" version="1.1" viewBox="0 0 482 385" width="482px" zoomAndPan="magnify"><defs><filter height="300%" id="f1xk35txid1uuf" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster ECシステム--><rect fill="#FFFFFF" filter="url(#f1xk35txid1uuf)" height="350" style="stroke: #000000; stroke-width: 1.5;" width="170" x="153" y="24"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="79" x="198.5" y="40.5332">EC&#x30B7;&#x30B9;&#x30C6;&#x30E0;</text><ellipse cx="237.9975" cy="75.9517" fill="#FEFECE" filter="url(#f1xk35txid1uuf)" rx="52.4975" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="202.9975" y="81.2564">&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;</text><ellipse cx="237.9975" cy="141.9517" fill="#FEFECE" filter="url(#f1xk35txid1uuf)" rx="52.4975" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="202.9975" y="147.2564">&#x5546;&#x54C1;&#x3092;&#x898B;&#x308B;</text><ellipse cx="237.9975" cy="207.9517" fill="#FEFECE" filter="url(#f1xk35txid1uuf)" rx="52.4975" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="202.9975" y="213.2564">&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;</text><ellipse cx="237.8716" cy="275.1743" fill="#FEFECE" filter="url(#f1xk35txid1uuf)" rx="68.8716" ry="16.1743" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="188.8716" y="280.479">&#x5546;&#x54C1;&#x3092;&#x767B;&#x9332;&#x3059;&#x308B;</text><ellipse cx="237.8716" cy="342.1743" fill="#FEFECE" filter="url(#f1xk35txid1uuf)" rx="68.8716" ry="16.1743" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="188.8716" y="347.479">&#x5546;&#x54C1;&#x3092;&#x767A;&#x9001;&#x3059;&#x308B;</text><!--entity 購入者--><ellipse cx="27" cy="109.5" fill="#FEFECE" filter="url(#f1xk35txid1uuf)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M27,117.5 L27,144.5 M14,125.5 L40,125.5 M27,144.5 L14,159.5 M27,144.5 L40,159.5 " fill="none" filter="url(#f1xk35txid1uuf)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="6" y="181.0332">&#x8CFC;&#x5165;&#x8005;</text><!--entity 管理者--><ellipse cx="449" cy="160.5" fill="#FEFECE" filter="url(#f1xk35txid1uuf)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M449,168.5 L449,195.5 M436,176.5 L462,176.5 M449,195.5 L436,210.5 M449,195.5 L462,210.5 " fill="none" filter="url(#f1xk35txid1uuf)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="428" y="232.0332">&#x7BA1;&#x7406;&#x8005;</text><!--link 購入者 to 商品を探す--><path d="M48.031,135.407 C64.1979,130.105 87.5388,122.497 108,116 C137.332,106.686 170.496,96.409 195.852,88.603 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="200.816,87.076,191.0377,85.899,196.037,88.5461,193.3899,93.5454,200.816,87.076" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 商品を見る--><path d="M48.0398,142 C78.242,142 136.558,142 180.456,142 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x5546;&#x54C1;&#x3092;&#x898B;&#x308B;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="185.465,142,176.465,138,180.465,142,176.465,146,185.465,142" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 商品を買う--><path d="M48.0398,148.328 C82.0788,159.078 151.828,181.104 196.401,195.179 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="201.439,196.77,194.0617,190.2451,196.6712,195.2641,191.6522,197.8736,201.439,196.77" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を探す to 管理者--><path d="M281.16,88.375 C297.186,93.781 315.343,100.778 331,109 C367.308,128.066 405.113,157.177 427.596,175.639 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="276.26,86.749,283.5428,93.3793,281.0057,88.3233,286.0617,85.7861,276.26,86.749" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を見る to 管理者--><path d="M284.351,153.067 C328.912,163.94 394.87,180.035 427.782,188.066 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x898B;&#x308B;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="279.297,151.833,287.0916,157.8533,284.1544,153.0188,288.9889,150.0815,279.297,151.833" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を登録する to 管理者--><path d="M281.067,259.808 C296.782,254.04 314.753,247.333 331,241 C365.162,227.685 404.543,211.315 427.796,201.543 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x767B;&#x9332;&#x3059;&#x308B;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="276.267,261.567,286.0937,262.2275,280.962,259.8473,283.3421,254.7155,276.267,261.567" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を発送する to 管理者--><path d="M289.092,328.4695 C303.234,323.4928 318.235,317.0523 331,309 C369.95,284.43 406.185,244.884 427.713,218.917 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x767A;&#x9001;&#x3059;&#x308B;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="284.333,330.1013,294.144,330.9638,289.0623,328.4785,291.5476,323.3968,284.333,330.1013" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+:購入者:
+:管理者:
+
+rectangle "ECシステム" {
+    購入者- - ->(商品を探す)
+    購入者- - ->(商品を見る)
+    購入者- - ->(商品を買う)
+
+    (商品を探す)<- - -管理者
+    (商品を見る)<- - -管理者
+    (商品を登録する)<- - -管理者
+    (商品を発送する)<- - -管理者
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><ul>
+<li>&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x306E;&#x5B9A;&#x7FA9;&#x3084;&#x3001;&#x5BFE;&#x8C61;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x304C;&#x5BFE;&#x5FDC;&#x3059;&#x308B;&#x7BC4;&#x56F2;&#x3092;&#x660E;&#x78BA;&#x306B;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+<li>&#x3088;&#x308A;&#x5177;&#x4F53;&#x7684;&#x306A;&#x30B7;&#x30FC;&#x30F3;&#x3068;&#x3057;&#x3066;&#x7406;&#x89E3;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x306B;&#x8A18;&#x8FF0;&#x3092;&#x6DFB;&#x3048;&#x308B;&#x3068;&#x66F4;&#x306B;&#x826F;&#x3044;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%83%A6%E3%83%BC%E3%82%B9%E3%82%B1%E3%83%BC%E3%82%B9%E3%81%AE%E8%A1%A8%E7%8F%BE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3">&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x306E;&#x8868;&#x73FE;&#x30D1;&#x30BF;&#x30FC;&#x30F3;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B31-%E6%B1%8E%E5%8C%96generalization">&#x30D1;&#x30BF;&#x30FC;&#x30F3;1: &#x6C4E;&#x5316;(Generalization)</h3>
+
+<ul>
+<li>&#x30AF;&#x30E9;&#x30B9;&#x56F3;&#x306B;&#x304A;&#x3051;&#x308B;&#x6C4E;&#x5316;&#x3068;&#x540C;&#x3058;&#x610F;&#x5473;&#x3002;&#x5148;&#x304B;&#x3089;&#x57FA;&#x3078;&#x77E2;&#x5370;&#x304C;&#x5411;&#x304F;&#x3002;</li>
+<li>&#x300C;is a&#x300D;&#x95A2;&#x4FC2;&#x3001;&#x3064;&#x307E;&#x308A;&#x300C;B is a A&#x300D;&#x304C;&#x6210;&#x308A;&#x7ACB;&#x3064;&#x3002;</li>
+<li>&#x3053;&#x3046;&#x3044;&#x3046;&#x30A2;&#x30AF;&#x30BF;&#x30FC;&#x3084;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3082;&#x542B;&#x307E;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3088;&#x7684;&#x306B;&#x4F7F;&#x3046;&#x3002;</li>
+</ul>
+<p>&#x6C4E;&#x5316;&#x306E;&#x4F8B;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="103px" preserveAspectRatio="none" style="width:190px;height:103px;" version="1.1" viewBox="0 0 190 103" width="190px" zoomAndPan="magnify"><defs><filter height="300%" id="f17293a66r1r8b" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--entity 初回購入者--><ellipse cx="41" cy="18" fill="#FEFECE" filter="url(#f17293a66r1r8b)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M41,26 L41,53 M28,34 L54,34 M41,53 L28,68 M41,53 L54,68 " fill="none" filter="url(#f17293a66r1r8b)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="6" y="89.5332">&#x521D;&#x56DE;&#x8CFC;&#x5165;&#x8005;</text><!--entity 購入者--><ellipse cx="157" cy="18" fill="#FEFECE" filter="url(#f17293a66r1r8b)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M157,26 L157,53 M144,34 L170,34 M157,53 L144,68 M157,53 L170,68 " fill="none" filter="url(#f17293a66r1r8b)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="136" y="89.5332">&#x8CFC;&#x5165;&#x8005;</text><!--link 初回購入者 to 購入者--><path d="M76.2038,50.5 C88.6403,50.5 102.8102,50.5 115.724,50.5 " fill="none" id="&#x521D;&#x56DE;&#x8CFC;&#x5165;&#x8005;-&#x8CFC;&#x5165;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="none" points="115.742,43.4999,135.742,50.5,115.742,57.4999,115.742,43.4999" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+actor :初回購入者:
+actor :購入者:
+
+初回購入者 - -|> 購入者
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B32-%E5%8C%85%E5%90%ABinclude">&#x30D1;&#x30BF;&#x30FC;&#x30F3;2: &#x5305;&#x542B;(Include)</h3>
+
+<ul>
+<li>&#x4ED6;&#x306E;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x542B;&#x3080;&#x3068;&#x8868;&#x73FE;&#x3057;&#x305F;&#x3044;&#x6642;&#x306B;&#x4F7F;&#x3046;&#x3002;</li>
+<li>&#x300C;has a&#x300D;&#x95A2;&#x4FC2;&#x3001;&#x300C;A&#x306F;B&#x3092;&#x542B;&#x3080;&#x300D;&#x304C;&#x6210;&#x308A;&#x7ACB;&#x3064;&#x3002;</li>
+</ul>
+<p>&#x300C;&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;&#x306F;&#x5546;&#x54C1;&#x3092;&#x9078;&#x3076;&#x3092;&#x542B;&#x3080;&#x300D;&#x3092;&#x8868;&#x73FE;&#x3057;&#x305F;&#x4F8B;</p>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="158px" preserveAspectRatio="none" style="width:121px;height:158px;" version="1.1" viewBox="0 0 121 158" width="121px" zoomAndPan="magnify"><defs><filter height="300%" id="f1my3dvmjro942" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="58.4975" cy="23.4517" fill="#FEFECE" filter="url(#f1my3dvmjro942)" rx="52.4975" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="23.4975" y="28.7564">&#x5546;&#x54C1;&#x3092;&#x9078;&#x3076;</text><ellipse cx="58.4975" cy="132.4517" fill="#FEFECE" filter="url(#f1my3dvmjro942)" rx="52.4975" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="23.4975" y="137.7564">&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;</text><!--link 商品を選ぶ to 商品を買う--><path d="M58.5,44.449 C58.5,65.4331 58.5,97.9643 58.5,116.7485 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x9078;&#x3076;-&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="58.5,39.378,54.5,48.378,58.5,44.378,62.5,48.378,58.5,39.378" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="41" x="59.5" y="83.4951">include</text><!--
+@startuml
+(商品を選ぶ) <.. (商品を買う) : include
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B33-%E6%8B%A1%E5%BC%B5extend">&#x30D1;&#x30BF;&#x30FC;&#x30F3;3: &#x62E1;&#x5F35;(Extend)</h3>
+
+<ul>
+<li>&#x5305;&#x542B;&#x3068;&#x306F;&#x7570;&#x306A;&#x308A;&#x3001;&#x3042;&#x308B;&#x6761;&#x4EF6;&#x306E;&#x6642;&#x3060;&#x3051;&#x5229;&#x7528;&#x3059;&#x308B;&#x5834;&#x5408;&#x306B;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="164px" preserveAspectRatio="none" style="width:176px;height:164px;" version="1.1" viewBox="0 0 176 164" width="176px" zoomAndPan="magnify"><defs><filter height="300%" id="fazadqk9z377d" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="85.8574" cy="26.3715" fill="#FEFECE" filter="url(#fazadqk9z377d)" rx="79.8574" ry="18.3715" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="126" x="22.8574" y="31.6762">&#x304A;&#x3059;&#x3059;&#x3081;&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;</text><ellipse cx="85.9975" cy="138.4517" fill="#FEFECE" filter="url(#fazadqk9z377d)" rx="52.4975" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="50.9975" y="143.7564">&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;</text><!--link おすすめ商品を買う to 商品を買う--><path d="M86,50.186 C86,71.9151 86,104.0711 86,122.6917 " fill="none" id="&#x304A;&#x3059;&#x3059;&#x3081;&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;-&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;" style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="#A80036" points="86,45.173,82,54.173,86,50.173,90,54.173,86,45.173" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="46" x="87" y="89.4951">extends</text><!--
+@startuml
+(おすすめ商品を買う) <.. (商品を買う) : extends
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B34-%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8">&#x30D1;&#x30BF;&#x30FC;&#x30F3;4: &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;</h3>
+
+<ul>
+<li>&#x8907;&#x6570;&#x306E;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3092;&#x307E;&#x3068;&#x3081;&#x3066;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3001;&#x30B5;&#x30D6;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306B;&#x307E;&#x3068;&#x3081;&#x308B;&#x969B;&#x306B;&#x5229;&#x7528;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x4F8B;&#x3067;&#x53D6;&#x308A;&#x4E0A;&#x3052;&#x305F;EC&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306E;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x3001;&#x8CFC;&#x5165;&#x8005;&#x304C;&#x300C;&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;&#x300D;&#x306E;&#x3068;&#x3001;<br>
+&#x7BA1;&#x7406;&#x8005;&#x304C;&#x300C;&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;&#x300D;&#x306E;&#x3068;&#x3067;&#x306F;&#x3001;&#x63A2;&#x3059;&#x6761;&#x4EF6;&#x3084;&#x6C42;&#x3081;&#x308B;&#x5185;&#x5BB9;&#x304C;&#x7570;&#x306A;&#x308B;&#x3002;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="638px" preserveAspectRatio="none" style="width:488px;height:638px;" version="1.1" viewBox="0 0 488 638" width="488px" zoomAndPan="magnify"><defs><filter height="300%" id="f1at6jfw3meq4n" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--cluster ECシステム--><rect fill="#FFFFFF" filter="url(#f1at6jfw3meq4n)" height="603" style="stroke: #000000; stroke-width: 1.5;" width="224" x="129" y="24"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="79" x="201.5" y="40.5332">EC&#x30B7;&#x30B9;&#x30C6;&#x30E0;</text><!--cluster 公開側--><polygon fill="#FFFFFF" filter="url(#f1at6jfw3meq4n)" points="153,68,204,68,211,91.6094,329,91.6094,329,290,153,290,153,68" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="153" x2="211" y1="91.6094" y2="91.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="45" x="157" y="84.5332">&#x516C;&#x958B;&#x5074;</text><!--cluster 管理側--><polygon fill="#FFFFFF" filter="url(#f1at6jfw3meq4n)" points="153,314,204,314,211,337.6094,329,337.6094,329,603,153,603,153,314" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 1.5;" x1="153" x2="211" y1="337.6094" y2="337.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="45" x="157" y="330.5332">&#x7BA1;&#x7406;&#x5074;</text><ellipse cx="240.8989" cy="120.7798" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="71.8989" ry="16.7798" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="106" x="187.8989" y="126.0845">&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;[&#x516C;&#x958B;]</text><ellipse cx="240.8989" cy="189.7798" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="71.8989" ry="16.7798" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="106" x="187.8989" y="195.0845">&#x5546;&#x54C1;&#x3092;&#x898B;&#x308B;[&#x516C;&#x958B;]</text><ellipse cx="240.9975" cy="257.9517" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="52.4975" ry="15.4517" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="205.9975" y="263.2564">&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;</text><ellipse cx="240.8989" cy="366.7798" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="71.8989" ry="16.7798" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="106" x="187.8989" y="372.0845">&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;[&#x7BA1;&#x7406;]</text><ellipse cx="240.8989" cy="435.7798" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="71.8989" ry="16.7798" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="106" x="187.8989" y="441.0845">&#x5546;&#x54C1;&#x3092;&#x898B;&#x308B;[&#x7BA1;&#x7406;]</text><ellipse cx="240.8716" cy="504.1743" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="68.8716" ry="16.1743" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="191.8716" y="509.479">&#x5546;&#x54C1;&#x3092;&#x767B;&#x9332;&#x3059;&#x308B;</text><ellipse cx="240.8716" cy="571.1743" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="68.8716" ry="16.1743" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="98" x="191.8716" y="576.479">&#x5546;&#x54C1;&#x3092;&#x767A;&#x9001;&#x3059;&#x308B;</text><!--entity 購入者--><ellipse cx="27" cy="157.5" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M27,165.5 L27,192.5 M14,173.5 L40,173.5 M27,192.5 L14,207.5 M27,192.5 L40,207.5 " fill="none" filter="url(#f1at6jfw3meq4n)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="6" y="229.0332">&#x8CFC;&#x5165;&#x8005;</text><!--entity 管理者--><ellipse cx="455" cy="437.5" fill="#FEFECE" filter="url(#f1at6jfw3meq4n)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M455,445.5 L455,472.5 M442,453.5 L468,453.5 M455,472.5 L442,487.5 M455,472.5 L468,487.5 " fill="none" filter="url(#f1at6jfw3meq4n)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="434" y="509.0332">&#x7BA1;&#x7406;&#x8005;</text><!--link 購入者 to 商品を探す[公開]--><path d="M48.1875,182.193 C66.9375,175.044 95.6922,164.338 121,156 C143.06,148.732 167.654,141.376 188.731,135.295 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;[&#x516C;&#x958B;]" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="193.729,133.858,183.9742,132.5001,188.9236,135.2393,186.1843,140.1887,193.729,133.858" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 商品を見る[公開]--><path d="M48.3275,190 C74.7641,190 122.436,190 163.621,190 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x5546;&#x54C1;&#x3092;&#x898B;&#x308B;[&#x516C;&#x958B;]" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="168.868,190,159.868,186,163.868,190,159.868,194,168.868,190" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 購入者 to 商品を買う--><path d="M48.1341,198.174 C66.8473,205.628 95.5779,216.71 121,225 C145.445,232.972 173.103,240.717 195.599,246.698 " fill="none" id="&#x8CFC;&#x5165;&#x8005;-&#x5546;&#x54C1;&#x3092;&#x8CB7;&#x3046;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="200.611,248.024,192.9329,241.8558,195.7772,246.7456,190.8874,249.5898,200.611,248.024" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を探す[管理] to 管理者--><path d="M299.744,379.677 C319.711,385.172 341.865,392.55 361,402 C388.26,415.462 415.934,436.91 433.922,452.116 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x63A2;&#x3059;[&#x7BA1;&#x7406;]-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="294.718,378.321,302.3648,384.528,299.5453,379.6239,304.4494,376.8044,294.718,378.321" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を見る[管理] to 管理者--><path d="M306.046,446.272 C349.678,453.269 404.62,462.081 433.73,466.749 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x898B;&#x308B;[&#x7BA1;&#x7406;]-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="301.054,445.471,309.3074,450.8451,305.991,446.2624,310.5737,442.9459,301.054,445.471" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を登録する to 管理者--><path d="M303.301,494.169 C347.449,487.088 404.26,477.977 433.929,473.219 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x767B;&#x9332;&#x3059;&#x308B;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="298.256,494.978,307.7764,497.5004,303.1927,494.1852,306.5079,489.6016,298.256,494.978" style="stroke: #A80036; stroke-width: 1.0;"/><!--link 商品を発送する to 管理者--><path d="M299.48,559.5131 C319.52,554.3606 341.788,547.3025 361,538 C388.363,524.751 416.019,503.262 433.973,487.99 " fill="none" id="&#x5546;&#x54C1;&#x3092;&#x767A;&#x9001;&#x3059;&#x308B;-&#x7BA1;&#x7406;&#x8005;" style="stroke: #A80036; stroke-width: 1.0;"/><polygon fill="#A80036" points="294.436,560.7822,304.14,562.4653,299.2849,559.5622,302.188,554.7071,294.436,560.7822" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+left to right direction
+
+:購入者:
+:管理者:
+
+rectangle "ECシステム" {
+    package 公開側 {
+        購入者- - ->(商品を探す[公開])
+        購入者- - ->(商品を見る[公開])
+        購入者- - ->(商品を買う)
+    }
+
+    package 管理側 {
+        (商品を探す[管理])<- - -管理者
+        (商品を見る[管理])<- - -管理者
+        (商品を登録する)<- - -管理者
+        (商品を発送する)<- - -管理者
+    }
+}
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</h2>
+
+<hr>
+<ul>
+<li><a href="http://blog.asial.co.jp/archive/category/UML">Asial/Developers/Blog UML&#x3092;&#x63CF;&#x3053;&#x3046;</a></li>
+<li><a href="https://qiita.com/devopsCoordinator/items/bbd57df681844308fb5d">&#x3010;&#x65B0;&#x4EBA;&#x6559;&#x80B2; &#x8CC7;&#x6599;&#x3011;&#x7B2C;5&#x7AE0; UML&#x307E;&#x3067;&#x306E;&#x9053; &#x301C;&#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;&#x306E;&#x8AAC;&#x660E;&amp;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;&#x7DE8;&#x301C;</a></li>
+<li><a href="http://yohshiy.blog.fc2.com/blog-entry-155.html">&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DE;&#x30FC;&#x30BA;&#x96D1;&#x8A18;&#x5E33; PlantUML - &#x30E6;&#x30FC;&#x30B9;&#x30B1;&#x30FC;&#x30B9;&#x56F3;</a></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
