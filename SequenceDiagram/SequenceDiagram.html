@@ -1,0 +1,1106 @@
+<!DOCTYPE html><html><head>
+      <title>SequenceDiagram</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:\Users\shisa\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.3.11\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <h1 class="mume-header" id="plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</h1>
+
+<h2 class="mume-header" id="%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</h2>
+
+<hr>
+<p>&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x306E;&#x4ED5;&#x69D8;&#x66F8;&#x3001;&#x8A2D;&#x8A08;&#x66F8;&#x306E;&#x4F5C;&#x6210;&#x3084;&#x7BA1;&#x7406;&#x3092;&#x52B9;&#x7387;&#x5316;&#x3059;&#x308B;&#x305F;&#x3081;&#x306B;&#x3001;Markdown + PlantUML&#x306B;&#x3088;&#x308B;&#x4F5C;&#x6210;&#x65B9;&#x6CD5;&#x3092;&#x65E5;&#x3005;&#x6A21;&#x7D22;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;<br>
+&#x3057;&#x304B;&#x3057;&#x306A;&#x304C;&#x3089;&#x3001;&#x305D;&#x3082;&#x305D;&#x3082;UML&#x56F3;&#x306E;&#x6B63;&#x5F0F;&#x306A;&#x66F8;&#x304D;&#x65B9;&#x3068;&#x3044;&#x3046;&#x3082;&#x306E;&#x3092;&#x3061;&#x3083;&#x3093;&#x3068;&#x5206;&#x304B;&#x3063;&#x3066;&#x3044;&#x306A;&#x3044;&#x3068;&#x3044;&#x3046;&#x306E;&#x304C;&#x6B63;&#x76F4;&#x306A;&#x3068;&#x3053;&#x308D;&#x306A;&#x306E;&#x3067;&#x3001;PlantUML&#x3092;&#x901A;&#x3058;&#x3066;UML&#x306E;&#x5404;&#x7A2E;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x52C9;&#x5F37;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p>
+<ul>
+<li>&#x672C;&#x7A3F;&#x306E;&#x30C6;&#x30FC;&#x30DE;&#x306F;&#x3001;&#x300C;UML&#x306B;&#x3088;&#x308B;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x300D;&#x3067;&#x3059;&#x3002;</li>
+<li>&#x672C;&#x7A3F;&#x306B;&#x304A;&#x3051;&#x308B;UML&#x56F3;&#x306E;&#x4F5C;&#x6210;&#x306F;&#x3001;Markdown + PlantUML&#x304C;&#x30D9;&#x30FC;&#x30B9;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x524D;&#x63D0;&#x3068;&#x3057;&#x307E;&#x3059;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</h2>
+
+<hr>
+<ul>
+<li><a href="#plantuml%E3%82%92%E9%80%9A%E3%81%98%E3%81%A6%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E5%AD%A6%E3%81%B6">PlantUML&#x3092;&#x901A;&#x3058;&#x3066;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x66F8;&#x304D;&#x65B9;&#x3092;&#x5B66;&#x3076;</a>
+<ul>
+<li><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">&#x306F;&#x3058;&#x3081;&#x306B;</a></li>
+<li><a href="#%E7%9B%AE%E6%AC%A1">&#x76EE;&#x6B21;</a></li>
+<li><a href="#%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%A8%E3%81%AF">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3068;&#x306F;</a></li>
+<li><a href="#%E8%A8%AD%E8%A8%88%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E7%AB%8B%E3%81%A1%E4%BD%8D%E7%BD%AE">&#x8A2D;&#x8A08;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306B;&#x304A;&#x3051;&#x308B;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x7ACB;&#x3061;&#x4F4D;&#x7F6E;</a></li>
+<li><a href="#%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E6%8F%8F%E3%81%8D%E6%96%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%92%E3%83%B3%E3%83%88">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x63CF;&#x304D;&#x65B9;&#x306B;&#x3064;&#x3044;&#x3066;&#x306E;&#x30D2;&#x30F3;&#x30C8;</a>
+<ul>
+<li><a href="#%E3%83%92%E3%83%B3%E3%83%881">&#x30D2;&#x30F3;&#x30C8;1</a></li>
+<li><a href="#%E3%83%92%E3%83%B3%E3%83%882">&#x30D2;&#x30F3;&#x30C8;2</a></li>
+</ul>
+</li>
+<li><a href="#%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3092;&#x69CB;&#x6210;&#x3059;&#x308B;&#x8981;&#x7D20;</a>
+<ul>
+<li><a href="#%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8">&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</a></li>
+<li><a href="#%E8%87%AA%E5%B7%B1%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8">&#x81EA;&#x5DF1;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</a></li>
+<li><a href="#%E5%A4%96%E9%83%A8%E3%81%A8%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%84%E3%82%8A%E5%8F%96%E3%82%8A">&#x5916;&#x90E8;&#x3068;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x3084;&#x308A;&#x53D6;&#x308A;</a></li>
+<li><a href="#%E3%83%A9%E3%82%A4%E3%83%95%E3%83%A9%E3%82%A4%E3%83%B3">&#x30E9;&#x30A4;&#x30D5;&#x30E9;&#x30A4;&#x30F3;</a></li>
+<li><a href="#%E5%AE%9F%E8%A1%8C%E4%BB%95%E6%A7%98%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%81%AE%E8%A1%A8%E7%8F%BE">&#x5B9F;&#x884C;&#x4ED5;&#x69D8;(&#x30A4;&#x30D9;&#x30F3;&#x30C8;)&#x306E;&#x8868;&#x73FE;</a></li>
+<li><a href="#%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E4%BE%8B-%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x4F8B;: &#x30ED;&#x30B0;&#x30A4;&#x30F3;</a></li>
+<li><a href="#%E8%A4%87%E5%90%88%E3%83%95%E3%83%A9%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88">&#x8907;&#x5408;&#x30D5;&#x30E9;&#x30B0;&#x30E1;&#x30F3;&#x30C8;</a>
+<ul>
+<li><a href="#alt-%E5%88%86%E5%B2%90%E5%87%A6%E7%90%86%E3%81%AE%E8%A1%A8%E7%8F%BE%E4%BE%8B">alt &#x5206;&#x5C90;&#x51E6;&#x7406;&#x306E;&#x8868;&#x73FE;&#x4F8B;</a></li>
+<li><a href="#ref-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E4%BD%BF%E7%94%A8-%E5%88%A5%E5%8F%82%E7%85%A7">ref &#x76F8;&#x4E92;&#x4F5C;&#x7528;&#x4F7F;&#x7528; &#x5225;&#x53C2;&#x7167;</a></li>
+<li><a href="#opt-%E6%9D%A1%E4%BB%B6%E3%81%AB%E3%82%88%E3%82%8B%E5%AE%9F%E8%A1%8C%E3%81%AE%E8%A1%A8%E7%8F%BE">opt &#x6761;&#x4EF6;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x884C;&#x306E;&#x8868;&#x73FE;</a></li>
+<li><a href="#delay-%E9%9D%9E%E5%90%8C%E6%9C%9F%E3%81%AE%E9%81%85%E5%BB%B6%E5%87%A6%E7%90%86">delay &#x975E;&#x540C;&#x671F;&#x306E;&#x9045;&#x5EF6;&#x51E6;&#x7406;</a></li>
+<li><a href="#par-%E4%B8%A6%E5%88%97%E5%87%A6%E7%90%86">par &#x4E26;&#x5217;&#x51E6;&#x7406;</a></li>
+<li><a href="#loop-%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97%E5%87%A6%E7%90%86">loop &#x7E70;&#x308A;&#x8FD4;&#x3057;&#x51E6;&#x7406;</a></li>
+<li><a href="#break-%E4%B8%AD%E6%96%AD%E5%87%A6%E7%90%86">break &#x4E2D;&#x65AD;&#x51E6;&#x7406;</a></li>
+<li><a href="#critical-%E6%8E%92%E4%BB%96%E5%88%B6%E5%BE%A1%E5%87%A6%E7%90%86">critical &#x6392;&#x4ED6;&#x5236;&#x5FA1;&#x51E6;&#x7406;</a></li>
+<li><a href="#%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E5%8C%96">&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x5316;</a></li>
+</ul>
+</li>
+<li><a href="#%E4%BD%9C%E6%88%90%E3%81%A8%E6%B6%88%E6%BB%85">&#x4F5C;&#x6210;&#x3068;&#x6D88;&#x6EC5;</a></li>
+<li><a href="#%E4%B8%8A%E4%B8%8B%E3%81%A7%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E9%96%93%E3%81%A7%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%82%92%E7%A9%BA%E3%81%91%E3%82%8B">&#x4E0A;&#x4E0B;&#x3067;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x9593;&#x3067;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x3092;&#x7A7A;&#x3051;&#x308B;</a></li>
+<li><a href="#%E5%88%86%E9%9B%A2%E7%B7%9A">&#x5206;&#x96E2;&#x7DDA;</a></li>
+<li><a href="#%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9">&#x30DC;&#x30C3;&#x30AF;&#x30B9;</a></li>
+<li><a href="#%E3%83%8E%E3%83%BC%E3%83%88">&#x30CE;&#x30FC;&#x30C8;</a>
+<ul>
+<li><a href="#%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%8E%E3%83%BC%E3%83%88">&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x30CE;&#x30FC;&#x30C8;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</a></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%A8%E3%81%AF">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3068;&#x306F;</h2>
+
+<hr>
+<ul>
+<li>&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3068;&#x306F;&#x3001;&#x30AF;&#x30E9;&#x30B9;&#x3084;&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x9593;&#x306E;&#x3084;&#x308A;&#x53D6;&#x308A;&#x3092;&#x6642;&#x9593;&#x8EF8;&#x306B;&#x6CBF;&#x3063;&#x3066;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3082;&#x306E;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+<li>&#x8A73;&#x7D30;&#x8A2D;&#x8A08;&#x306E;&#x6210;&#x679C;&#x7269;&#x306E;&#x4E2D;&#x3067;&#x6700;&#x3082;&#x91CD;&#x8981;&#x306A;&#x56F3;&#x3002;&#x63CF;&#x304F;&#x969B;&#x306F;&#x3044;&#x304D;&#x306A;&#x308A;&#x30BC;&#x30ED;&#x304B;&#x3089;&#x63CF;&#x304F;&#x306E;&#x3067;&#x306F;&#x306A;&#x304F;&#x3001;&#x30ED;&#x30D0;&#x30B9;&#x30C8;&#x30CD;&#x30B9;&#x56F3;&#x3092;&#x53C2;&#x8003;&#x306B;&#x3057;&#x306A;&#x304C;&#x3089;&#x63CF;&#x304F;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E8%A8%AD%E8%A8%88%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E7%AB%8B%E3%81%A1%E4%BD%8D%E7%BD%AE">&#x8A2D;&#x8A08;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306B;&#x304A;&#x3051;&#x308B;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x7ACB;&#x3061;&#x4F4D;&#x7F6E;</h2>
+
+<hr>
+<ul>
+<li>&#x8A2D;&#x8A08;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306F;&#x3001;&#x4E88;&#x5099;&#x8A2D;&#x8A08;(&#x3042;&#x308B;&#x3044;&#x306F;&#x4E8B;&#x524D;&#x8A2D;&#x8A08;)&#x3068;&#x8A73;&#x7D30;&#x8A2D;&#x8A08;&#x306E;&#xFF12;&#x6BB5;&#x968E;&#x306B;&#x5206;&#x3051;&#x3066;&#x884C;&#x308F;&#x308C;&#x308B;&#x3002;</li>
+<li>&#x8981;&#x6C42;&#x5B9A;&#x7FA9;&#x2192;&#x4E88;&#x5099;&#x8A2D;&#x8A08;&#x2192;&#x8A73;&#x7D30;&#x8A2D;&#x8A08;&#x2192;&#x5B9F;&#x88C5;&#x30FB;&#x30C6;&#x30B9;&#x30C8;&#x307E;&#x3067;&#x3092;&#x5FC5;&#x8981;&#x6700;&#x4F4E;&#x9650;&#x306E;&#x30B9;&#x30C6;&#x30C3;&#x30D7;&#x3067;&#x5B9F;&#x8DF5;&#x7684;&#x306B;&#x884C;&#x3046;&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3092;ICONIX&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x3068;&#x3044;&#x3046;&#x3002;</li>
+<li>&#xFF18;&#x5272;&#x7A0B;&#x5EA6;&#x5B8C;&#x6210;&#x3055;&#x305B;&#x305F;&#x3089;&#x6B21;&#x306E;&#x30D5;&#x30A7;&#x30FC;&#x30BA;&#x306B;&#x9032;&#x307F;&#x3001;&#x524D;&#x306E;&#x30D5;&#x30A7;&#x30FC;&#x30BA;&#x306E;&#x6210;&#x679C;&#x7269;&#x3092;&#x66F4;&#x306B;&#x9032;&#x5316;&#x3055;&#x305B;&#x308B;&#x3068;&#x3044;&#x3046;&#x6BB5;&#x968E;&#x7684;&#x306A;&#x8A2D;&#x8A08;&#x3002;</li>
+</ul>
+<p>ICONIX&#x30D7;&#x30ED;&#x30BB;&#x30B9;&#x306E;&#x6D41;&#x308C;<br>
+<img src="2019-01-09-22-01-36.png" alt=""><br>
+<img src="2019-01-09-22-09-17.png" alt=""></p>
+<ul>
+<li>&#x4E88;&#x5099;&#x8A2D;&#x8A08;&#x3067;&#x306F;&#x3001;&#x5B9F;&#x969B;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x6C17;&#x306B;&#x305B;&#x305A;&#x306B;&#x300C;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x5168;&#x4F53;&#x3068;&#x3057;&#x3066;&#x3069;&#x3046;&#x632F;&#x308B;&#x821E;&#x3046;&#x3079;&#x304D;&#x304B;&#x300D;&#x3092;&#x5148;&#x306B;&#x6C7A;&#x3081;&#x308B;&#x3002;</li>
+<li>&#x6B21;&#x306E;&#x8A73;&#x7D30;&#x8A2D;&#x8A08;&#x3067;&#x3001;&#x9069;&#x7528;&#x3057;&#x305F;&#x30A2;&#x30FC;&#x30AD;&#x30C6;&#x30AF;&#x30C1;&#x30E3;&#x306E;&#x90FD;&#x5408;&#x3092;&#x8003;&#x616E;&#x3057;&#x306A;&#x304C;&#x3089;&#x30AF;&#x30E9;&#x30B9;&#x306B;&#x8CAC;&#x52D9;&#x3092;&#x5272;&#x308A;&#x5F53;&#x3066;&#x3066;&#x3044;&#x304F;&#x3002;</li>
+<li>&#x4E8B;&#x524D;&#x306B;&#x30ED;&#x30D0;&#x30B9;&#x30C8;&#x30CD;&#x30B9;&#x56F3;&#x3055;&#x3048;&#x63CF;&#x3044;&#x3066;&#x3044;&#x308C;&#x3070;&#x3001;&#x8981;&#x4EF6;&#x5B9A;&#x7FA9;&#x306B;&#x304D;&#x3061;&#x3093;&#x3068;&#x7D50;&#x3073;&#x3064;&#x3044;&#x305F;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x304C;&#x63CF;&#x3051;&#x308B;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E6%8F%8F%E3%81%8D%E6%96%B9%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E3%81%AE%E3%83%92%E3%83%B3%E3%83%88">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x63CF;&#x304D;&#x65B9;&#x306B;&#x3064;&#x3044;&#x3066;&#x306E;&#x30D2;&#x30F3;&#x30C8;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E3%83%92%E3%83%B3%E3%83%881">&#x30D2;&#x30F3;&#x30C8;1</h3>
+
+<ul>
+<li>&#x30ED;&#x30D0;&#x30B9;&#x30C8;&#x30CD;&#x30B9;&#x56F3;&#x4E0A;&#x306E;&#x300C;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x300D;&#x306F;&#x3044;&#x305A;&#x308C;&#x304B;&#x306E;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3068;&#x306A;&#x308B;&#x3002;</li>
+<li>&#x3044;&#x305A;&#x308C;&#x3082;&#xFF11;&#x5BFE;&#xFF11;&#x3067;&#x3042;&#x308B;&#x5FC5;&#x8981;&#x306F;&#x306A;&#x3044;&#x3002;1&#x3064;&#x306E;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x304C;&#x8907;&#x6570;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306B;&#x5BFE;&#x5FDC;&#x3057;&#x3066;&#x3044;&#x3066;&#x3082;&#x69CB;&#x308F;&#x306A;&#x3044;&#x3002;</li>
+<li>&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30EB;&#x306F;&#xFF11;&#x672C;&#x306E;&#x7DDA;&#x306B;&#x306A;&#x308A;&#x3001;&#x305D;&#x308C;&#x304C;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306B;&#x304A;&#x3051;&#x308B;&#x3084;&#x308A;&#x53D6;&#x308A;&#x3068;&#x306A;&#x308B;&#x3002;<br>
+<img src="2019-01-12-13-04-18.png" alt=""></li>
+</ul>
+<h3 class="mume-header" id="%E3%83%92%E3%83%B3%E3%83%882">&#x30D2;&#x30F3;&#x30C8;2</h3>
+
+<ul>
+<li>&#x30ED;&#x30D0;&#x30B9;&#x30C8;&#x30CD;&#x30B9;&#x56F3;&#x4E0A;&#x306E;&#x300C;&#x30A8;&#x30F3;&#x30C6;&#x30A3;&#x30C6;&#x30A3;&#x300D;&#x306F;&#x5168;&#x3066;&#x3001;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x4E0A;&#x306B;&#x767B;&#x5834;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3092;&#x63CF;&#x304F;&#x6700;&#x5927;&#x306E;&#x30E1;&#x30EA;&#x30C3;&#x30C8;&#x306F;&#x3001;&#x56F3;&#x4E0A;&#x3067;&#x300C;&#x30D7;&#x30EA;&#x30D5;&#x30A1;&#x30AF;&#x30BF;&#x30EA;&#x30F3;&#x30B0;&#x300D;&#x304C;&#x884C;&#x3048;&#x308B;&#x3053;&#x3068;&#x3067;&#x3042;&#x308B;&#x3002;</li>
+<li>&#x30D7;&#x30EA;&#x30D5;&#x30A1;&#x30AF;&#x30BF;&#x30EA;&#x30F3;&#x30B0;&#x3068;&#x306F;&#x3001;&#x5B9F;&#x88C5;&#x524D;&#x306B;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3092;&#x7528;&#x3044;&#x3066;&#x8A2D;&#x8A08;&#x3092;&#x518D;&#x8003;&#x30FB;&#x6539;&#x5584;&#x3059;&#x308B;&#x4E8B;&#x3067;&#x3059;&#x3002;</li>
+</ul>
+<h2 class="mume-header" id="%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B%E8%A6%81%E7%B4%A0">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3092;&#x69CB;&#x6210;&#x3059;&#x308B;&#x8981;&#x7D20;</h2>
+
+<hr>
+<h3 class="mume-header" id="%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8">&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</h3>
+
+<p>PlantUML&#x3067;&#x306F;&#x4E0B;&#x8A18;&#x306E;&#x3088;&#x3046;&#x306B;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Alice -&gt; Bob : &#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="131px" preserveAspectRatio="none" style="width:149px;height:131px;" version="1.1" viewBox="0 0 149 131" width="149px" zoomAndPan="magnify"><defs><filter height="300%" id="f6rkvota4jke2" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="32" x2="32" y1="39.6094" y2="89.9609"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="120.5" x2="120.5" y1="39.6094" y2="89.9609"/><rect fill="#FEFECE" filter="url(#f6rkvota4jke2)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#f6rkvota4jke2)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="88.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="110.4941">Alice</text><rect fill="#FEFECE" filter="url(#f6rkvota4jke2)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="99.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="106.5" y="24.5332">Bob</text><rect fill="#FEFECE" filter="url(#f6rkvota4jke2)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="99.5" y="88.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="106.5" y="110.4941">Bob</text><polygon fill="#A80036" points="109,67.9609,119,71.9609,109,75.9609,113,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="115" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="39" y="67.1045">&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</text><!--
+@startuml
+Alice -> Bob : メッセージ
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><p>&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x7A2E;&#x5225;&#x3068;&#x77E2;&#x5370;&#x306E;&#x5F62;&#x72B6;<br>
+<img src="2019-01-09-22-28-30.png" alt=""></p>
+<p>&#x8A18;&#x8FF0;&#x4F8B;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Alice -&gt; Bob : &#x540C;&#x671F;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;
+Alice &lt;-- Bob : &#x623B;&#x308A;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;
+
+Alice -&gt;&gt; Chuck : &#x975E;&#x540C;&#x671F;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="192px" preserveAspectRatio="none" style="width:243px;height:192px;" version="1.1" viewBox="0 0 243 192" width="243px" zoomAndPan="magnify"><defs><filter height="300%" id="f6qy2iasxegry" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="32" x2="32" y1="39.6094" y2="150.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="146.5" x2="146.5" y1="39.6094" y2="150.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="207.5" x2="207.5" y1="39.6094" y2="150.6641"/><rect fill="#FEFECE" filter="url(#f6qy2iasxegry)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#f6qy2iasxegry)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="149.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="171.1973">Alice</text><rect fill="#FEFECE" filter="url(#f6qy2iasxegry)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="125.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="132.5" y="24.5332">Bob</text><rect fill="#FEFECE" filter="url(#f6qy2iasxegry)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="125.5" y="149.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="132.5" y="171.1973">Bob</text><rect fill="#FEFECE" filter="url(#f6qy2iasxegry)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="178.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="185.5" y="24.5332">Chuck</text><rect fill="#FEFECE" filter="url(#f6qy2iasxegry)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="54" x="178.5" y="149.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="40" x="185.5" y="171.1973">Chuck</text><polygon fill="#A80036" points="135,67.9609,145,71.9609,135,75.9609,139,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="141" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="39" y="67.1045">&#x540C;&#x671F;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</text><polygon fill="#A80036" points="43,98.3125,33,102.3125,43,106.3125,39,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="37" x2="146" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="49" y="97.4561">&#x623B;&#x308A;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="205.5" x2="195.5" y1="132.6641" y2="128.6641"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="205.5" x2="195.5" y1="132.6641" y2="136.6641"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="206.5" y1="132.6641" y2="132.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="39" y="127.8076">&#x975E;&#x540C;&#x671F;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</text><!--
+@startuml
+Alice -> Bob : 同期メッセージ
+Alice <- - Bob : 戻りメッセージ
+
+Alice ->> Chuck : 非同期メッセージ
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E8%87%AA%E5%B7%B1%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8">&#x81EA;&#x5DF1;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</h3>
+
+<p>&#x5BFE;&#x8C61;&#x3092;&#x540C;&#x3058;&#x306B;&#x3059;&#x308B;&#x3068;&#x81EA;&#x5DF1;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3068;&#x306A;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Alice -&gt; Alice : &#x81EA;&#x5DF1;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="144px" preserveAspectRatio="none" style="width:142px;height:144px;" version="1.1" viewBox="0 0 142 144" width="142px" zoomAndPan="magnify"><defs><filter height="300%" id="f1lsjzhdvajkwm" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="32" x2="32" y1="39.6094" y2="102.9609"/><rect fill="#FEFECE" filter="url(#f1lsjzhdvajkwm)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#f1lsjzhdvajkwm)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="101.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="123.4941">Alice</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="74" y1="71.9609" y2="71.9609"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="74" x2="74" y1="71.9609" y2="84.9609"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="33" x2="74" y1="84.9609" y2="84.9609"/><polygon fill="#A80036" points="43,80.9609,33,84.9609,43,88.9609,39,84.9609" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="39" y="67.1045">&#x81EA;&#x5DF1;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;</text><!--
+@startuml
+Alice -> Alice : 自己メッセージ
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E5%A4%96%E9%83%A8%E3%81%A8%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%84%E3%82%8A%E5%8F%96%E3%82%8A">&#x5916;&#x90E8;&#x3068;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x3084;&#x308A;&#x53D6;&#x308A;</h3>
+
+<p>&#x9001;&#x308A;&#x624B;&#x3084;&#x53D7;&#x3051;&#x624B;&#x304C;&#x30C0;&#x30A4;&#x30A2;&#x30B0;&#x30E9;&#x30E0;&#x4E0A;&#x306B;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F; [ &#x307E;&#x305F;&#x306F; ] &#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3002;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>[-&gt; Alice : DoWork
+
+Alice -&gt;] : Request
+Alice &lt;--]
+
+[&lt;- Alice : Done
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="206px" preserveAspectRatio="none" style="width:157px;height:206px;" version="1.1" viewBox="0 0 157 206" width="157px" zoomAndPan="magnify"><defs><filter height="300%" id="fflrujyqqpwju" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="74" x2="74" y1="39.6094" y2="164.6641"/><rect fill="#FEFECE" filter="url(#fflrujyqqpwju)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="50" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="57" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#fflrujyqqpwju)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="50" y="163.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="57" y="185.1973">Alice</text><polygon fill="#A80036" points="62,67.9609,72,71.9609,62,75.9609,66,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="3" x2="68" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="47" x="10" y="67.1045">DoWork</text><polygon fill="#A80036" points="134,98.3125,144,102.3125,134,106.3125,138,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="74" x2="140" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="48" x="81" y="97.4561">Request</text><polygon fill="#A80036" points="85,112.3125,75,116.3125,85,120.3125,81,116.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="79" x2="145" y1="116.3125" y2="116.3125"/><polygon fill="#A80036" points="14,142.6641,4,146.6641,14,150.6641,10,146.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="8" x2="73" y1="146.6641" y2="146.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="30" x="20" y="141.8076">Done</text><!--
+@startuml
+[-> Alice : DoWork
+
+Alice ->] : Request
+Alice <- -]
+
+[<- Alice : Done
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%A9%E3%82%A4%E3%83%95%E3%83%A9%E3%82%A4%E3%83%B3">&#x30E9;&#x30A4;&#x30D5;&#x30E9;&#x30A4;&#x30F3;</h3>
+
+<ul>
+<li>&#x30E9;&#x30A4;&#x30D5;&#x30E9;&#x30A4;&#x30F3;&#x306E;&#x8981;&#x7D20;&#x306F;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x51FA;&#x73FE;&#x9806;&#x306B;&#x5DE6;&#x304B;&#x3089;&#x8868;&#x793A;&#x3055;&#x308C;&#x308B;&#x3002;</li>
+<li>&#x8981;&#x7D20;&#x540D;&#x306B;&#x8A18;&#x53F7;&#x306A;&#x3069;&#x306E;&#x82F1;&#x6570;&#x5B57;&#x4EE5;&#x5916;&#x3092;&#x4F7F;&#x3046;&#x5834;&#x5408;&#x306B;&#x306F;&quot;&#x3067;&#x56F2;&#x3080;&#x3002;</li>
+<li>as&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x3067;&#x5225;&#x540D;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x3053;&#x3068;&#x3082;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Alice -&gt; &quot;Bob : Human&quot;
+Alice -&gt; &#x592A;&#x90CE;
+Alice -&gt; &quot;I have a really\nlong name&quot; as Long
+Alice &lt;-- Long
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="192px" preserveAspectRatio="none" style="width:344px;height:192px;" version="1.1" viewBox="0 0 344 192" width="344px" zoomAndPan="magnify"><defs><filter height="300%" id="fz101qjfsxywr" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="32" x2="32" y1="57.2188" y2="133.2188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="115" x2="115" y1="57.2188" y2="133.2188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="198" x2="198" y1="57.2188" y2="133.2188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="284" x2="284" y1="57.2188" y2="133.2188"/><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="20.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="42.1426">Alice</text><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="132.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="153.752">Alice</text><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="95" x="66" y="20.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="81" x="73" y="42.1426">Bob : Human</text><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="95" x="66" y="132.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="81" x="73" y="153.752">Bob : Human</text><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="175" y="20.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="182" y="42.1426">&#x592A;&#x90CE;</text><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="175" y="132.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="182" y="153.752">&#x592A;&#x90CE;</text><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="231" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="88" x="238" y="24.5332">I have a really</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="249" y="42.1426">long name</text><rect fill="#FEFECE" filter="url(#fz101qjfsxywr)" height="49.2188" style="stroke: #A80036; stroke-width: 1.5;" width="102" x="231" y="132.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="88" x="238" y="153.752">I have a really</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="249" y="171.3613">long name</text><polygon fill="#A80036" points="103.5,69.2188,113.5,73.2188,103.5,77.2188,107.5,73.2188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="109.5" y1="73.2188" y2="73.2188"/><polygon fill="#A80036" points="186,83.2188,196,87.2188,186,91.2188,190,87.2188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="192" y1="87.2188" y2="87.2188"/><polygon fill="#A80036" points="272,97.2188,282,101.2188,272,105.2188,276,101.2188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="278" y1="101.2188" y2="101.2188"/><polygon fill="#A80036" points="43,111.2188,33,115.2188,43,119.2188,39,115.2188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="37" x2="283" y1="115.2188" y2="115.2188"/><!--
+@startuml
+Alice -> "Bob : Human"
+Alice -> 太郎
+Alice -> "I have a really\nlong name" as Long
+Alice <- - Long
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E5%AE%9F%E8%A1%8C%E4%BB%95%E6%A7%98%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E3%81%AE%E8%A1%A8%E7%8F%BE">&#x5B9F;&#x884C;&#x4ED5;&#x69D8;(&#x30A4;&#x30D9;&#x30F3;&#x30C8;)&#x306E;&#x8868;&#x73FE;</h3>
+
+<ul>
+<li>&#x30E9;&#x30A4;&#x30D5;&#x30E9;&#x30A4;&#x30F3;&#x3067;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x304C;&#x5B9F;&#x884C;&#x4E2D;&#x3067;&#x3042;&#x308B;&#x3053;&#x3068;&#x3092;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x30E9;&#x30A4;&#x30D5;&#x30E9;&#x30A4;&#x30F3;&#x306E;&#x7DDA;&#x306E;&#x4E0A;&#x306B;&#x767D;&#x3044;&#x7BB1;&#x3067;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>activate Alice
+Alice -&gt; Bob : Message
+Alice &lt;-- Bob
+deactivate Bob
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="145px" preserveAspectRatio="none" style="width:142px;height:145px;" version="1.1" viewBox="0 0 142 145" width="142px" zoomAndPan="magnify"><defs><filter height="300%" id="f138uiu0pnh1j4" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f138uiu0pnh1j4)" height="45.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="27" y="49.6094"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="32" x2="32" y1="39.6094" y2="103.9609"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="113.5" x2="113.5" y1="39.6094" y2="103.9609"/><rect fill="#FEFECE" filter="url(#f138uiu0pnh1j4)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#f138uiu0pnh1j4)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="102.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="124.4941">Alice</text><rect fill="#FEFECE" filter="url(#f138uiu0pnh1j4)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="92.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="99.5" y="24.5332">Bob</text><rect fill="#FEFECE" filter="url(#f138uiu0pnh1j4)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="92.5" y="102.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="99.5" y="124.4941">Bob</text><rect fill="#FFFFFF" filter="url(#f138uiu0pnh1j4)" height="45.3516" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="27" y="49.6094"/><polygon fill="#A80036" points="102,67.9609,112,71.9609,102,75.9609,106,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="37" x2="108" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="53" x="44" y="67.1045">Message</text><polygon fill="#A80036" points="48,81.9609,38,85.9609,48,89.9609,44,85.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="42" x2="113" y1="85.9609" y2="85.9609"/><!--
+@startuml
+activate Alice
+Alice -> Bob : Message
+Alice <- - Bob
+deactivate Bob
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%9B%B3%E3%81%AE%E4%BE%8B-%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3">&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x4F8B;: &#x30ED;&#x30B0;&#x30A4;&#x30F3;</h3>
+
+<p>&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x306B;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;&#x3068;&#x3044;&#x3046;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>activate User
+    User -&gt; LogIn : &#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;
+    activate LogIn
+        LogIn -&gt; UserInfo : &#x30E6;&#x30FC;&#x30B6;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x304B;
+        activate UserInfo
+            UserInfo --&gt; LogIn
+        deactivate UserInfo
+        UserInfo -&gt; AuthorityInfo : &#x6A29;&#x9650;&#x304C;&#x3042;&#x308B;&#x304B;&#xFF1F;
+        activate AuthorityInfo
+            AuthorityInfo --&gt; LogIn
+        deactivate AuthorityInfo
+        LogIn --&gt; User
+    deactivate LogIn
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="234px" preserveAspectRatio="none" style="width:455px;height:234px;" version="1.1" viewBox="0 0 455 234" width="455px" zoomAndPan="magnify"><defs><filter height="300%" id="fc4tbo5b1lk04" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="134.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="26.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="102.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="133.5" y="71.9609"/><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="279.5" y="102.3125"/><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="394.5" y="146.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="31" x2="31" y1="39.6094" y2="192.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="138" x2="138" y1="39.6094" y2="192.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="284.5" x2="284.5" y1="39.6094" y2="192.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="399" x2="399" y1="39.6094" y2="192.6641"/><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="15" y="24.5332">User</text><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="8" y="191.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="15" y="213.1973">User</text><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="112" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="119" y="24.5332">LogIn</text><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="112" y="191.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="119" y="213.1973">LogIn</text><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="249.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="256.5" y="24.5332">UserInfo</text><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="249.5" y="191.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="256.5" y="213.1973">UserInfo</text><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="351" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="358" y="24.5332">AuthorityInfo</text><rect fill="#FEFECE" filter="url(#fc4tbo5b1lk04)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="351" y="191.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="358" y="213.1973">AuthorityInfo</text><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="134.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="26.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="102.7031" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="133.5" y="71.9609"/><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="279.5" y="102.3125"/><rect fill="#FFFFFF" filter="url(#fc4tbo5b1lk04)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="394.5" y="146.6641"/><polygon fill="#A80036" points="121.5,67.9609,131.5,71.9609,121.5,75.9609,125.5,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="36.5" x2="127.5" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="43.5" y="67.1045">&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;</text><polygon fill="#A80036" points="267.5,98.3125,277.5,102.3125,267.5,106.3125,271.5,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="143.5" x2="273.5" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="117" x="150.5" y="97.4561">&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x304B;</text><polygon fill="#A80036" points="154.5,112.3125,144.5,116.3125,154.5,120.3125,150.5,116.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="148.5" x2="283.5" y1="116.3125" y2="116.3125"/><polygon fill="#A80036" points="382.5,142.6641,392.5,146.6641,382.5,150.6641,386.5,146.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="284.5" x2="388.5" y1="146.6641" y2="146.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="291.5" y="141.8076">&#x6A29;&#x9650;&#x304C;&#x3042;&#x308B;&#x304B;&#xFF1F;</text><polygon fill="#A80036" points="154.5,156.6641,144.5,160.6641,154.5,164.6641,150.5,160.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="148.5" x2="398.5" y1="160.6641" y2="160.6641"/><polygon fill="#A80036" points="47.5,170.6641,37.5,174.6641,47.5,178.6641,43.5,174.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="41.5" x2="137.5" y1="174.6641" y2="174.6641"/><!--
+@startuml
+activate User
+    User -> LogIn : ログインする
+    activate LogIn
+        LogIn -> UserInfo : ユーザが存在するか
+        activate UserInfo
+            UserInfo - -> LogIn
+        deactivate UserInfo
+        UserInfo -> AuthorityInfo : 権限があるか？
+        activate AuthorityInfo
+            AuthorityInfo - -> LogIn
+        deactivate AuthorityInfo
+        LogIn - -> User
+    deactivate LogIn
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E8%A4%87%E5%90%88%E3%83%95%E3%83%A9%E3%82%B0%E3%83%A1%E3%83%B3%E3%83%88">&#x8907;&#x5408;&#x30D5;&#x30E9;&#x30B0;&#x30E1;&#x30F3;&#x30C8;</h3>
+
+<p><img src="2019-01-10-21-22-16.png" alt=""></p>
+<h4 class="mume-header" id="alt-%E5%88%86%E5%B2%90%E5%87%A6%E7%90%86%E3%81%AE%E8%A1%A8%E7%8F%BE%E4%BE%8B">alt &#x5206;&#x5C90;&#x51E6;&#x7406;&#x306E;&#x8868;&#x73FE;&#x4F8B;</h4>
+
+<p>&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x51E6;&#x7406;&#x306E;&#x6210;&#x529F;&#x3068;&#x5931;&#x6557;</p>
+<pre data-role="codeBlock" data-info="" class="language-"><code>activate User
+    User -&gt; LogIn : &#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;
+    activate LogIn
+        LogIn -&gt; UserInfo : &#x30E6;&#x30FC;&#x30B6;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x304B;
+        activate UserInfo
+            UserInfo --&gt; LogIn
+        deactivate UserInfo
+        UserInfo -&gt; AuthorityInfo : &#x6A29;&#x9650;&#x304C;&#x3042;&#x308B;&#x304B;&#xFF1F;
+        activate AuthorityInfo
+            AuthorityInfo --&gt; LogIn
+        deactivate AuthorityInfo
+        alt &#x8A8D;&#x8A3C;[&#x6210;&#x529F;]
+            LogIn --&gt; User : dashboard&#x306B;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;
+            deactivate LogIn
+        else &#x8A8D;&#x8A3C;[&#x5931;&#x6557;]
+            LogIn --&gt; User: &#x8A8D;&#x8A3C;&#x5931;&#x6557;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x8868;&#x793A;
+        end
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="329px" preserveAspectRatio="none" style="width:561px;height:329px;" version="1.1" viewBox="0 0 561 329" width="561px" zoomAndPan="magnify"><defs><filter height="300%" id="focls4a7l0484" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="228.9453" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="41.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="144.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="239.5" y="71.9609"/><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="385.5" y="102.3125"/><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="500.5" y="146.6641"/><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="94.8906" style="stroke: #000000; stroke-width: 2.0;" width="268" x="13" y="175.6641"/><rect fill="#FFFFFF" height="46.1875" style="stroke: none; stroke-width: 1.0;" width="268" x="13" y="224.3672"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="46" x2="46" y1="39.6094" y2="287.5547"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="244" x2="244" y1="39.6094" y2="287.5547"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="390.5" x2="390.5" y1="39.6094" y2="287.5547"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="505" x2="505" y1="39.6094" y2="287.5547"/><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="23" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="30" y="24.5332">User</text><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="23" y="286.5547"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="30" y="308.0879">User</text><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="218" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="225" y="24.5332">LogIn</text><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="218" y="286.5547"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="225" y="308.0879">LogIn</text><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="355.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="362.5" y="24.5332">UserInfo</text><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="355.5" y="286.5547"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="362.5" y="308.0879">UserInfo</text><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="457" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="464" y="24.5332">AuthorityInfo</text><rect fill="#FEFECE" filter="url(#focls4a7l0484)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="457" y="286.5547"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="464" y="308.0879">AuthorityInfo</text><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="228.9453" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="41.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="144.4063" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="239.5" y="71.9609"/><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="385.5" y="102.3125"/><rect fill="#FFFFFF" filter="url(#focls4a7l0484)" height="14" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="500.5" y="146.6641"/><polygon fill="#A80036" points="227.5,67.9609,237.5,71.9609,227.5,75.9609,231.5,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="51.5" x2="233.5" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="58.5" y="67.1045">&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;</text><polygon fill="#A80036" points="373.5,98.3125,383.5,102.3125,373.5,106.3125,377.5,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="249.5" x2="379.5" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="117" x="256.5" y="97.4561">&#x30E6;&#x30FC;&#x30B6;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x304B;</text><polygon fill="#A80036" points="260.5,112.3125,250.5,116.3125,260.5,120.3125,256.5,116.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="254.5" x2="389.5" y1="116.3125" y2="116.3125"/><polygon fill="#A80036" points="488.5,142.6641,498.5,146.6641,488.5,150.6641,492.5,146.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="390.5" x2="494.5" y1="146.6641" y2="146.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="397.5" y="141.8076">&#x6A29;&#x9650;&#x304C;&#x3042;&#x308B;&#x304B;&#xFF1F;</text><polygon fill="#A80036" points="260.5,156.6641,250.5,160.6641,260.5,164.6641,256.5,160.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="254.5" x2="504.5" y1="160.6641" y2="160.6641"/><path d="M13,175.6641 L74,175.6641 L74,183.6641 L64,193.6641 L13,193.6641 L13,175.6641 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="94.8906" style="stroke: #000000; stroke-width: 2.0;" width="268" x="13" y="175.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="28" y="190.1592">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="89" y="189.083">[&#x8A8D;&#x8A3C;[&#x6210;&#x529F;]]</text><polygon fill="#A80036" points="62.5,212.3672,52.5,216.3672,62.5,220.3672,58.5,216.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="56.5" x2="243.5" y1="216.3672" y2="216.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="151" x="68.5" y="211.5107">dashboard&#x306B;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="281" y1="225.3672" y2="225.3672"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="18" y="236.7861">[&#x8A8D;&#x8A3C;[&#x5931;&#x6557;]]</text><polygon fill="#A80036" points="62.5,258.5547,52.5,262.5547,62.5,266.5547,58.5,262.5547" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="56.5" x2="243.5" y1="262.5547" y2="262.5547"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="68.5" y="257.6982">&#x8A8D;&#x8A3C;&#x5931;&#x6557;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x8868;&#x793A;</text><!--
+@startuml
+activate User
+    User -> LogIn : ログインする
+    activate LogIn
+        LogIn -> UserInfo : ユーザが存在するか
+        activate UserInfo
+            UserInfo - -> LogIn
+        deactivate UserInfo
+        UserInfo -> AuthorityInfo : 権限があるか？
+        activate AuthorityInfo
+            AuthorityInfo - -> LogIn
+        deactivate AuthorityInfo
+        alt 認証[成功]
+            LogIn - -> User : dashboardにリダイレクト
+            deactivate LogIn
+        else 認証[失敗]
+            LogIn - -> User: 認証失敗のメッセージを表示
+        end
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="ref-%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E4%BD%BF%E7%94%A8-%E5%88%A5%E5%8F%82%E7%85%A7">ref &#x76F8;&#x4E92;&#x4F5C;&#x7528;&#x4F7F;&#x7528; &#x5225;&#x53C2;&#x7167;</h4>
+
+<ul>
+<li>&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3092;&#x7C21;&#x7565;&#x5316;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;&#x4ED6;&#x306E;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x6B32;&#x3057;&#x3044;&#x6642;&#x306B;&#x4F7F;&#x3046;&#x3002;</li>
+<li>&#x4E0B;&#x8A18;&#x306F;&#x3001;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x51E6;&#x7406;&#x306E;&#x6A29;&#x9650;&#x78BA;&#x8A8D;&#x3092;&#x5225;&#x53C2;&#x7167;&#x3068;&#x3057;&#x305F;&#x4F8B;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>activate User
+    User -&gt; LogIn : &#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;
+    activate LogIn
+        LogIn -&gt; UserInfo : &#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x51E6;&#x7406;
+        ref over UserInfo, AuthorityInfo : &#x6A29;&#x9650;&#x3092;&#x30C1;&#x30A7;&#x30C3;&#x30AF;
+        UserInfo --&gt; LogIn
+        alt &#x8A8D;&#x8A3C;[&#x6210;&#x529F;]
+            LogIn --&gt; User : dashboard&#x306B;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;
+            deactivate LogIn
+        else &#x8A8D;&#x8A3C;[&#x5931;&#x6557;]
+            LogIn --&gt; User: &#x8A8D;&#x8A3C;&#x5931;&#x6557;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x8868;&#x793A;
+        end
+    deactivate LogIn
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="332px" preserveAspectRatio="none" style="width:503px;height:332px;" version="1.1" viewBox="0 0 503 332" width="503px" zoomAndPan="magnify"><defs><filter height="300%" id="ftgy4qetjqah7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#ftgy4qetjqah7)" height="232.2969" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="41.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#ftgy4qetjqah7)" height="147.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="239.5" y="71.9609"/><rect fill="#FFFFFF" filter="url(#ftgy4qetjqah7)" height="94.8906" style="stroke: #000000; stroke-width: 2.0;" width="268" x="13" y="179.0156"/><rect fill="#FFFFFF" height="46.1875" style="stroke: none; stroke-width: 1.0;" width="268" x="13" y="227.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="46" x2="46" y1="39.6094" y2="290.9063"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="244" x2="244" y1="39.6094" y2="290.9063"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="351.5" x2="351.5" y1="39.6094" y2="290.9063"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="444.5" x2="444.5" y1="39.6094" y2="290.9063"/><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="23" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="30" y="24.5332">User</text><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="23" y="289.9063"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="30" y="311.4395">User</text><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="218" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="225" y="24.5332">LogIn</text><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="218" y="289.9063"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="225" y="311.4395">LogIn</text><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="316.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="323.5" y="24.5332">UserInfo</text><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="316.5" y="289.9063"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="323.5" y="311.4395">UserInfo</text><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="396.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="403.5" y="24.5332">AuthorityInfo</text><rect fill="#FEFECE" filter="url(#ftgy4qetjqah7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="396.5" y="289.9063"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="403.5" y="311.4395">AuthorityInfo</text><rect fill="#FFFFFF" filter="url(#ftgy4qetjqah7)" height="232.2969" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="41.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#ftgy4qetjqah7)" height="147.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="239.5" y="71.9609"/><polygon fill="#A80036" points="227.5,67.9609,237.5,71.9609,227.5,75.9609,231.5,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="51.5" x2="233.5" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="58.5" y="67.1045">&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;</text><polygon fill="#A80036" points="339.5,98.3125,349.5,102.3125,339.5,106.3125,343.5,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="249.5" x2="345.5" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="256.5" y="97.4561">&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x51E6;&#x7406;</text><rect fill="#FFFFFF" filter="url(#ftgy4qetjqah7)" height="42.7031" style="stroke: #000000; stroke-width: 2.0;" width="179" x="313.5" y="110.3125"/><polygon fill="#EEEEEE" points="313.5,110.3125,375.5,110.3125,375.5,118.3125,365.5,128.3125,313.5,128.3125,313.5,110.3125" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="17" x="326.5" y="125.8076">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="359.5" y="145.8076">&#x6A29;&#x9650;&#x3092;&#x30C1;&#x30A7;&#x30C3;&#x30AF;</text><polygon fill="#A80036" points="260.5,160.0156,250.5,164.0156,260.5,168.0156,256.5,164.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="254.5" x2="350.5" y1="164.0156" y2="164.0156"/><path d="M13,179.0156 L74,179.0156 L74,187.0156 L64,197.0156 L13,197.0156 L13,179.0156 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="94.8906" style="stroke: #000000; stroke-width: 2.0;" width="268" x="13" y="179.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="28" y="193.5107">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="89" y="192.4346">[&#x8A8D;&#x8A3C;[&#x6210;&#x529F;]]</text><polygon fill="#A80036" points="62.5,215.7188,52.5,219.7188,62.5,223.7188,58.5,219.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="56.5" x2="243.5" y1="219.7188" y2="219.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="151" x="68.5" y="214.8623">dashboard&#x306B;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="281" y1="228.7188" y2="228.7188"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="18" y="240.1377">[&#x8A8D;&#x8A3C;[&#x5931;&#x6557;]]</text><polygon fill="#A80036" points="62.5,261.9063,52.5,265.9063,62.5,269.9063,58.5,265.9063" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="56.5" x2="243.5" y1="265.9063" y2="265.9063"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="68.5" y="261.0498">&#x8A8D;&#x8A3C;&#x5931;&#x6557;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x8868;&#x793A;</text><!--
+@startuml
+activate User
+    User -> LogIn : ログインする
+    activate LogIn
+        LogIn -> UserInfo : ログイン処理
+        ref over UserInfo, AuthorityInfo : 権限をチェック
+        UserInfo - -> LogIn
+        alt 認証[成功]
+            LogIn - -> User : dashboardにリダイレクト
+            deactivate LogIn
+        else 認証[失敗]
+            LogIn - -> User: 認証失敗のメッセージを表示
+        end
+    deactivate LogIn
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="opt-%E6%9D%A1%E4%BB%B6%E3%81%AB%E3%82%88%E3%82%8B%E5%AE%9F%E8%A1%8C%E3%81%AE%E8%A1%A8%E7%8F%BE">opt &#x6761;&#x4EF6;&#x306B;&#x3088;&#x308B;&#x5B9F;&#x884C;&#x306E;&#x8868;&#x73FE;</h4>
+
+<ul>
+<li>&#x7279;&#x5B9A;&#x306E;&#x6761;&#x4EF6;&#x3092;&#x6E80;&#x305F;&#x3057;&#x305F;&#x5834;&#x5408;&#x306B;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x3092;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x4E0B;&#x8A18;&#x306F;&#x3001;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x51E6;&#x7406;&#x306E;&#x4F8B;&#x306B;&#x4F1A;&#x54E1;&#x672A;&#x767B;&#x9332;&#x306E;&#x5834;&#x5408;&#x306E;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x3092;&#x8FFD;&#x52A0;&#x3057;&#x305F;&#x4F8B;</li>
+</ul>
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="486px" preserveAspectRatio="none" style="width:509px;height:486px;" version="1.1" viewBox="0 0 509 486" width="509px" zoomAndPan="magnify"><defs><filter height="300%" id="f1y2j4o8hrbxe" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1y2j4o8hrbxe)" height="386.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="41.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#f1y2j4o8hrbxe)" height="147.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="239.5" y="225.7188"/><rect fill="#FFFFFF" filter="url(#f1y2j4o8hrbxe)" height="139.7578" style="stroke: #000000; stroke-width: 2.0;" width="226.5" x="13" y="56.6094"/><rect fill="#FFFFFF" filter="url(#f1y2j4o8hrbxe)" height="94.8906" style="stroke: #000000; stroke-width: 2.0;" width="268" x="13" y="332.7734"/><rect fill="#FFFFFF" height="46.1875" style="stroke: none; stroke-width: 1.0;" width="268" x="13" y="381.4766"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="46" x2="46" y1="39.6094" y2="444.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="127.5" x2="127.5" y1="39.6094" y2="444.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="244" x2="244" y1="39.6094" y2="444.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="351.5" x2="351.5" y1="39.6094" y2="444.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="444.5" x2="444.5" y1="39.6094" y2="444.6641"/><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="23" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="30" y="24.5332">User</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="23" y="443.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="30" y="465.1973">User</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="80.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="87.5" y="24.5332">Registration</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="80.5" y="443.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="87.5" y="465.1973">Registration</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="218" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="225" y="24.5332">LogIn</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="49" x="218" y="443.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="35" x="225" y="465.1973">LogIn</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="316.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="323.5" y="24.5332">UserInfo</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="66" x="316.5" y="443.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="52" x="323.5" y="465.1973">UserInfo</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="396.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="403.5" y="24.5332">AuthorityInfo</text><rect fill="#FEFECE" filter="url(#f1y2j4o8hrbxe)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="93" x="396.5" y="443.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="79" x="403.5" y="465.1973">AuthorityInfo</text><rect fill="#FFFFFF" filter="url(#f1y2j4o8hrbxe)" height="386.0547" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="41.5" y="49.6094"/><rect fill="#FFFFFF" filter="url(#f1y2j4o8hrbxe)" height="147.7578" style="stroke: #A80036; stroke-width: 1.0;" width="10" x="239.5" y="225.7188"/><path d="M13,56.6094 L78,56.6094 L78,64.6094 L68,74.6094 L13,74.6094 L13,56.6094 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="139.7578" style="stroke: #000000; stroke-width: 2.0;" width="226.5" x="13" y="56.6094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="20" x="28" y="71.1045">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="104" x="93" y="70.0283">[&#x4F1A;&#x54E1;&#x672A;&#x767B;&#x9332;&#x306E;&#x5834;&#x5408;]</text><polygon fill="#A80036" points="115.5,93.3125,125.5,97.3125,115.5,101.3125,119.5,97.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="51.5" x2="121.5" y1="97.3125" y2="97.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="58.5" y="92.4561">&#x65B0;&#x898F;&#x767B;&#x9332;</text><polygon fill="#A80036" points="486.5,123.6641,496.5,127.6641,486.5,131.6641,490.5,127.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="127.5" x2="492.5" y1="127.6641" y2="127.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="134.5" y="122.8076">&#x30E1;&#x30FC;&#x30EB;&#x914D;&#x4FE1;&#x51E6;&#x7406;</text><polygon fill="#A80036" points="62.5,154.0156,52.5,158.0156,62.5,162.0156,58.5,158.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="56.5" x2="497.5" y1="158.0156" y2="158.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="68.5" y="153.1592">&#x30E1;&#x30FC;&#x30EB;&#x9001;&#x4FE1;</text><polygon fill="#A80036" points="115.5,184.3672,125.5,188.3672,115.5,192.3672,119.5,188.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="51.5" x2="121.5" y1="188.3672" y2="188.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="58.5" y="183.5107">&#x6709;&#x52B9;&#x5316;</text><polygon fill="#A80036" points="227.5,221.7188,237.5,225.7188,227.5,229.7188,231.5,225.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="51.5" x2="233.5" y1="225.7188" y2="225.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="58.5" y="220.8623">&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3059;&#x308B;</text><polygon fill="#A80036" points="339.5,252.0703,349.5,256.0703,339.5,260.0703,343.5,256.0703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="249.5" x2="345.5" y1="256.0703" y2="256.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="256.5" y="251.2139">&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x51E6;&#x7406;</text><rect fill="#FFFFFF" filter="url(#f1y2j4o8hrbxe)" height="42.7031" style="stroke: #000000; stroke-width: 2.0;" width="179" x="313.5" y="264.0703"/><polygon fill="#EEEEEE" points="313.5,264.0703,375.5,264.0703,375.5,272.0703,365.5,282.0703,313.5,282.0703,313.5,264.0703" style="stroke: #000000; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="17" x="326.5" y="279.5654">ref</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="359.5" y="299.5654">&#x6A29;&#x9650;&#x3092;&#x30C1;&#x30A7;&#x30C3;&#x30AF;</text><polygon fill="#A80036" points="260.5,313.7734,250.5,317.7734,260.5,321.7734,256.5,317.7734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="254.5" x2="350.5" y1="317.7734" y2="317.7734"/><path d="M13,332.7734 L74,332.7734 L74,340.7734 L64,350.7734 L13,350.7734 L13,332.7734 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="94.8906" style="stroke: #000000; stroke-width: 2.0;" width="268" x="13" y="332.7734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="16" x="28" y="347.2686">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="89" y="346.1924">[&#x8A8D;&#x8A3C;[&#x6210;&#x529F;]]</text><polygon fill="#A80036" points="62.5,369.4766,52.5,373.4766,62.5,377.4766,58.5,373.4766" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="56.5" x2="243.5" y1="373.4766" y2="373.4766"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="151" x="68.5" y="368.6201">dashboard&#x306B;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;</text><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="281" y1="382.4766" y2="382.4766"/><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="64" x="18" y="393.8955">[&#x8A8D;&#x8A3C;[&#x5931;&#x6557;]]</text><polygon fill="#A80036" points="62.5,415.6641,52.5,419.6641,62.5,423.6641,58.5,419.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="56.5" x2="243.5" y1="419.6641" y2="419.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="169" x="68.5" y="414.8076">&#x8A8D;&#x8A3C;&#x5931;&#x6557;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x8868;&#x793A;</text><!--
+@startuml
+activate User
+    opt 会員未登録の場合
+        User -> Registration : 新規登録
+        Registration ->] : メール配信処理
+        User <- -] : メール送信
+        User -> Registration : 有効化
+    end
+    User -> LogIn : ログインする
+    activate LogIn
+        LogIn -> UserInfo : ログイン処理
+        ref over UserInfo, AuthorityInfo : 権限をチェック
+        UserInfo - -> LogIn
+        alt 認証[成功]
+            LogIn - -> User : dashboardにリダイレクト
+            deactivate LogIn
+        else 認証[失敗]
+            LogIn - -> User: 認証失敗のメッセージを表示
+        end
+    deactivate LogIn
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="delay-%E9%9D%9E%E5%90%8C%E6%9C%9F%E3%81%AE%E9%81%85%E5%BB%B6%E5%87%A6%E7%90%86">delay &#x975E;&#x540C;&#x671F;&#x306E;&#x9045;&#x5EF6;&#x51E6;&#x7406;</h4>
+
+<ul>
+<li>&#x975E;&#x540C;&#x671F;&#x306E;&#x51E6;&#x7406;&#x306B;&#x304A;&#x3044;&#x3066;&#x3001;&#x9045;&#x5EF6;&#x3057;&#x3066;&#x304B;&#x3089;&#x51E6;&#x7406;&#x3055;&#x308C;&#x308B;&#x3082;&#x306E;&#x3092;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x4E0B;&#x8A18;&#x306F;&#x3001;&#x4F1A;&#x54E1;&#x767B;&#x9332;&#x6642;&#x306E;&#x30E1;&#x30FC;&#x30EB;&#x914D;&#x4FE1;&#x51E6;&#x7406;&#x304B;&#x3089;&#x9001;&#x4FE1;&#x307E;&#x3067;&#x306B;&#xFF11;&#x5206;&#x306E;&#x9045;&#x5EF6;&#x304C;&#x8D77;&#x304D;&#x308B;&#x3068;&#x3059;&#x308B;&#x4F8B;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>activate User
+    User -&gt; Registration : &#x65B0;&#x898F;&#x767B;&#x9332;
+    Registration -&gt;] : &#x30E1;&#x30FC;&#x30EB;&#x914D;&#x4FE1;&#x51E6;&#x7406;
+    User &lt;-- Registration
+
+    ...&#xFF11;&#x5206;&#x5F8C;...
+
+    User &lt;--] : &#x30E1;&#x30FC;&#x30EB;&#x9001;&#x4FE1;
+    User -&gt; Registration : &#x6709;&#x52B9;&#x5316;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="278px" preserveAspectRatio="none" style="width:238px;height:278px;" version="1.1" viewBox="0 0 238 278" width="238px" zoomAndPan="magnify"><defs><filter height="300%" id="f18pwclxka04bt" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f18pwclxka04bt)" height="74.7031" style="stroke: #FFFFFF; stroke-width: 1.0;" width="10" x="26.5" y="49.6094"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="26.5" x2="26.5" y1="49.6094" y2="124.3125"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="36.5" x2="36.5" y1="49.6094" y2="124.3125"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="26.5" x2="36.5" y1="49.6094" y2="49.6094"/><rect fill="#FFFFFF" filter="url(#f18pwclxka04bt)" height="61.7031" style="stroke: #FFFFFF; stroke-width: 1.0;" width="10" x="26.5" y="166.1484"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="26.5" x2="26.5" y1="166.1484" y2="227.8516"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="36.5" x2="36.5" y1="166.1484" y2="227.8516"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="31" x2="31" y1="39.6094" y2="124.3125"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="31" x2="31" y1="124.3125" y2="166.1484"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="31" x2="31" y1="166.1484" y2="236.8516"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="112.5" x2="112.5" y1="39.6094" y2="124.3125"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 1.0,4.0;" x1="112.5" x2="112.5" y1="124.3125" y2="166.1484"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="112.5" x2="112.5" y1="166.1484" y2="236.8516"/><rect fill="#FEFECE" filter="url(#f18pwclxka04bt)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="15" y="24.5332">User</text><rect fill="#FEFECE" filter="url(#f18pwclxka04bt)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="43" x="8" y="235.8516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="29" x="15" y="257.3848">User</text><rect fill="#FEFECE" filter="url(#f18pwclxka04bt)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="65.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="72.5" y="24.5332">Registration</text><rect fill="#FEFECE" filter="url(#f18pwclxka04bt)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="90" x="65.5" y="235.8516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="76" x="72.5" y="257.3848">Registration</text><rect fill="#FFFFFF" filter="url(#f18pwclxka04bt)" height="74.7031" style="stroke: #FFFFFF; stroke-width: 1.0;" width="10" x="26.5" y="49.6094"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="26.5" x2="26.5" y1="49.6094" y2="124.3125"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="36.5" x2="36.5" y1="49.6094" y2="124.3125"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="26.5" x2="36.5" y1="49.6094" y2="49.6094"/><rect fill="#FFFFFF" filter="url(#f18pwclxka04bt)" height="61.7031" style="stroke: #FFFFFF; stroke-width: 1.0;" width="10" x="26.5" y="166.1484"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="26.5" x2="26.5" y1="166.1484" y2="227.8516"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="36.5" x2="36.5" y1="166.1484" y2="227.8516"/><polygon fill="#A80036" points="100.5,67.9609,110.5,71.9609,100.5,75.9609,104.5,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="36.5" x2="106.5" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="43.5" y="67.1045">&#x65B0;&#x898F;&#x767B;&#x9332;</text><polygon fill="#A80036" points="215.5,98.3125,225.5,102.3125,215.5,106.3125,219.5,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="112.5" x2="221.5" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="119.5" y="97.4561">&#x30E1;&#x30FC;&#x30EB;&#x914D;&#x4FE1;&#x51E6;&#x7406;</text><polygon fill="#A80036" points="47.5,112.3125,37.5,116.3125,47.5,120.3125,43.5,116.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="41.5" x2="111.5" y1="116.3125" y2="116.3125"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="33" x="55.5" y="149.7314">&#xFF11;&#x5206;&#x5F8C;</text><polygon fill="#A80036" points="47.5,184.5,37.5,188.5,47.5,192.5,43.5,188.5" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="41.5" x2="226.5" y1="188.5" y2="188.5"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="53.5" y="183.6436">&#x30E1;&#x30FC;&#x30EB;&#x9001;&#x4FE1;</text><polygon fill="#A80036" points="100.5,214.8516,110.5,218.8516,100.5,222.8516,104.5,218.8516" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="36.5" x2="106.5" y1="218.8516" y2="218.8516"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="43.5" y="213.9951">&#x6709;&#x52B9;&#x5316;</text><!--
+@startuml
+activate User
+    User -> Registration : 新規登録
+    Registration ->] : メール配信処理
+    User <- - Registration
+
+    ...１分後...
+
+    User <- -] : メール送信
+    User -> Registration : 有効化
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="par-%E4%B8%A6%E5%88%97%E5%87%A6%E7%90%86">par &#x4E26;&#x5217;&#x51E6;&#x7406;</h4>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>actor Bob
+
+Bob -&gt; &#x76EE;&#x899A;&#x307E;&#x3057; : &#x6B62;&#x3081;&#x308B;
+Bob &lt;-- &#x76EE;&#x899A;&#x307E;&#x3057;
+
+par
+    Bob -&gt; &#x6B6F;&#x30D6;&#x30E9;&#x30B7; : &#x78E8;&#x304F;
+    Bob &lt;-- &#x6B6F;&#x30D6;&#x30E9;&#x30B7;
+else
+    Bob -&gt; &#x65B0;&#x805E; : &#x8AAD;&#x3080;
+    Bob &lt;-- &#x65B0;&#x805E;
+end
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="363px" preserveAspectRatio="none" style="width:300px;height:363px;" version="1.1" viewBox="0 0 300 363" width="300px" zoomAndPan="magnify"><defs><filter height="300%" id="f1uk3f4l1j5qu6" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1uk3f4l1j5qu6)" height="109.0547" style="stroke: #000000; stroke-width: 2.0;" width="275.5" x="13" y="148.9609"/><rect fill="#FFFFFF" height="46.3516" style="stroke: none; stroke-width: 1.0;" width="275.5" x="13" y="211.6641"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="38" x2="38" y1="87.6094" y2="275.0156"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="101.5" x2="101.5" y1="87.6094" y2="275.0156"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="185.5" x2="185.5" y1="87.6094" y2="275.0156"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="255.5" x2="255.5" y1="87.6094" y2="275.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="23" y="84.5332">Bob</text><ellipse cx="38.5" cy="13" fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M38.5,21 L38.5,48 M25.5,29 L51.5,29 M38.5,48 L25.5,63 M38.5,48 L51.5,63 " fill="none" filter="url(#f1uk3f4l1j5qu6)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="23" y="288.5488">Bob</text><ellipse cx="38.5" cy="301.625" fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M38.5,309.625 L38.5,336.625 M25.5,317.625 L51.5,317.625 M38.5,336.625 L25.5,351.625 M38.5,336.625 L51.5,351.625 " fill="none" filter="url(#f1uk3f4l1j5qu6)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="64.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="71.5" y="72.5332">&#x76EE;&#x899A;&#x307E;&#x3057;</text><rect fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="64.5" y="274.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="71.5" y="295.5488">&#x76EE;&#x899A;&#x307E;&#x3057;</text><rect fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="148.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="155.5" y="72.5332">&#x6B6F;&#x30D6;&#x30E9;&#x30B7;</text><rect fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="148.5" y="274.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="155.5" y="295.5488">&#x6B6F;&#x30D6;&#x30E9;&#x30B7;</text><rect fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="232.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="239.5" y="72.5332">&#x65B0;&#x805E;</text><rect fill="#FEFECE" filter="url(#f1uk3f4l1j5qu6)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="232.5" y="274.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="239.5" y="295.5488">&#x65B0;&#x805E;</text><polygon fill="#A80036" points="89.5,115.9609,99.5,119.9609,89.5,123.9609,93.5,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="38.5" x2="95.5" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="45.5" y="115.1045">&#x6B62;&#x3081;&#x308B;</text><polygon fill="#A80036" points="49.5,129.9609,39.5,133.9609,49.5,137.9609,45.5,133.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="43.5" x2="100.5" y1="133.9609" y2="133.9609"/><path d="M13,148.9609 L79,148.9609 L79,156.9609 L69,166.9609 L13,166.9609 L13,148.9609 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="109.0547" style="stroke: #000000; stroke-width: 2.0;" width="275.5" x="13" y="148.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="21" x="28" y="163.4561">par</text><polygon fill="#A80036" points="173.5,185.6641,183.5,189.6641,173.5,193.6641,177.5,189.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="38.5" x2="179.5" y1="189.6641" y2="189.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="45.5" y="184.8076">&#x78E8;&#x304F;</text><polygon fill="#A80036" points="49.5,199.6641,39.5,203.6641,49.5,207.6641,45.5,203.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="43.5" x2="184.5" y1="203.6641" y2="203.6641"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="13" x2="288.5" y1="212.6641" y2="212.6641"/><polygon fill="#A80036" points="243.5,232.0156,253.5,236.0156,243.5,240.0156,247.5,236.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="38.5" x2="249.5" y1="236.0156" y2="236.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="45.5" y="231.1592">&#x8AAD;&#x3080;</text><polygon fill="#A80036" points="49.5,246.0156,39.5,250.0156,49.5,254.0156,45.5,250.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="43.5" x2="254.5" y1="250.0156" y2="250.0156"/><!--
+@startuml
+actor Bob
+
+Bob -> 目覚まし : 止める
+Bob <- - 目覚まし
+
+par
+    Bob -> 歯ブラシ : 磨く
+    Bob <- - 歯ブラシ
+else
+    Bob -> 新聞 : 読む
+    Bob <- - 新聞
+end
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="loop-%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97%E5%87%A6%E7%90%86">loop &#x7E70;&#x308A;&#x8FD4;&#x3057;&#x51E6;&#x7406;</h4>
+
+<ul>
+<li>loop&#x306E;&#x5F8C;&#x306F;&#x4EFB;&#x610F;&#x306E;&#x6587;&#x5B57;&#x5217;&#x304C;&#x4F7F;&#x3048;&#x308B;&#x3002;</li>
+<li>UML&#x3067;&#x306F;&#x3001;[&#x958B;&#x59CB;, &#x7D42;&#x4E86;]&#x306E;&#x5F62;&#x5F0F;&#x3067;&#x66F8;&#x304F;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>actor &#x5BA2;
+
+loop 1, &#x5546;&#x54C1;&#x6570;
+    &#x5BA2; -&gt; &#x5E97;&#x54E1; : &#x5546;&#x54C1;
+    &#x5E97;&#x54E1; -&gt; &#x30EC;&#x30B8; : &#x30D0;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#x5165;&#x529B;
+end
+
+&#x5E97;&#x54E1; &lt;-- &#x30EC;&#x30B8; : &#x5408;&#x8A08;&#x91D1;&#x984D;
+&#x5BA2; &lt;-- &#x5E97;&#x54E1; : &#x5408;&#x8A08;&#x91D1;&#x984D;
+&#x5BA2; -&gt; &#x5E97;&#x54E1; : &#x304A;&#x91D1;
+&#x5E97;&#x54E1; -&gt; &#x30EC;&#x30B8; : &#x304A;&#x91D1;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="410px" preserveAspectRatio="none" style="width:273px;height:410px;" version="1.1" viewBox="0 0 273 410" width="273px" zoomAndPan="magnify"><defs><filter height="300%" id="f1242jibpqwevk" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1242jibpqwevk)" height="79.0547" style="stroke: #000000; stroke-width: 2.0;" width="249" x="13" y="104.6094"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="38" x2="38" y1="87.6094" y2="322.0703"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="114" x2="114" y1="87.6094" y2="322.0703"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="229" x2="229" y1="87.6094" y2="322.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="28" y="84.5332">&#x5BA2;</text><ellipse cx="38" cy="13" fill="#FEFECE" filter="url(#f1242jibpqwevk)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M38,21 L38,48 M25,29 L51,29 M38,48 L25,63 M38,48 L51,63 " fill="none" filter="url(#f1242jibpqwevk)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="28" y="335.6035">&#x5BA2;</text><ellipse cx="38" cy="348.6797" fill="#FEFECE" filter="url(#f1242jibpqwevk)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M38,356.6797 L38,383.6797 M25,364.6797 L51,364.6797 M38,383.6797 L25,398.6797 M38,383.6797 L51,398.6797 " fill="none" filter="url(#f1242jibpqwevk)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f1242jibpqwevk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="91" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="98" y="72.5332">&#x5E97;&#x54E1;</text><rect fill="#FEFECE" filter="url(#f1242jibpqwevk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="91" y="321.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="98" y="342.6035">&#x5E97;&#x54E1;</text><rect fill="#FEFECE" filter="url(#f1242jibpqwevk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="206" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="213" y="72.5332">&#x30EC;&#x30B8;</text><rect fill="#FEFECE" filter="url(#f1242jibpqwevk)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="206" y="321.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="213" y="342.6035">&#x30EC;&#x30B8;</text><path d="M13,104.6094 L86,104.6094 L86,112.6094 L76,122.6094 L13,122.6094 L13,104.6094 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="79.0547" style="stroke: #000000; stroke-width: 2.0;" width="249" x="13" y="104.6094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="28" y="119.1045">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="56" x="101" y="118.0283">[1, &#x5546;&#x54C1;&#x6570;]</text><polygon fill="#A80036" points="102,141.3125,112,145.3125,102,149.3125,106,145.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="38" x2="108" y1="145.3125" y2="145.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="45" y="140.4561">&#x5546;&#x54C1;</text><polygon fill="#A80036" points="217,171.6641,227,175.6641,217,179.6641,221,175.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="114" x2="223" y1="175.6641" y2="175.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="121" y="170.8076">&#x30D0;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#x5165;&#x529B;</text><polygon fill="#A80036" points="125,209.0156,115,213.0156,125,217.0156,121,213.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="119" x2="228" y1="213.0156" y2="213.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="131" y="208.1592">&#x5408;&#x8A08;&#x91D1;&#x984D;</text><polygon fill="#A80036" points="49,239.3672,39,243.3672,49,247.3672,45,243.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="43" x2="113" y1="243.3672" y2="243.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="55" y="238.5107">&#x5408;&#x8A08;&#x91D1;&#x984D;</text><polygon fill="#A80036" points="102,269.7188,112,273.7188,102,277.7188,106,273.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="38" x2="108" y1="273.7188" y2="273.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="45" y="268.8623">&#x304A;&#x91D1;</text><polygon fill="#A80036" points="217,300.0703,227,304.0703,217,308.0703,221,304.0703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="114" x2="223" y1="304.0703" y2="304.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="121" y="299.2139">&#x304A;&#x91D1;</text><!--
+@startuml
+actor 客
+
+loop 1, 商品数
+    客 -> 店員 : 商品
+    店員 -> レジ : バーコード入力
+end
+
+店員 <- - レジ : 合計金額
+客 <- - 店員 : 合計金額
+客 -> 店員 : お金
+店員 -> レジ : お金
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="break-%E4%B8%AD%E6%96%AD%E5%87%A6%E7%90%86">break &#x4E2D;&#x65AD;&#x51E6;&#x7406;</h4>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>actor &quot;&#x5BA2;(&#x672A;&#x6210;&#x5E74;)&quot; as guest
+
+loop 1, &#x5546;&#x54C1;&#x6570;
+    guest -&gt; &#x5E97;&#x54E1; : &#x5546;&#x54C1;
+    break &#x5546;&#x54C1; = &#x9152;
+        guest &lt;- &#x5E97;&#x54E1; : &#x8CA9;&#x58F2;&#x62D2;&#x5426;
+    end
+    &#x5E97;&#x54E1; -&gt; &#x30EC;&#x30B8; : &#x30D0;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#x5165;&#x529B;
+end
+&#x5E97;&#x54E1; &lt;-- &#x30EC;&#x30B8; : &#x5408;&#x8A08;&#x91D1;&#x984D;
+guest &lt;-- &#x5E97;&#x54E1; : &#x5408;&#x8A08;&#x91D1;&#x984D;
+guest -&gt; &#x5E97;&#x54E1;: &#x304A;&#x91D1;
+&#x5E97;&#x54E1; -&gt; &#x30EC;&#x30B8; : &#x304A;&#x91D1;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="473px" preserveAspectRatio="none" style="width:304px;height:473px;" version="1.1" viewBox="0 0 304 473" width="304px" zoomAndPan="magnify"><defs><filter height="300%" id="f1qjrra04y7izx" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f1qjrra04y7izx)" height="141.7578" style="stroke: #000000; stroke-width: 2.0;" width="280" x="13" y="104.6094"/><rect fill="#FFFFFF" filter="url(#f1qjrra04y7izx)" height="48.7031" style="stroke: #000000; stroke-width: 2.0;" width="157" x="23" y="160.3125"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="69" x2="69" y1="87.6094" y2="384.7734"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="145" x2="145" y1="87.6094" y2="384.7734"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="260" x2="260" y1="87.6094" y2="384.7734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="33" y="84.5332">&#x5BA2;(&#x672A;&#x6210;&#x5E74;)</text><ellipse cx="69" cy="13" fill="#FEFECE" filter="url(#f1qjrra04y7izx)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M69,21 L69,48 M56,29 L82,29 M69,48 L56,63 M69,48 L82,63 " fill="none" filter="url(#f1qjrra04y7izx)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="66" x="33" y="398.3066">&#x5BA2;(&#x672A;&#x6210;&#x5E74;)</text><ellipse cx="69" cy="411.3828" fill="#FEFECE" filter="url(#f1qjrra04y7izx)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M69,419.3828 L69,446.3828 M56,427.3828 L82,427.3828 M69,446.3828 L56,461.3828 M69,446.3828 L82,461.3828 " fill="none" filter="url(#f1qjrra04y7izx)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f1qjrra04y7izx)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="122" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="129" y="72.5332">&#x5E97;&#x54E1;</text><rect fill="#FEFECE" filter="url(#f1qjrra04y7izx)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="122" y="383.7734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="129" y="405.3066">&#x5E97;&#x54E1;</text><rect fill="#FEFECE" filter="url(#f1qjrra04y7izx)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="237" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="244" y="72.5332">&#x30EC;&#x30B8;</text><rect fill="#FEFECE" filter="url(#f1qjrra04y7izx)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="237" y="383.7734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="244" y="405.3066">&#x30EC;&#x30B8;</text><path d="M13,104.6094 L86,104.6094 L86,112.6094 L76,122.6094 L13,122.6094 L13,104.6094 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="141.7578" style="stroke: #000000; stroke-width: 2.0;" width="280" x="13" y="104.6094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="28" y="119.1045">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="56" x="101" y="118.0283">[1, &#x5546;&#x54C1;&#x6570;]</text><polygon fill="#A80036" points="133,141.3125,143,145.3125,133,149.3125,137,145.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="69" x2="139" y1="145.3125" y2="145.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="76" y="140.4561">&#x5546;&#x54C1;</text><path d="M23,160.3125 L104,160.3125 L104,168.3125 L94,178.3125 L23,178.3125 L23,160.3125 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="48.7031" style="stroke: #000000; stroke-width: 2.0;" width="157" x="23" y="160.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="36" x="38" y="174.8076">break</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="56" x="119" y="173.7314">[&#x5546;&#x54C1; = &#x9152;]</text><polygon fill="#A80036" points="80,197.0156,70,201.0156,80,205.0156,76,201.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="74" x2="144" y1="201.0156" y2="201.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="86" y="196.1592">&#x8CA9;&#x58F2;&#x62D2;&#x5426;</text><polygon fill="#A80036" points="248,234.3672,258,238.3672,248,242.3672,252,238.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="145" x2="254" y1="238.3672" y2="238.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="91" x="152" y="233.5107">&#x30D0;&#x30FC;&#x30B3;&#x30FC;&#x30C9;&#x5165;&#x529B;</text><polygon fill="#A80036" points="156,271.7188,146,275.7188,156,279.7188,152,275.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="150" x2="259" y1="275.7188" y2="275.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="162" y="270.8623">&#x5408;&#x8A08;&#x91D1;&#x984D;</text><polygon fill="#A80036" points="80,302.0703,70,306.0703,80,310.0703,76,306.0703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="74" x2="144" y1="306.0703" y2="306.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="86" y="301.2139">&#x5408;&#x8A08;&#x91D1;&#x984D;</text><polygon fill="#A80036" points="133,332.4219,143,336.4219,133,340.4219,137,336.4219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="69" x2="139" y1="336.4219" y2="336.4219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="76" y="331.5654">&#x304A;&#x91D1;</text><polygon fill="#A80036" points="248,362.7734,258,366.7734,248,370.7734,252,366.7734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="145" x2="254" y1="366.7734" y2="366.7734"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="152" y="361.917">&#x304A;&#x91D1;</text><!--
+@startuml
+actor "客(未成年)" as guest
+
+loop 1, 商品数
+    guest -> 店員 : 商品
+    break 商品 = 酒
+        guest <- 店員 : 販売拒否
+    end
+    店員 -> レジ : バーコード入力
+end
+店員 <- - レジ : 合計金額
+guest <- - 店員 : 合計金額
+guest -> 店員: お金
+店員 -> レジ : お金
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="critical-%E6%8E%92%E4%BB%96%E5%88%B6%E5%BE%A1%E5%87%A6%E7%90%86">critical &#x6392;&#x4ED6;&#x5236;&#x5FA1;&#x51E6;&#x7406;</h4>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>actor &#x30E6;&#x30FC;&#x30B6;&#x30FC; as user
+participant &#x753B;&#x9762; as view
+participant &#x30C7;&#x30FC;&#x30BF; as data
+
+create view
+user -&gt; view : &#x8868;&#x793A;
+view -&gt; data : &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8AAD;&#x307F;&#x53D6;&#x308A;
+view &lt;-- data : &#x30C7;&#x30FC;&#x30BF;
+user &lt;-- view
+
+user -&gt; view : &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x5909;&#x66F4;
+user &lt;-- view
+
+user -&gt; view : &#x4FDD;&#x5B58;
+critical
+    view -&gt; data : &#x30C7;&#x30FC;&#x30BF;&#x306E;&#x66F8;&#x304D;&#x8FBC;&#x307F;
+    view &lt;-- data
+end
+user &lt;-- view
+destroy view
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="482px" preserveAspectRatio="none" style="width:320px;height:482px;" version="1.1" viewBox="0 0 320 482" width="320px" zoomAndPan="magnify"><defs><filter height="300%" id="f1uhwhnqf61js7" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FEFECE" filter="url(#f1uhwhnqf61js7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="118" y="97.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="125" y="119.1426">&#x753B;&#x9762;</text><rect fill="#FFFFFF" filter="url(#f1uhwhnqf61js7)" height="62.7031" style="stroke: #000000; stroke-width: 2.0;" width="201" x="108" y="300.625"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="39" x2="39" y1="87.6094" y2="394.3281"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="141" x2="141" y1="130.9141" y2="394.3281"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="269" x2="269" y1="87.6094" y2="394.3281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="8" y="84.5332">&#x30E6;&#x30FC;&#x30B6;&#x30FC;</text><ellipse cx="39" cy="13" fill="#FEFECE" filter="url(#f1uhwhnqf61js7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M39,21 L39,48 M26,29 L52,29 M39,48 L26,63 M39,48 L52,63 " fill="none" filter="url(#f1uhwhnqf61js7)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="8" y="407.8613">&#x30E6;&#x30FC;&#x30B6;&#x30FC;</text><ellipse cx="39" cy="420.9375" fill="#FEFECE" filter="url(#f1uhwhnqf61js7)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M39,428.9375 L39,455.9375 M26,436.9375 L52,436.9375 M39,455.9375 L26,470.9375 M39,455.9375 L52,470.9375 " fill="none" filter="url(#f1uhwhnqf61js7)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f1uhwhnqf61js7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="118" y="393.3281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="125" y="414.8613">&#x753B;&#x9762;</text><rect fill="#FEFECE" filter="url(#f1uhwhnqf61js7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="56" x="239" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="246" y="72.5332">&#x30C7;&#x30FC;&#x30BF;</text><rect fill="#FEFECE" filter="url(#f1uhwhnqf61js7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="56" x="239" y="393.3281"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="246" y="414.8613">&#x30C7;&#x30FC;&#x30BF;</text><polygon fill="#A80036" points="106,115.9609,116,119.9609,106,123.9609,110,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="39" x2="112" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="46" y="115.1045">&#x8868;&#x793A;</text><rect fill="#FEFECE" filter="url(#f1uhwhnqf61js7)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="118" y="97.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="125" y="119.1426">&#x753B;&#x9762;</text><polygon fill="#A80036" points="257,162.5703,267,166.5703,257,170.5703,261,166.5703" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="141" x2="263" y1="166.5703" y2="166.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="148" y="161.7139">&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x8AAD;&#x307F;&#x53D6;&#x308A;</text><polygon fill="#A80036" points="152,192.9219,142,196.9219,152,200.9219,148,196.9219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="146" x2="268" y1="196.9219" y2="196.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="158" y="192.0654">&#x30C7;&#x30FC;&#x30BF;</text><polygon fill="#A80036" points="50,206.9219,40,210.9219,50,214.9219,46,210.9219" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="44" x2="140" y1="210.9219" y2="210.9219"/><polygon fill="#A80036" points="129,237.2734,139,241.2734,129,245.2734,133,241.2734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="39" x2="135" y1="241.2734" y2="241.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="78" x="46" y="236.417">&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x5909;&#x66F4;</text><polygon fill="#A80036" points="50,251.2734,40,255.2734,50,259.2734,46,255.2734" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="44" x2="140" y1="255.2734" y2="255.2734"/><polygon fill="#A80036" points="129,281.625,139,285.625,129,289.625,133,285.625" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="39" x2="135" y1="285.625" y2="285.625"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="46" y="280.7686">&#x4FDD;&#x5B58;</text><path d="M108,300.625 L196,300.625 L196,308.625 L186,318.625 L108,318.625 L108,300.625 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="62.7031" style="stroke: #000000; stroke-width: 2.0;" width="201" x="108" y="300.625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="43" x="123" y="315.1201">critical</text><polygon fill="#A80036" points="257,337.3281,267,341.3281,257,345.3281,261,341.3281" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="141" x2="263" y1="341.3281" y2="341.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="104" x="148" y="336.4717">&#x30C7;&#x30FC;&#x30BF;&#x306E;&#x66F8;&#x304D;&#x8FBC;&#x307F;</text><polygon fill="#A80036" points="152,351.3281,142,355.3281,152,359.3281,148,355.3281" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="146" x2="268" y1="355.3281" y2="355.3281"/><polygon fill="#A80036" points="50,372.3281,40,376.3281,50,380.3281,46,376.3281" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="44" x2="140" y1="376.3281" y2="376.3281"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="132" x2="150" y1="367.3281" y2="385.3281"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="132" x2="150" y1="385.3281" y2="367.3281"/><!--
+@startuml
+actor ユーザー as user
+participant 画面 as view
+participant データ as data
+
+create view
+user -> view : 表示
+view -> data : データの読み取り
+view <- - data : データ
+user <- - view
+
+user -> view : データの変更
+user <- - view
+
+user -> view : 保存
+critical
+    view -> data : データの書き込み
+    view <- - data
+end
+user <- - view
+destroy view
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h4 class="mume-header" id="%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E5%8C%96">&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x5316;</h4>
+
+<ul>
+<li>PlantUML&#x304C;&#x30B5;&#x30DD;&#x30FC;&#x30C8;&#x3057;&#x3066;&#x3044;&#x306A;&#x3044;&#x8907;&#x5408;&#x30D5;&#x30E9;&#x30B0;&#x30E1;&#x30F3;&#x30C8;&#x3092;&#x4F7F;&#x3044;&#x305F;&#x3044;&#x5834;&#x5408;</li>
+<li>&#x5358;&#x306B;&#x51E6;&#x7406;&#x3092;&#x30B0;&#x30EB;&#x30FC;&#x30D7;&#x5316;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>actor Bob
+
+Bob -&gt; &#x3081;&#x3056;&#x307E;&#x3057; : &#x6B62;&#x3081;&#x308B;
+Bob &lt;-- &#x3081;&#x3056;&#x307E;&#x3057;
+
+group &#x671D;&#x306E;&#x6E96;&#x5099;
+    par
+        Bob -&gt; &#x6B6F;&#x30D6;&#x30E9;&#x30B7; : &#x78E8;&#x304F;
+        Bob &lt;-- &#x6B6F;&#x30D6;&#x30E9;&#x30B7;
+    else
+        Bob -&gt; &#x65B0;&#x805E; : &#x8AAD;&#x3080;
+        Bob &lt;-- &#x65B0;&#x805E;
+    end
+    Bob -&gt; &#x670D; : &#x7740;&#x66FF;&#x3048;&#x308B;
+    Bob &lt;-- &#x670D;
+end
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="440px" preserveAspectRatio="none" style="width:351px;height:440px;" version="1.1" viewBox="0 0 351 440" width="351px" zoomAndPan="magnify"><defs><filter height="300%" id="f7sq9idc8ypn9" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#f7sq9idc8ypn9)" height="185.7578" style="stroke: #000000; stroke-width: 2.0;" width="327.5" x="13" y="148.9609"/><rect fill="#FFFFFF" filter="url(#f7sq9idc8ypn9)" height="109.0547" style="stroke: #000000; stroke-width: 2.0;" width="275.5" x="23" y="174.3125"/><rect fill="#FFFFFF" height="46.3516" style="stroke: none; stroke-width: 1.0;" width="275.5" x="23" y="237.0156"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="48" x2="48" y1="87.6094" y2="351.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="111.5" x2="111.5" y1="87.6094" y2="351.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="195.5" x2="195.5" y1="87.6094" y2="351.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="265.5" x2="265.5" y1="87.6094" y2="351.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="314.5" x2="314.5" y1="87.6094" y2="351.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="33" y="84.5332">Bob</text><ellipse cx="48.5" cy="13" fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M48.5,21 L48.5,48 M35.5,29 L61.5,29 M48.5,48 L35.5,63 M48.5,48 L61.5,63 " fill="none" filter="url(#f7sq9idc8ypn9)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="33" y="365.252">Bob</text><ellipse cx="48.5" cy="378.3281" fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M48.5,386.3281 L48.5,413.3281 M35.5,394.3281 L61.5,394.3281 M48.5,413.3281 L35.5,428.3281 M48.5,413.3281 L61.5,428.3281 " fill="none" filter="url(#f7sq9idc8ypn9)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="74.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="81.5" y="72.5332">&#x3081;&#x3056;&#x307E;&#x3057;</text><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="74.5" y="350.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="81.5" y="372.252">&#x3081;&#x3056;&#x307E;&#x3057;</text><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="158.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="165.5" y="72.5332">&#x6B6F;&#x30D6;&#x30E9;&#x30B7;</text><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="158.5" y="350.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="165.5" y="372.252">&#x6B6F;&#x30D6;&#x30E9;&#x30B7;</text><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="242.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="249.5" y="72.5332">&#x65B0;&#x805E;</text><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="242.5" y="350.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="249.5" y="372.252">&#x65B0;&#x805E;</text><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="28" x="298.5" y="51"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="305.5" y="72.5332">&#x670D;</text><rect fill="#FEFECE" filter="url(#f7sq9idc8ypn9)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="28" x="298.5" y="350.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="14" x="305.5" y="372.252">&#x670D;</text><polygon fill="#A80036" points="99.5,115.9609,109.5,119.9609,99.5,123.9609,103.5,119.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="48.5" x2="105.5" y1="119.9609" y2="119.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="55.5" y="115.1045">&#x6B62;&#x3081;&#x308B;</text><polygon fill="#A80036" points="59.5,129.9609,49.5,133.9609,59.5,137.9609,55.5,133.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="53.5" x2="110.5" y1="133.9609" y2="133.9609"/><path d="M13,148.9609 L114,148.9609 L114,156.9609 L104,166.9609 L13,166.9609 L13,148.9609 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="185.7578" style="stroke: #000000; stroke-width: 2.0;" width="327.5" x="13" y="148.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="56" x="28" y="163.4561">&#x671D;&#x306E;&#x6E96;&#x5099;</text><path d="M23,174.3125 L89,174.3125 L89,182.3125 L79,192.3125 L23,192.3125 L23,174.3125 " fill="#EEEEEE" style="stroke: #000000; stroke-width: 1.0;"/><rect fill="none" height="109.0547" style="stroke: #000000; stroke-width: 2.0;" width="275.5" x="23" y="174.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="21" x="38" y="188.8076">par</text><polygon fill="#A80036" points="183.5,211.0156,193.5,215.0156,183.5,219.0156,187.5,215.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="48.5" x2="189.5" y1="215.0156" y2="215.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="55.5" y="210.1592">&#x78E8;&#x304F;</text><polygon fill="#A80036" points="59.5,225.0156,49.5,229.0156,59.5,233.0156,55.5,229.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="53.5" x2="194.5" y1="229.0156" y2="229.0156"/><line style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="23" x2="298.5" y1="238.0156" y2="238.0156"/><polygon fill="#A80036" points="253.5,257.3672,263.5,261.3672,253.5,265.3672,257.5,261.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="48.5" x2="259.5" y1="261.3672" y2="261.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="55.5" y="256.5107">&#x8AAD;&#x3080;</text><polygon fill="#A80036" points="59.5,271.3672,49.5,275.3672,59.5,279.3672,55.5,275.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="53.5" x2="264.5" y1="275.3672" y2="275.3672"/><polygon fill="#A80036" points="302.5,308.7188,312.5,312.7188,302.5,316.7188,306.5,312.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="48.5" x2="308.5" y1="312.7188" y2="312.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="55.5" y="307.8623">&#x7740;&#x66FF;&#x3048;&#x308B;</text><polygon fill="#A80036" points="59.5,322.7188,49.5,326.7188,59.5,330.7188,55.5,326.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="53.5" x2="313.5" y1="326.7188" y2="326.7188"/><!--
+@startuml
+actor Bob
+
+Bob -> めざまし : 止める
+Bob <- - めざまし
+
+group 朝の準備
+    par
+        Bob -> 歯ブラシ : 磨く
+        Bob <- - 歯ブラシ
+    else
+        Bob -> 新聞 : 読む
+        Bob <- - 新聞
+    end
+    Bob -> 服 : 着替える
+    Bob <- - 服
+end
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E4%BD%9C%E6%88%90%E3%81%A8%E6%B6%88%E6%BB%85">&#x4F5C;&#x6210;&#x3068;&#x6D88;&#x6EC5;</h3>
+
+<ul>
+<li>&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x4F5C;&#x6210;&#x3068;&#x6D88;&#x6EC5;&#x3092;&#x8868;&#x73FE;&#x3059;&#x308B;&#x3002;</li>
+<li>create, destroy&#x30AD;&#x30FC;&#x30EF;&#x30FC;&#x30C9;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>participant &quot;Main Window&quot; as main
+
+create Loader
+main -&gt; Loader : &lt;&lt;&#x4F5C;&#x6210;&gt;&gt;
+main &lt;-- Loader
+destroy Loader
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="161px" preserveAspectRatio="none" style="width:210px;height:161px;" version="1.1" viewBox="0 0 210 161" width="210px" zoomAndPan="magnify"><defs><filter height="300%" id="f1tj8wkj8k7okc" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FEFECE" filter="url(#f1tj8wkj8k7okc)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="59" x="140.5" y="49.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="147.5" y="71.1426">Loader</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="58" x2="58" y1="39.6094" y2="120.2188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="171.5" x2="171.5" y1="82.9141" y2="120.2188"/><rect fill="#FEFECE" filter="url(#f1tj8wkj8k7okc)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="97" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="15" y="24.5332">Main Window</text><rect fill="#FEFECE" filter="url(#f1tj8wkj8k7okc)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="97" x="8" y="119.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="83" x="15" y="140.752">Main Window</text><rect fill="#FEFECE" filter="url(#f1tj8wkj8k7okc)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="59" x="140.5" y="119.2188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="147.5" y="140.752">Loader</text><polygon fill="#A80036" points="128.5,67.9609,138.5,71.9609,128.5,75.9609,132.5,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="58.5" x2="134.5" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="58" x="65.5" y="67.1045">&lt;&lt;&#x4F5C;&#x6210;&gt;&gt;</text><rect fill="#FEFECE" filter="url(#f1tj8wkj8k7okc)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="59" x="140.5" y="49.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="45" x="147.5" y="71.1426">Loader</text><polygon fill="#A80036" points="69.5,98.2188,59.5,102.2188,69.5,106.2188,65.5,102.2188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="63.5" x2="171" y1="102.2188" y2="102.2188"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="163" x2="181" y1="93.2188" y2="111.2188"/><line style="stroke: #A80036; stroke-width: 2.0;" x1="163" x2="181" y1="111.2188" y2="93.2188"/><!--
+@startuml
+participant "Main Window" as main
+
+create Loader
+main -> Loader : <<作成>>
+main <- - Loader
+destroy Loader
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E4%B8%8A%E4%B8%8B%E3%81%A7%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E9%96%93%E3%81%A7%E3%82%B9%E3%83%9A%E3%83%BC%E3%82%B9%E3%82%92%E7%A9%BA%E3%81%91%E3%82%8B">&#x4E0A;&#x4E0B;&#x3067;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x9593;&#x3067;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x3092;&#x7A7A;&#x3051;&#x308B;</h3>
+
+<ul>
+<li>&#x4E0A;&#x4E0B;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x9593;&#x306B;|||&#x3092;&#x5165;&#x308C;&#x308B;&#x3002;</li>
+<li>||&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x306E;&#x30D4;&#x30AF;&#x30BB;&#x30EB;&#x5024;||&#x3067;&#x30B9;&#x30DA;&#x30FC;&#x30B9;&#x306E;&#x5927;&#x304D;&#x3055;&#x3092;&#x8ABF;&#x6574;&#x3067;&#x304D;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Alice -&gt; Bob : message 1
+Bob --&gt; Alice : OK
+|||
+Alice -&gt; Bob : message 2
+Bob --&gt; Alice : OK
+||60||
+Alice -&gt; Bob : message 3
+Bob --&gt; Alice : OK
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="368px" preserveAspectRatio="none" style="width:148px;height:368px;" version="1.1" viewBox="0 0 148 368" width="148px" zoomAndPan="magnify"><defs><filter height="300%" id="f14oiekyr9vshg" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="32" x2="32" y1="39.6094" y2="326.7188"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="119.5" x2="119.5" y1="39.6094" y2="326.7188"/><rect fill="#FEFECE" filter="url(#f14oiekyr9vshg)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#f14oiekyr9vshg)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="325.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="347.252">Alice</text><rect fill="#FEFECE" filter="url(#f14oiekyr9vshg)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="98.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="105.5" y="24.5332">Bob</text><rect fill="#FEFECE" filter="url(#f14oiekyr9vshg)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="98.5" y="325.7188"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="105.5" y="347.252">Bob</text><polygon fill="#A80036" points="108,67.9609,118,71.9609,108,75.9609,112,71.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="114" y1="71.9609" y2="71.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="39" y="67.1045">message 1</text><polygon fill="#A80036" points="43,98.3125,33,102.3125,43,106.3125,39,102.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="37" x2="119" y1="102.3125" y2="102.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="19" x="49" y="97.4561">OK</text><polygon fill="#A80036" points="108,153.6641,118,157.6641,108,161.6641,112,157.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="114" y1="157.6641" y2="157.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="39" y="152.8076">message 2</text><polygon fill="#A80036" points="43,184.0156,33,188.0156,43,192.0156,39,188.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="37" x2="119" y1="188.0156" y2="188.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="19" x="49" y="183.1592">OK</text><polygon fill="#A80036" points="108,274.3672,118,278.3672,108,282.3672,112,278.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="114" y1="278.3672" y2="278.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="64" x="39" y="273.5107">message 3</text><polygon fill="#A80036" points="43,304.7188,33,308.7188,43,312.7188,39,308.7188" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="37" x2="119" y1="308.7188" y2="308.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="19" x="49" y="303.8623">OK</text><!--
+@startuml
+Alice -> Bob : message 1
+Bob - -> Alice : OK
+|||
+Alice -> Bob : message 2
+Bob - -> Alice : OK
+||60||
+Alice -> Bob : message 3
+Bob - -> Alice : OK
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E5%88%86%E9%9B%A2%E7%B7%9A">&#x5206;&#x96E2;&#x7DDA;</h3>
+
+<pre data-role="codeBlock" data-info="" class="language-"><code>== &#x521D;&#x671F;&#x5316; ==
+Alice -&gt; Bob : &#x8A8D;&#x8A3C;&#x8981;&#x6C42;
+Bob --&gt; Alice : &#x8A8D;&#x8A3C;&#x5FDC;&#x7B54;
+== &#x5F8C;&#x51E6;&#x7406; ==
+Alice -&gt; Bob : &#x30BF;&#x30B9;&#x30AF;&#x95A2;&#x6570;
+Alice &lt;-- Bob
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="294px" preserveAspectRatio="none" style="width:159px;height:294px;" version="1.1" viewBox="0 0 159 294" width="159px" zoomAndPan="magnify"><defs><filter height="300%" id="f81non2be1pv0" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="32" x2="32" y1="39.6094" y2="253.3672"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="120.5" x2="120.5" y1="39.6094" y2="253.3672"/><rect fill="#FEFECE" filter="url(#f81non2be1pv0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#f81non2be1pv0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="8" y="252.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="15" y="273.9004">Alice</text><rect fill="#FEFECE" filter="url(#f81non2be1pv0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="99.5" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="106.5" y="24.5332">Bob</text><rect fill="#FEFECE" filter="url(#f81non2be1pv0)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="99.5" y="252.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="106.5" y="273.9004">Bob</text><rect fill="#EEEEEE" filter="url(#f81non2be1pv0)" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="144.5" x="3" y="70.7852"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="147.5" y1="70.7852" y2="70.7852"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="147.5" y1="73.7852" y2="73.7852"/><rect fill="#EEEEEE" filter="url(#f81non2be1pv0)" height="24.3516" style="stroke: #000000; stroke-width: 2.0;" width="60" x="45.25" y="59.6094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="42" x="51.25" y="77.1045">&#x521D;&#x671F;&#x5316;</text><polygon fill="#A80036" points="109,112.3125,119,116.3125,109,120.3125,113,116.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="115" y1="116.3125" y2="116.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="39" y="111.4561">&#x8A8D;&#x8A3C;&#x8981;&#x6C42;</text><polygon fill="#A80036" points="43,142.6641,33,146.6641,43,150.6641,39,146.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="37" x2="120" y1="146.6641" y2="146.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="49" y="141.8076">&#x8A8D;&#x8A3C;&#x5FDC;&#x7B54;</text><rect fill="#EEEEEE" filter="url(#f81non2be1pv0)" height="3" style="stroke: #EEEEEE; stroke-width: 1.0;" width="144.5" x="3" y="175.8398"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="147.5" y1="175.8398" y2="175.8398"/><line style="stroke: #000000; stroke-width: 1.0;" x1="3" x2="147.5" y1="178.8398" y2="178.8398"/><rect fill="#EEEEEE" filter="url(#f81non2be1pv0)" height="24.3516" style="stroke: #000000; stroke-width: 2.0;" width="60" x="45.25" y="164.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="42" x="51.25" y="182.1592">&#x5F8C;&#x51E6;&#x7406;</text><polygon fill="#A80036" points="109,217.3672,119,221.3672,109,225.3672,113,221.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="32" x2="115" y1="221.3672" y2="221.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="39" y="216.5107">&#x30BF;&#x30B9;&#x30AF;&#x95A2;&#x6570;</text><polygon fill="#A80036" points="43,231.3672,33,235.3672,43,239.3672,39,235.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="37" x2="120" y1="235.3672" y2="235.3672"/><!--
+@startuml
+== 初期化 ==
+Alice -> Bob : 認証要求
+Bob - -> Alice : 認証応答
+== 後処理 ==
+Alice -> Bob : タスク関数
+Alice <- - Bob
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9">&#x30DC;&#x30C3;&#x30AF;&#x30B9;</h3>
+
+<p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="348px" preserveAspectRatio="none" style="width:254px;height:348px;" version="1.1" viewBox="0 0 254 348" width="254px" zoomAndPan="magnify"><defs><filter height="300%" id="f14advnt98hhrw" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#ADD8E6" height="333.9766" style="stroke: #A80036; stroke-width: 1.0;" width="172" x="4" y="4"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacingAndGlyphs" textLength="28" x="76" y="17.4951">&#x793E;&#x5185;</text><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="46" x2="46" y1="108.9609" y2="250.3672"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="135" x2="135" y1="108.9609" y2="250.3672"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="224" x2="224" y1="108.9609" y2="250.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="8" y="105.8848">&#x30A8;&#x30F3;&#x30B8;&#x30CB;&#x30A2;</text><ellipse cx="46" cy="34.3516" fill="#FEFECE" filter="url(#f14advnt98hhrw)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M46,42.3516 L46,69.3516 M33,50.3516 L59,50.3516 M46,69.3516 L33,84.3516 M46,69.3516 L59,84.3516 " fill="none" filter="url(#f14advnt98hhrw)" style="stroke: #A80036; stroke-width: 2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="70" x="8" y="263.9004">&#x30A8;&#x30F3;&#x30B8;&#x30CB;&#x30A2;</text><ellipse cx="46" cy="276.9766" fill="#FEFECE" filter="url(#f14advnt98hhrw)" rx="8" ry="8" style="stroke: #A80036; stroke-width: 2.0;"/><path d="M46,284.9766 L46,311.9766 M33,292.9766 L59,292.9766 M46,311.9766 L33,326.9766 M46,311.9766 L59,326.9766 " fill="none" filter="url(#f14advnt98hhrw)" style="stroke: #A80036; stroke-width: 2.0;"/><rect fill="#FEFECE" filter="url(#f14advnt98hhrw)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="98" y="72.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="105" y="93.8848">&#x30B5;&#x30DD;&#x30FC;&#x30C8;</text><rect fill="#FEFECE" filter="url(#f14advnt98hhrw)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="70" x="98" y="249.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="105" y="270.9004">&#x30B5;&#x30DD;&#x30FC;&#x30C8;</text><rect fill="#FEFECE" filter="url(#f14advnt98hhrw)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="201" y="72.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="208" y="93.8848">&#x9867;&#x5BA2;</text><rect fill="#FEFECE" filter="url(#f14advnt98hhrw)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="42" x="201" y="249.3672"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="208" y="270.9004">&#x9867;&#x5BA2;</text><polygon fill="#A80036" points="146,137.3125,136,141.3125,146,145.3125,142,141.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="140" x2="223" y1="141.3125" y2="141.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="152" y="136.4561">&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;</text><polygon fill="#A80036" points="57,167.6641,47,171.6641,57,175.6641,53,171.6641" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="51" x2="134" y1="171.6641" y2="171.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="65" x="63" y="166.8076">&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;</text><polygon fill="#A80036" points="123,198.0156,133,202.0156,123,206.0156,127,202.0156" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="46" x2="129" y1="202.0156" y2="202.0156"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="53" y="197.1592">&#x56DE;&#x7B54;</text><polygon fill="#A80036" points="212,228.3672,222,232.3672,212,236.3672,216,232.3672" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 2.0,2.0;" x1="135" x2="218" y1="232.3672" y2="232.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="26" x="142" y="227.5107">&#x56DE;&#x7B54;</text><!--
+@startuml
+box "社内" #LightBlue
+    actor エンジニア
+    participant サポート
+end box
+participant 顧客
+
+顧客 -> サポート : 問い合わせ
+サポート -> エンジニア : 問い合わせ
+
+エンジニア - -> サポート : 回答
+サポート - -> 顧客 : 回答
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h3 class="mume-header" id="%E3%83%8E%E3%83%BC%E3%83%88">&#x30CE;&#x30FC;&#x30C8;</h3>
+
+<h4 class="mume-header" id="%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%8E%E3%83%BC%E3%83%88">&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x30CE;&#x30FC;&#x30C8;</h4>
+
+<ul>
+<li>&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x30CE;&#x30FC;&#x30C8;&#x306F;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306E;&#x76F4;&#x4E0B;&#x306B;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x4F4D;&#x7F6E;&#x306F;right&#x307E;&#x305F;&#x306F;left&#x3067;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3002;</li>
+<li>&#x80CC;&#x666F;&#x8272;&#x3092;&#x5909;&#x3048;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;#&#x8272;&#x540D;&#x3001;#RGB&#x5024;&#x3067;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3002;</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-"><code>Alice -&gt; Bob : Hello
+note left : &#x6700;&#x521D;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30CE;&#x30FC;&#x30C8;
+
+Bob -&gt; Alice : OK
+note right #aqua : &#x6B21;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30CE;&#x30FC;&#x30C8;
+
+Bob -&gt; Bob : I am thinking
+note left #FFAAAA : &#x8907;&#x6570;&#x884C;&#x306E;\n&#x30CE;&#x30FC;&#x30C8;
+</code></pre><p><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="238px" preserveAspectRatio="none" style="width:508px;height:238px;" version="1.1" viewBox="0 0 508 238" width="508px" zoomAndPan="magnify"><defs><filter height="300%" id="f77ceftzk5j5v" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="233" x2="233" y1="39.6094" y2="197.0156"/><line style="stroke: #A80036; stroke-width: 1.0; stroke-dasharray: 5.0,5.0;" x1="288" x2="288" y1="39.6094" y2="197.0156"/><rect fill="#FEFECE" filter="url(#f77ceftzk5j5v)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="209" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="216" y="24.5332">Alice</text><rect fill="#FEFECE" filter="url(#f77ceftzk5j5v)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="44" x="209" y="196.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="30" x="216" y="217.5488">Alice</text><rect fill="#FEFECE" filter="url(#f77ceftzk5j5v)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="267" y="3"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="274" y="24.5332">Bob</text><rect fill="#FEFECE" filter="url(#f77ceftzk5j5v)" height="31.6094" style="stroke: #A80036; stroke-width: 1.5;" width="39" x="267" y="196.0156"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="25" x="274" y="217.5488">Bob</text><polygon fill="#A80036" points="276.5,72.9609,286.5,76.9609,276.5,80.9609,280.5,76.9609" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="233" x2="282.5" y1="76.9609" y2="76.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="29" x="240" y="72.1045">Hello</text><path d="M8,54.6094 L8,80.6094 L224,80.6094 L224,64.6094 L214,54.6094 L8,54.6094 " fill="#FBFB77" filter="url(#f77ceftzk5j5v)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M214,54.6094 L214,64.6094 L224,64.6094 L214,54.6094 " fill="#FBFB77" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="195" x="14" y="73.1045">&#x6700;&#x521D;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30CE;&#x30FC;&#x30C8;</text><polygon fill="#A80036" points="244,113.3125,234,117.3125,244,121.3125,240,117.3125" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="238" x2="287.5" y1="117.3125" y2="117.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="19" x="250" y="112.4561">OK</text><path d="M293,94.9609 L293,120.9609 L496,120.9609 L496,104.9609 L486,94.9609 L293,94.9609 " fill="#00FFFF" filter="url(#f77ceftzk5j5v)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M486,94.9609 L486,104.9609 L496,104.9609 L486,94.9609 " fill="#00FFFF" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="182" x="299" y="113.4561">&#x6B21;&#x306E;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x306B;&#x5BFE;&#x3059;&#x308B;&#x30CE;&#x30FC;&#x30C8;</text><line style="stroke: #A80036; stroke-width: 1.0;" x1="288.5" x2="330.5" y1="159.3398" y2="159.3398"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="330.5" x2="330.5" y1="159.3398" y2="172.3398"/><line style="stroke: #A80036; stroke-width: 1.0;" x1="289.5" x2="330.5" y1="172.3398" y2="172.3398"/><polygon fill="#A80036" points="299.5,168.3398,289.5,172.3398,299.5,176.3398,295.5,172.3398" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="74" x="295.5" y="154.4834">I am thinking</text><path d="M206,135.3125 L206,177.3125 L279,177.3125 L279,145.3125 L269,135.3125 L206,135.3125 " fill="#FFAAAA" filter="url(#f77ceftzk5j5v)" style="stroke: #A80036; stroke-width: 1.0;"/><path d="M269,135.3125 L269,145.3125 L279,145.3125 L269,135.3125 " fill="#FFAAAA" style="stroke: #A80036; stroke-width: 1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="52" x="212" y="153.8076">&#x8907;&#x6570;&#x884C;&#x306E;</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacingAndGlyphs" textLength="39" x="212" y="170.1592">&#x30CE;&#x30FC;&#x30C8;</text><!--
+@startuml
+Alice -> Bob : Hello
+note left : 最初のメッセージに対するノート
+
+Bob -> Alice : OK
+note right #aqua : 次のメッセージに対するノート
+
+Bob -> Bob : I am thinking
+note left #FFAAAA : 複数行の\nノート
+@enduml
+
+PlantUML version 1.2018.11(Sun Sep 23 01:43:53 JST 2018)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_191-b12
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: MS932
+Language: ja
+Country: JP
+--></g></svg></p><h2 class="mume-header" id="%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99">&#x53C2;&#x8003;&#x8CC7;&#x6599;</h2>
+
+<hr>
+<ul>
+<li><a href="http://blog.asial.co.jp/archive/category/UML">Asial/Developers/Blog UML&#x3092;&#x63CF;&#x3053;&#x3046;</a></li>
+<li><a href="https://qiita.com/devopsCoordinator/items/4535c3cce207b114ad6c">&#x3010;&#x65B0;&#x4EBA;&#x6559;&#x80B2; &#x8CC7;&#x6599;&#x3011;&#x7B2C;8&#x7AE0; UML&#x307E;&#x3067;&#x306E;&#x9053; &#x301C;&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;&#x306E;&#x8AAC;&#x660E;&amp;&#x66F8;&#x3044;&#x3066;&#x307F;&#x3088;&#x3046;&#x7DE8;&#x301C;</a></li>
+<li><a href="http://yohshiy.blog.fc2.com/blog-entry-153.html">&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DE;&#x30FC;&#x30BA;&#x96D1;&#x8A18;&#x5E33; PlantUML - &#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x56F3;</a></li>
+<li><a href="http://d.hatena.ne.jp/shuji_w6e/20081116/1226853215">&#x3084;&#x3055;&#x3057;&#x3044;&#x30C7;&#x30B9;&#x30DE;&#x30FC;&#x30C1; ICONIX&#x30D7;&#x30ED;&#x30BB;&#x30B9;</a></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
